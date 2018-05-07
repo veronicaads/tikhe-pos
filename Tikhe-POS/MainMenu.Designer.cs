@@ -110,7 +110,7 @@
             this.service_btn.Name = "service_btn";
             this.service_btn.Size = new System.Drawing.Size(85, 86);
             this.service_btn.TabIndex = 4;
-            this.service_btn.Text = "Service";
+            this.service_btn.Text = "Report";
             this.service_btn.UseVisualStyleBackColor = false;
             // 
             // supplier_btn
@@ -185,62 +185,62 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tekton Pro Ext", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Tempus Sans ITC", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(57, 236);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 18);
+            this.label3.Size = new System.Drawing.Size(78, 19);
             this.label3.TabIndex = 5;
             this.label3.Text = "Customer";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Tekton Pro Ext", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Tempus Sans ITC", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(213, 236);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 18);
+            this.label4.Size = new System.Drawing.Size(67, 19);
             this.label4.TabIndex = 5;
             this.label4.Text = "Supplier";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Tekton Pro Ext", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Tempus Sans ITC", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(361, 236);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(85, 18);
+            this.label5.Size = new System.Drawing.Size(81, 19);
             this.label5.TabIndex = 5;
             this.label5.Text = "Employee";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Tekton Pro Ext", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Tempus Sans ITC", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(58, 372);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(74, 18);
+            this.label6.Size = new System.Drawing.Size(65, 19);
             this.label6.TabIndex = 5;
             this.label6.Text = "Restock";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Tekton Pro Ext", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(223, 372);
+            this.label7.Font = new System.Drawing.Font("Tempus Sans ITC", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(226, 372);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(54, 18);
+            this.label7.Size = new System.Drawing.Size(43, 19);
             this.label7.TabIndex = 5;
             this.label7.Text = "Sales";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Tekton Pro Ext", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(367, 372);
+            this.label8.Font = new System.Drawing.Font("Tempus Sans ITC", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(373, 372);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(67, 18);
+            this.label8.Size = new System.Drawing.Size(58, 19);
             this.label8.TabIndex = 5;
-            this.label8.Text = "Service";
+            this.label8.Text = "Report";
             // 
             // MainMenu
             // 
