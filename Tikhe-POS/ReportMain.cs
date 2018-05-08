@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Tikhe_POS
 {
-    public partial class MainMenu : Form
+    public partial class ReportMain : Form
     {
-        public MainMenu()
+        public ReportMain()
         {
             InitializeComponent();
         }
@@ -22,12 +22,32 @@ namespace Tikhe_POS
 
         }
 
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void circularButton1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter_1(object sender, EventArgs e)
         {
 
         }

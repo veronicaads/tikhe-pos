@@ -16,5 +16,20 @@ namespace Tikhe_POS
         {
             InitializeComponent();
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void login_btn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
