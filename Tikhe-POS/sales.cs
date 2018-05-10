@@ -21,5 +21,10 @@ namespace Tikhe_POS
         {
 
         }
+
+        private void login_btn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
