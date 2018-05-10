@@ -21,5 +21,12 @@ namespace Tikhe_POS
         {
 
         }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            MainMenu form = new MainMenu();
+            form.Show();
+            Hide();
+        }
     }
 }

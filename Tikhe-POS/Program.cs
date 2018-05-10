@@ -16,7 +16,7 @@ namespace Tikhe_POS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new ReportMain());
+            Application.Run(new MainMenu());
         }
     }
 }

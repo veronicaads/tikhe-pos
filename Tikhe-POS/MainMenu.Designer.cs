@@ -73,6 +73,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "Log Out";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -191,6 +192,7 @@
             this.service_btn.Size = new System.Drawing.Size(85, 86);
             this.service_btn.TabIndex = 4;
             this.service_btn.UseVisualStyleBackColor = false;
+            this.service_btn.Click += new System.EventHandler(this.service_btn_Click);
             // 
             // supplier_btn
             // 
@@ -233,7 +235,7 @@
             this.restock_btn.Size = new System.Drawing.Size(84, 86);
             this.restock_btn.TabIndex = 1;
             this.restock_btn.UseVisualStyleBackColor = false;
-            this.restock_btn.Click += new System.EventHandler(this.circularButton1_Click);
+            this.restock_btn.Click += new System.EventHandler(this.restock_btn_Click);
             // 
             // sales_btn
             // 
@@ -248,7 +250,7 @@
             this.sales_btn.Size = new System.Drawing.Size(85, 86);
             this.sales_btn.TabIndex = 1;
             this.sales_btn.UseVisualStyleBackColor = false;
-            this.sales_btn.Click += new System.EventHandler(this.circularButton1_Click);
+            this.sales_btn.Click += new System.EventHandler(this.sales_btn_Click);
             // 
             // MainMenu
             // 

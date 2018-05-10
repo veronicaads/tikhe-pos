@@ -105,8 +105,9 @@
             this.button18.Name = "button18";
             this.button18.Size = new System.Drawing.Size(72, 29);
             this.button18.TabIndex = 5;
-            this.button18.Text = "Back";
+            this.button18.Text = "< Back";
             this.button18.UseVisualStyleBackColor = false;
+            this.button18.Click += new System.EventHandler(this.button18_Click);
             // 
             // label2
             // 

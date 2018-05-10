@@ -33,24 +33,24 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.graph_report = new System.Windows.Forms.GroupBox();
+            this.item_graph = new System.Windows.Forms.RadioButton();
+            this.order_graphic = new System.Windows.Forms.RadioButton();
+            this.customer_graphic = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.customer_graphic = new System.Windows.Forms.RadioButton();
-            this.order_graphic = new System.Windows.Forms.RadioButton();
-            this.item_graph = new System.Windows.Forms.RadioButton();
             this.summary_report = new System.Windows.Forms.GroupBox();
-            this.service_summary = new System.Windows.Forms.RadioButton();
             this.item_summary = new System.Windows.Forms.RadioButton();
-            this.detail = new System.Windows.Forms.GroupBox();
+            this.service_summary = new System.Windows.Forms.RadioButton();
             this.customer_summary = new System.Windows.Forms.RadioButton();
-            this.customer_detail = new System.Windows.Forms.RadioButton();
-            this.service_detail = new System.Windows.Forms.RadioButton();
+            this.detail = new System.Windows.Forms.GroupBox();
             this.item_detail = new System.Windows.Forms.RadioButton();
+            this.service_detail = new System.Windows.Forms.RadioButton();
+            this.customer_detail = new System.Windows.Forms.RadioButton();
             this.inventory = new System.Windows.Forms.GroupBox();
-            this.low_inventory = new System.Windows.Forms.RadioButton();
-            this.summary_inventory = new System.Windows.Forms.RadioButton();
             this.inventory_history = new System.Windows.Forms.RadioButton();
+            this.summary_inventory = new System.Windows.Forms.RadioButton();
+            this.low_inventory = new System.Windows.Forms.RadioButton();
+            this.button18 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.graph_report.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -111,6 +111,40 @@
             this.graph_report.Text = "Graphical Reports";
             this.graph_report.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // item_graph
+            // 
+            this.item_graph.AutoSize = true;
+            this.item_graph.Location = new System.Drawing.Point(12, 87);
+            this.item_graph.Name = "item_graph";
+            this.item_graph.Size = new System.Drawing.Size(113, 24);
+            this.item_graph.TabIndex = 6;
+            this.item_graph.TabStop = true;
+            this.item_graph.Text = "Item Sales";
+            this.item_graph.UseVisualStyleBackColor = true;
+            // 
+            // order_graphic
+            // 
+            this.order_graphic.AutoSize = true;
+            this.order_graphic.Location = new System.Drawing.Point(12, 56);
+            this.order_graphic.Name = "order_graphic";
+            this.order_graphic.Size = new System.Drawing.Size(145, 24);
+            this.order_graphic.TabIndex = 5;
+            this.order_graphic.TabStop = true;
+            this.order_graphic.Text = "Service Orders";
+            this.order_graphic.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.order_graphic.UseVisualStyleBackColor = true;
+            // 
+            // customer_graphic
+            // 
+            this.customer_graphic.AutoSize = true;
+            this.customer_graphic.Location = new System.Drawing.Point(12, 26);
+            this.customer_graphic.Name = "customer_graphic";
+            this.customer_graphic.Size = new System.Drawing.Size(113, 24);
+            this.customer_graphic.TabIndex = 5;
+            this.customer_graphic.TabStop = true;
+            this.customer_graphic.Text = "Customers";
+            this.customer_graphic.UseVisualStyleBackColor = true;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -134,51 +168,6 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(14, 13);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(73, 41);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "< Back";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // customer_graphic
-            // 
-            this.customer_graphic.AutoSize = true;
-            this.customer_graphic.Location = new System.Drawing.Point(12, 26);
-            this.customer_graphic.Name = "customer_graphic";
-            this.customer_graphic.Size = new System.Drawing.Size(113, 24);
-            this.customer_graphic.TabIndex = 5;
-            this.customer_graphic.TabStop = true;
-            this.customer_graphic.Text = "Customers";
-            this.customer_graphic.UseVisualStyleBackColor = true;
-            // 
-            // order_graphic
-            // 
-            this.order_graphic.AutoSize = true;
-            this.order_graphic.Location = new System.Drawing.Point(12, 56);
-            this.order_graphic.Name = "order_graphic";
-            this.order_graphic.Size = new System.Drawing.Size(145, 24);
-            this.order_graphic.TabIndex = 5;
-            this.order_graphic.TabStop = true;
-            this.order_graphic.Text = "Service Orders";
-            this.order_graphic.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.order_graphic.UseVisualStyleBackColor = true;
-            // 
-            // item_graph
-            // 
-            this.item_graph.AutoSize = true;
-            this.item_graph.Location = new System.Drawing.Point(12, 87);
-            this.item_graph.Name = "item_graph";
-            this.item_graph.Size = new System.Drawing.Size(113, 24);
-            this.item_graph.TabIndex = 6;
-            this.item_graph.TabStop = true;
-            this.item_graph.Text = "Item Sales";
-            this.item_graph.UseVisualStyleBackColor = true;
-            // 
             // summary_report
             // 
             this.summary_report.Controls.Add(this.item_summary);
@@ -193,6 +182,17 @@
             this.summary_report.TabStop = false;
             this.summary_report.Text = "Summary Reports";
             // 
+            // item_summary
+            // 
+            this.item_summary.AutoSize = true;
+            this.item_summary.Location = new System.Drawing.Point(13, 86);
+            this.item_summary.Name = "item_summary";
+            this.item_summary.Size = new System.Drawing.Size(114, 28);
+            this.item_summary.TabIndex = 9;
+            this.item_summary.TabStop = true;
+            this.item_summary.Text = "Item Sales";
+            this.item_summary.UseVisualStyleBackColor = true;
+            // 
             // service_summary
             // 
             this.service_summary.AutoSize = true;
@@ -205,16 +205,16 @@
             this.service_summary.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.service_summary.UseVisualStyleBackColor = true;
             // 
-            // item_summary
+            // customer_summary
             // 
-            this.item_summary.AutoSize = true;
-            this.item_summary.Location = new System.Drawing.Point(13, 86);
-            this.item_summary.Name = "item_summary";
-            this.item_summary.Size = new System.Drawing.Size(114, 28);
-            this.item_summary.TabIndex = 9;
-            this.item_summary.TabStop = true;
-            this.item_summary.Text = "Item Sales";
-            this.item_summary.UseVisualStyleBackColor = true;
+            this.customer_summary.AutoSize = true;
+            this.customer_summary.Location = new System.Drawing.Point(12, 26);
+            this.customer_summary.Name = "customer_summary";
+            this.customer_summary.Size = new System.Drawing.Size(118, 28);
+            this.customer_summary.TabIndex = 7;
+            this.customer_summary.TabStop = true;
+            this.customer_summary.Text = "Customers";
+            this.customer_summary.UseVisualStyleBackColor = true;
             // 
             // detail
             // 
@@ -231,27 +231,16 @@
             this.detail.Text = "Detail Reports";
             this.detail.Enter += new System.EventHandler(this.groupBox1_Enter_1);
             // 
-            // customer_summary
+            // item_detail
             // 
-            this.customer_summary.AutoSize = true;
-            this.customer_summary.Location = new System.Drawing.Point(12, 26);
-            this.customer_summary.Name = "customer_summary";
-            this.customer_summary.Size = new System.Drawing.Size(118, 28);
-            this.customer_summary.TabIndex = 7;
-            this.customer_summary.TabStop = true;
-            this.customer_summary.Text = "Customers";
-            this.customer_summary.UseVisualStyleBackColor = true;
-            // 
-            // customer_detail
-            // 
-            this.customer_detail.AutoSize = true;
-            this.customer_detail.Location = new System.Drawing.Point(16, 26);
-            this.customer_detail.Name = "customer_detail";
-            this.customer_detail.Size = new System.Drawing.Size(118, 28);
-            this.customer_detail.TabIndex = 8;
-            this.customer_detail.TabStop = true;
-            this.customer_detail.Text = "Customers";
-            this.customer_detail.UseVisualStyleBackColor = true;
+            this.item_detail.AutoSize = true;
+            this.item_detail.Location = new System.Drawing.Point(16, 83);
+            this.item_detail.Name = "item_detail";
+            this.item_detail.Size = new System.Drawing.Size(114, 28);
+            this.item_detail.TabIndex = 10;
+            this.item_detail.TabStop = true;
+            this.item_detail.Text = "Item Sales";
+            this.item_detail.UseVisualStyleBackColor = true;
             // 
             // service_detail
             // 
@@ -265,16 +254,16 @@
             this.service_detail.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.service_detail.UseVisualStyleBackColor = true;
             // 
-            // item_detail
+            // customer_detail
             // 
-            this.item_detail.AutoSize = true;
-            this.item_detail.Location = new System.Drawing.Point(16, 83);
-            this.item_detail.Name = "item_detail";
-            this.item_detail.Size = new System.Drawing.Size(114, 28);
-            this.item_detail.TabIndex = 10;
-            this.item_detail.TabStop = true;
-            this.item_detail.Text = "Item Sales";
-            this.item_detail.UseVisualStyleBackColor = true;
+            this.customer_detail.AutoSize = true;
+            this.customer_detail.Location = new System.Drawing.Point(16, 26);
+            this.customer_detail.Name = "customer_detail";
+            this.customer_detail.Size = new System.Drawing.Size(118, 28);
+            this.customer_detail.TabIndex = 8;
+            this.customer_detail.TabStop = true;
+            this.customer_detail.Text = "Customers";
+            this.customer_detail.UseVisualStyleBackColor = true;
             // 
             // inventory
             // 
@@ -290,28 +279,6 @@
             this.inventory.TabStop = false;
             this.inventory.Text = "Inventory Reports";
             // 
-            // low_inventory
-            // 
-            this.low_inventory.AutoSize = true;
-            this.low_inventory.Location = new System.Drawing.Point(12, 28);
-            this.low_inventory.Name = "low_inventory";
-            this.low_inventory.Size = new System.Drawing.Size(144, 28);
-            this.low_inventory.TabIndex = 0;
-            this.low_inventory.TabStop = true;
-            this.low_inventory.Text = "Low Inventory";
-            this.low_inventory.UseVisualStyleBackColor = true;
-            // 
-            // summary_inventory
-            // 
-            this.summary_inventory.AutoSize = true;
-            this.summary_inventory.Location = new System.Drawing.Point(184, 28);
-            this.summary_inventory.Name = "summary_inventory";
-            this.summary_inventory.Size = new System.Drawing.Size(189, 28);
-            this.summary_inventory.TabIndex = 1;
-            this.summary_inventory.TabStop = true;
-            this.summary_inventory.Text = "Inventory Summary";
-            this.summary_inventory.UseVisualStyleBackColor = true;
-            // 
             // inventory_history
             // 
             this.inventory_history.AutoSize = true;
@@ -324,16 +291,52 @@
             this.inventory_history.UseMnemonic = false;
             this.inventory_history.UseVisualStyleBackColor = true;
             // 
+            // summary_inventory
+            // 
+            this.summary_inventory.AutoSize = true;
+            this.summary_inventory.Location = new System.Drawing.Point(184, 28);
+            this.summary_inventory.Name = "summary_inventory";
+            this.summary_inventory.Size = new System.Drawing.Size(189, 28);
+            this.summary_inventory.TabIndex = 1;
+            this.summary_inventory.TabStop = true;
+            this.summary_inventory.Text = "Inventory Summary";
+            this.summary_inventory.UseVisualStyleBackColor = true;
+            // 
+            // low_inventory
+            // 
+            this.low_inventory.AutoSize = true;
+            this.low_inventory.Location = new System.Drawing.Point(12, 28);
+            this.low_inventory.Name = "low_inventory";
+            this.low_inventory.Size = new System.Drawing.Size(144, 28);
+            this.low_inventory.TabIndex = 0;
+            this.low_inventory.TabStop = true;
+            this.low_inventory.Text = "Low Inventory";
+            this.low_inventory.UseVisualStyleBackColor = true;
+            // 
+            // button18
+            // 
+            this.button18.BackColor = System.Drawing.Color.Gray;
+            this.button18.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button18.Font = new System.Drawing.Font("MS Reference Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button18.Location = new System.Drawing.Point(18, 13);
+            this.button18.Margin = new System.Windows.Forms.Padding(4);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(72, 37);
+            this.button18.TabIndex = 8;
+            this.button18.Text = "< Back";
+            this.button18.UseVisualStyleBackColor = false;
+            this.button18.Click += new System.EventHandler(this.button18_Click);
+            // 
             // ReportMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(89)))), ((int)(((byte)(134)))));
             this.ClientSize = new System.Drawing.Size(722, 389);
+            this.Controls.Add(this.button18);
             this.Controls.Add(this.inventory);
             this.Controls.Add(this.detail);
             this.Controls.Add(this.summary_report);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.graph_report);
@@ -365,7 +368,6 @@
         private System.Windows.Forms.GroupBox graph_report;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.RadioButton item_graph;
         private System.Windows.Forms.RadioButton order_graphic;
         private System.Windows.Forms.RadioButton customer_graphic;
@@ -381,5 +383,6 @@
         private System.Windows.Forms.RadioButton inventory_history;
         private System.Windows.Forms.RadioButton summary_inventory;
         private System.Windows.Forms.RadioButton low_inventory;
+        private System.Windows.Forms.Button button18;
     }
 }
