@@ -178,6 +178,7 @@
             this.employee_btn.Size = new System.Drawing.Size(85, 86);
             this.employee_btn.TabIndex = 4;
             this.employee_btn.UseVisualStyleBackColor = false;
+            this.employee_btn.Click += new System.EventHandler(this.employee_btn_Click);
             // 
             // service_btn
             // 
@@ -207,6 +208,7 @@
             this.supplier_btn.Size = new System.Drawing.Size(85, 86);
             this.supplier_btn.TabIndex = 3;
             this.supplier_btn.UseVisualStyleBackColor = false;
+            this.supplier_btn.Click += new System.EventHandler(this.supplier_btn_Click);
             // 
             // customer_btn
             // 
@@ -221,6 +223,7 @@
             this.customer_btn.Size = new System.Drawing.Size(85, 86);
             this.customer_btn.TabIndex = 2;
             this.customer_btn.UseVisualStyleBackColor = false;
+            this.customer_btn.Click += new System.EventHandler(this.customer_btn_Click);
             // 
             // restock_btn
             // 

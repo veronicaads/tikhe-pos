@@ -117,29 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAABCRJREFUeF7tm9lP1FAUxnnyn4UH/wAEQYzEgLyIsgU0kQeGbXgBE+MY2RdhBiGy
-        yCLCMCyyiU++XPuVe5rbcpl2mJ72gnOSX2hvb3u+75s7ZSaTlpWqVKUqVZhVXZ140FDe+byxoitrIQwh
-        21DRVQ9tUiZfNZZ3PtMIMANLm5TJV9arv49mwyPfxOh8LjSml47EwtqJA/b95hCp1HcKIStl8hWl7RVX
-        DMWY/7JyIsbTB84qkDL5KuwAwjCPOXcygLDMgzsXQJjmwZ0KoBjz86vXzWOucQGs/TjVjnOYxzGjAsis
-        HouT8z/2X3WcyzwwJoD06i9xePLbDgB/sY9xTvPAiADWd05t4142985dYsM2D4wIAHhXwNLGqUsoh3lg
-        TACA7gHLG26RXOaBUQGAjd0zl0BO88CoALxiuc0DYwLwM5+a2BGtNYOitXZATKdzrrm3NQ+MCCCI+ZZH
-        fY7Ylqo+J4RizAO6ppTJV9RIFaoTm8/8m9qEDbYRwtRCrijzgHRJmXxFjfKJ9TN/sbdmQyG8quwVH8d3
-        brxeEEiXlMlX1OgmsV7zoPXxgMv837MtG10ItzEPSJeUyVfUKKh5jLU/GbTP6artcQXgDeG1tUq8N8Yg
-        oAfpkjL5ihoFNY9jM5l9axX0OyGc794cgnpjDAL1JV1SJl9RI50InXnCDqEq3BDUvqRLyvSvxvKuCTop
-        Dt7V97kCKDQEb+h0XWnPv+iEuEg0Ja8FEDQE3Yqj60p7/kUn6ETETb4QdObvXQBADaGtZiCveXDvA8hn
-        HtyrAFTz+M8xPrenNa1y6wDiItE0GJp5QNeV9vzLmjxGJ8VBd31/aOYBXVfa4ytqRHdllXxfadUPQjAJ
-        s2GZB6RLyuQramSSeUC6pEy+okZBzQPcxXEOl3lAuqRMvqJGQc0D+jboDSAs84B0SZl8RY2CmgdX3wbd
-        q6AQ83PLRza6YwTpkjL5ihoFNU94QwhqfmzhQPzMXdhgWzcHkC4pk6+oUSHmCTUE4Gd+cvFA5I6ufmUC
-        2MaYbi5dU8rkK2qkNg9inkAI7XVJmyDv+anFQ5G1jANs6+aA2AIoxLwKzlMN5GNh5dhGd4yIJYB85rf2
-        zkV6zf3DKFGI+aBEHoCfebxn961lm1l3H+MwDyIPQDXlBa989vhSfN30/2k8LIwKAKQjeuUJ4wJQ4TYP
-        jA0gCvPAyACiMg9iC6Cjbkh0PB1yGcdYm/VBRxXYWpu0GGQbiy0A7746pgrmHqN9KZOvqBGMzi4fOo1T
-        M9s2Hya3nLGR0Q0HrrFPs1cfp2lfyuQrapSa3hb9I4viZVWvTd9IxiHKsf73GTH82XlgIroAVDEmEFkA
-        9MhMd/e4VkgcQIsMICtl8tV//9AUHk1rrkokXzx8e6kVEQPQ0lzZk4zksblSlapUd6jKyv4BdacD6x1C
-        EdYAAAAASUVORK5CYII=
-</value>
-  </data>
 </root>

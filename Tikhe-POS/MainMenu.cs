@@ -48,7 +48,26 @@ namespace Tikhe_POS
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Login form = new Login();
+            form.Show(); Hide();
+        }
+
+        private void customer_btn_Click(object sender, EventArgs e)
+        {
+            Customer form = new Customer();
+            form.Show(); Hide();
+        }
+
+        private void supplier_btn_Click(object sender, EventArgs e)
+        {
+            Supplier form = new Supplier();
+            form.Show(); Hide();
+        }
+
+        private void employee_btn_Click(object sender, EventArgs e)
+        {
+            Employee form = new Employee();
+            form.Show(); Hide();
         }
     }
 }

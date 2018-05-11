@@ -342,6 +342,7 @@
             this.Controls.Add(this.graph_report);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ReportMain";
             this.Text = "ReportMain";
             this.panel1.ResumeLayout(false);

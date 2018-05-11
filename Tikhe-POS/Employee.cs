@@ -10,32 +10,26 @@ using System.Windows.Forms;
 
 namespace Tikhe_POS
 {
-    public partial class Login : Form
+    public partial class Employee : Form
     {
-        public Login()
+        public Employee()
         {
             InitializeComponent();
         }
 
-        private void Login_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void login_btn_Click(object sender, EventArgs e)
+        private void button18_Click(object sender, EventArgs e)
         {
             MainMenu form = new MainMenu();
-            form.Show(); Hide();
+            form.Show();Hide();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            user_txt.Text = "";
+            pass_txt.Text = "";
+            nama_txt.Text = "";
+            email_txt.Text = "";
+            hp_txt.Text = "";
         }
     }
 }
