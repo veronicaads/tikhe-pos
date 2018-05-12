@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.alamat_txt = new System.Windows.Forms.TextBox();
             this.nama_txt = new System.Windows.Forms.TextBox();
             this.email_txt = new System.Windows.Forms.TextBox();
@@ -44,16 +45,29 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button22 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.vendorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button18 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.personBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nama = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Produk = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.alamatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.merekDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vendorBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.personBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // alamat_txt
@@ -87,7 +101,7 @@
             // 
             // vendor_txt
             // 
-            this.vendor_txt.Location = new System.Drawing.Point(129, 237);
+            this.vendor_txt.Location = new System.Drawing.Point(128, 282);
             this.vendor_txt.Name = "vendor_txt";
             this.vendor_txt.Size = new System.Drawing.Size(198, 24);
             this.vendor_txt.TabIndex = 5;
@@ -95,11 +109,11 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(11, 240);
+            this.label8.Location = new System.Drawing.Point(10, 285);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(61, 18);
+            this.label8.Size = new System.Drawing.Size(62, 18);
             this.label8.TabIndex = 4;
-            this.label8.Text = "Vendor";
+            this.label8.Text = "Produk";
             // 
             // label7
             // 
@@ -118,6 +132,7 @@
             this.label5.Size = new System.Drawing.Size(68, 18);
             this.label5.TabIndex = 4;
             this.label5.Text = "No. HP ";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label4
             // 
@@ -143,7 +158,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(267, 291);
+            this.button3.Location = new System.Drawing.Point(266, 336);
             this.button3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(66, 40);
@@ -172,13 +187,14 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(187, 291);
+            this.button2.Location = new System.Drawing.Point(186, 336);
             this.button2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(66, 40);
             this.button2.TabIndex = 3;
             this.button2.Text = "Delete";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -186,13 +202,14 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(104, 291);
+            this.button1.Location = new System.Drawing.Point(103, 336);
             this.button1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(67, 40);
             this.button1.TabIndex = 3;
             this.button1.Text = "Update";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button22
             // 
@@ -200,31 +217,49 @@
             this.button22.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button22.ForeColor = System.Drawing.Color.White;
-            this.button22.Location = new System.Drawing.Point(16, 291);
+            this.button22.Location = new System.Drawing.Point(15, 336);
             this.button22.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button22.Name = "button22";
             this.button22.Size = new System.Drawing.Size(72, 40);
             this.button22.TabIndex = 3;
             this.button22.Text = "Add";
             this.button22.UseVisualStyleBackColor = false;
+            this.button22.Click += new System.EventHandler(this.button22_Click);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(371, 178);
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.Nama,
+            this.HP,
+            this.Produk,
+            this.emailDataGridViewTextBoxColumn,
+            this.alamatDataGridViewTextBoxColumn,
+            this.merekDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.vendorBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(371, 175);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(369, 351);
+            this.dataGridView1.Size = new System.Drawing.Size(417, 397);
             this.dataGridView1.TabIndex = 14;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // vendorBindingSource
+            // 
+            this.vendorBindingSource.DataSource = typeof(Tikhe_POS.Vendor);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.alamat_txt);
             this.groupBox1.Controls.Add(this.nama_txt);
             this.groupBox1.Controls.Add(this.email_txt);
+            this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.hp_txt);
             this.groupBox1.Controls.Add(this.vendor_txt);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
@@ -235,10 +270,27 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(15, 169);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(350, 360);
+            this.groupBox1.Size = new System.Drawing.Size(350, 403);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Info Supplier";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(128, 244);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(198, 24);
+            this.textBox2.TabIndex = 5;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(13, 247);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(55, 18);
+            this.label9.TabIndex = 4;
+            this.label9.Text = "Merek";
+            this.label9.Click += new System.EventHandler(this.label5_Click);
             // 
             // label2
             // 
@@ -307,12 +359,63 @@
             this.textBox1.Size = new System.Drawing.Size(618, 32);
             this.textBox1.TabIndex = 15;
             // 
+            // personBindingSource
+            // 
+            this.personBindingSource.DataSource = typeof(Tikhe_POS.Person);
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 30;
+            // 
+            // Nama
+            // 
+            this.Nama.DataPropertyName = "Nama";
+            this.Nama.HeaderText = "Nama";
+            this.Nama.Name = "Nama";
+            this.Nama.ReadOnly = true;
+            this.Nama.Width = 140;
+            // 
+            // HP
+            // 
+            this.HP.DataPropertyName = "HP";
+            this.HP.HeaderText = "HP";
+            this.HP.Name = "HP";
+            // 
+            // Produk
+            // 
+            this.Produk.DataPropertyName = "Produk";
+            this.Produk.HeaderText = "Produk";
+            this.Produk.Name = "Produk";
+            this.Produk.Width = 105;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            // 
+            // alamatDataGridViewTextBoxColumn
+            // 
+            this.alamatDataGridViewTextBoxColumn.DataPropertyName = "Alamat";
+            this.alamatDataGridViewTextBoxColumn.HeaderText = "Alamat";
+            this.alamatDataGridViewTextBoxColumn.Name = "alamatDataGridViewTextBoxColumn";
+            // 
+            // merekDataGridViewTextBoxColumn
+            // 
+            this.merekDataGridViewTextBoxColumn.DataPropertyName = "Merek";
+            this.merekDataGridViewTextBoxColumn.HeaderText = "Merek";
+            this.merekDataGridViewTextBoxColumn.Name = "merekDataGridViewTextBoxColumn";
+            // 
             // Supplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(89)))), ((int)(((byte)(134)))));
-            this.ClientSize = new System.Drawing.Size(750, 569);
+            this.ClientSize = new System.Drawing.Size(800, 584);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
@@ -326,10 +429,12 @@
             this.Name = "Supplier";
             this.Text = "Supplier";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vendorBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.personBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -360,5 +465,16 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.BindingSource personBindingSource;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.BindingSource vendorBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nama;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Produk;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn alamatDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn merekDataGridViewTextBoxColumn;
     }
 }

@@ -28,12 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button18 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.button20 = new System.Windows.Forms.Button();
             this.button19 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -49,15 +54,24 @@
             this.button24 = new System.Windows.Forms.Button();
             this.button23 = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.total_txt = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.subtotal_txt = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stokBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.noDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serviceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hargaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stokBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -123,6 +137,9 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.label13);
+            this.groupBox4.Controls.Add(this.label12);
+            this.groupBox4.Controls.Add(this.label11);
             this.groupBox4.Controls.Add(this.button20);
             this.groupBox4.Controls.Add(this.button19);
             this.groupBox4.Controls.Add(this.label5);
@@ -136,24 +153,58 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Info Supplier";
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(82, 101);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(116, 16);
+            this.label13.TabIndex = 7;
+            this.label13.Text = "0818 0818 0818 ";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(82, 43);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(64, 16);
+            this.label12.TabIndex = 6;
+            this.label12.Text = "Alamat  ";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(82, 27);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(65, 16);
+            this.label11.TabIndex = 5;
+            this.label11.Text = "Nama    ";
+            // 
             // button20
             // 
             this.button20.BackColor = System.Drawing.Color.Gray;
             this.button20.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button20.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button20.Location = new System.Drawing.Point(159, 130);
             this.button20.Margin = new System.Windows.Forms.Padding(4);
             this.button20.Name = "button20";
             this.button20.Size = new System.Drawing.Size(91, 36);
             this.button20.TabIndex = 2;
-            this.button20.Text = "Add New";
+            this.button20.Text = "Remove";
             this.button20.UseVisualStyleBackColor = false;
+            this.button20.Click += new System.EventHandler(this.button20_Click);
             // 
             // button19
             // 
             this.button19.BackColor = System.Drawing.Color.Gray;
             this.button19.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button19.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button19.Location = new System.Drawing.Point(39, 130);
             this.button19.Margin = new System.Windows.Forms.Padding(4);
             this.button19.Name = "button19";
@@ -161,6 +212,7 @@
             this.button19.TabIndex = 2;
             this.button19.Text = "Search";
             this.button19.UseVisualStyleBackColor = false;
+            this.button19.Click += new System.EventHandler(this.button19_Click);
             // 
             // label5
             // 
@@ -168,19 +220,19 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(9, 101);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(89, 16);
+            this.label5.Size = new System.Drawing.Size(57, 16);
             this.label5.TabIndex = 0;
-            this.label5.Text = "No. HP     :  ";
+            this.label5.Text = "No. HP";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 49);
+            this.label4.Location = new System.Drawing.Point(12, 43);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(76, 16);
+            this.label4.Size = new System.Drawing.Size(56, 16);
             this.label4.TabIndex = 0;
-            this.label4.Text = "Alamat  :  ";
+            this.label4.Text = "Alamat";
             // 
             // label3
             // 
@@ -188,9 +240,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(12, 27);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 16);
+            this.label3.Size = new System.Drawing.Size(49, 16);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Nama     :  ";
+            this.label3.Text = "Nama";
             // 
             // groupBox1
             // 
@@ -203,7 +255,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(37, 140);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(355, 180);
+            this.groupBox1.Size = new System.Drawing.Size(352, 180);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sabun";
@@ -220,6 +272,7 @@
             this.button5.TabIndex = 2;
             this.button5.Text = "Pewangi";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button2
             // 
@@ -233,6 +286,7 @@
             this.button2.TabIndex = 2;
             this.button2.Text = "Pewangi";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button4
             // 
@@ -244,8 +298,9 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(91, 52);
             this.button4.TabIndex = 2;
-            this.button4.Text = "Sabun Helm";
+            this.button4.Text = "Sikat";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button1
             // 
@@ -259,6 +314,7 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "Sabun Helm";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button3
             // 
@@ -270,8 +326,9 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(91, 52);
             this.button3.TabIndex = 2;
-            this.button3.Text = "Sabun Sepatu";
+            this.button3.Text = "Sol";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // login_btn
             // 
@@ -285,12 +342,13 @@
             this.login_btn.TabIndex = 2;
             this.login_btn.Text = "Sabun Sepatu";
             this.login_btn.UseVisualStyleBackColor = false;
+            this.login_btn.Click += new System.EventHandler(this.login_btn_Click);
             // 
             // button24
             // 
             this.button24.BackColor = System.Drawing.Color.Gray;
             this.button24.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button24.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button24.Location = new System.Drawing.Point(588, 480);
             this.button24.Margin = new System.Windows.Forms.Padding(4);
             this.button24.Name = "button24";
@@ -298,12 +356,13 @@
             this.button24.TabIndex = 10;
             this.button24.Text = "Cancel";
             this.button24.UseVisualStyleBackColor = false;
+            this.button24.Click += new System.EventHandler(this.button24_Click_1);
             // 
             // button23
             // 
             this.button23.BackColor = System.Drawing.Color.Gray;
             this.button23.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button23.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button23.Location = new System.Drawing.Point(429, 480);
             this.button23.Margin = new System.Windows.Forms.Padding(4);
             this.button23.Name = "button23";
@@ -311,61 +370,129 @@
             this.button23.TabIndex = 11;
             this.button23.Text = "Payment";
             this.button23.UseVisualStyleBackColor = false;
+            this.button23.Click += new System.EventHandler(this.button23_Click);
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.label7);
+            this.groupBox5.Controls.Add(this.total_txt);
+            this.groupBox5.Controls.Add(this.label9);
+            this.groupBox5.Controls.Add(this.subtotal_txt);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox5.Location = new System.Drawing.Point(429, 353);
+            this.groupBox5.Location = new System.Drawing.Point(429, 340);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(284, 106);
+            this.groupBox5.Size = new System.Drawing.Size(284, 119);
             this.groupBox5.TabIndex = 12;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Pembayaran";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(12, 41);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(122, 18);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "Sub Total  :   Rp. ";
+            // 
+            // total_txt
+            // 
+            this.total_txt.AutoSize = true;
+            this.total_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.total_txt.Location = new System.Drawing.Point(147, 82);
+            this.total_txt.Name = "total_txt";
+            this.total_txt.Size = new System.Drawing.Size(16, 18);
+            this.total_txt.TabIndex = 18;
+            this.total_txt.Text = "0";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(12, 82);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(124, 18);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "Total         :    Rp. ";
+            // 
+            // subtotal_txt
+            // 
+            this.subtotal_txt.AutoSize = true;
+            this.subtotal_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subtotal_txt.Location = new System.Drawing.Point(147, 41);
+            this.subtotal_txt.Name = "subtotal_txt";
+            this.subtotal_txt.Size = new System.Drawing.Size(16, 18);
+            this.subtotal_txt.TabIndex = 20;
+            this.subtotal_txt.Text = "0";
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.No,
-            this.Column1,
-            this.Column2,
-            this.Column3});
+            this.noDataGridViewTextBoxColumn,
+            this.serviceDataGridViewTextBoxColumn,
+            this.hargaDataGridViewTextBoxColumn,
+            this.Delete});
+            this.dataGridView1.DataSource = this.stokBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(37, 353);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(355, 175);
+            this.dataGridView1.Size = new System.Drawing.Size(352, 175);
             this.dataGridView1.TabIndex = 14;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // No
+            // stokBindingSource
             // 
-            this.No.HeaderText = "No.";
-            this.No.MaxInputLength = 3;
-            this.No.Name = "No";
-            this.No.Width = 60;
+            this.stokBindingSource.DataSource = typeof(Tikhe_POS.Stok);
             // 
-            // Column1
+            // orderBindingSource
             // 
-            this.Column1.HeaderText = "Service";
-            this.Column1.Name = "Column1";
+            this.orderBindingSource.DataSource = typeof(Tikhe_POS.Order);
             // 
-            // Column2
+            // noDataGridViewTextBoxColumn
             // 
-            this.Column2.HeaderText = "Harga";
-            this.Column2.Name = "Column2";
+            this.noDataGridViewTextBoxColumn.DataPropertyName = "No";
+            this.noDataGridViewTextBoxColumn.HeaderText = "No";
+            this.noDataGridViewTextBoxColumn.Name = "noDataGridViewTextBoxColumn";
+            this.noDataGridViewTextBoxColumn.Width = 30;
             // 
-            // Column3
+            // serviceDataGridViewTextBoxColumn
             // 
-            this.Column3.HeaderText = "Remove";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 65;
+            this.serviceDataGridViewTextBoxColumn.DataPropertyName = "Service";
+            this.serviceDataGridViewTextBoxColumn.HeaderText = "Service";
+            this.serviceDataGridViewTextBoxColumn.Name = "serviceDataGridViewTextBoxColumn";
+            this.serviceDataGridViewTextBoxColumn.Width = 140;
+            // 
+            // hargaDataGridViewTextBoxColumn
+            // 
+            this.hargaDataGridViewTextBoxColumn.DataPropertyName = "Harga";
+            this.hargaDataGridViewTextBoxColumn.HeaderText = "Harga";
+            this.hargaDataGridViewTextBoxColumn.Name = "hargaDataGridViewTextBoxColumn";
+            // 
+            // Delete
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Red;
+            this.Delete.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Delete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Delete.HeaderText = "";
+            this.Delete.Name = "Delete";
+            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Delete.Text = "X";
+            this.Delete.ToolTipText = "Delete";
+            this.Delete.UseColumnTextForButtonValue = true;
+            this.Delete.Width = 40;
             // 
             // restock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(89)))), ((int)(((byte)(134)))));
-            this.ClientSize = new System.Drawing.Size(750, 552);
+            this.ClientSize = new System.Drawing.Size(750, 568);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button24);
             this.Controls.Add(this.button23);
@@ -383,7 +510,11 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stokBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -397,7 +528,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button button20;
         private System.Windows.Forms.Button button19;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -413,9 +543,19 @@
         private System.Windows.Forms.Button button23;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn No;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.BindingSource orderBindingSource;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label total_txt;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label subtotal_txt;
+        private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.BindingSource stokBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn noDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn serviceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hargaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewButtonColumn Delete;
     }
 }

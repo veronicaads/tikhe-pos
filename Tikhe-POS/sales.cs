@@ -59,16 +59,20 @@ namespace Tikhe_POS
             total_harga += 20000;
             subtotal_txt.Text = total_harga.ToString();
         }
-
+        int selectedRows;
+        String tmp;
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            button19.Text = e.RowIndex.ToString();
             //Blom bisa kurangin total harga
             if (dataGridView2.Columns[e.ColumnIndex].Name == "Delete")
             {
                 if(MessageBox.Show("Are you sure to cancel this service ?","Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    
+                    selectedRows = e.RowIndex;
+                    DataGridViewRow row = dataGridView2.Rows[selectedRows];
+                    tmp = row.Cells[2].Value.ToString();
+                    total_harga = total_harga - Convert.ToInt32(tmp);
+                    subtotal_txt.Text = total_harga.ToString();
                     orderBindingSource.RemoveCurrent();
                 }
             }
@@ -174,14 +178,14 @@ namespace Tikhe_POS
 
         private void button16_Click(object sender, EventArgs e)
         {
-            orderBindingSource.Add(new Order() { No = "S12", Service = "Running Shoes", Harga = "250000" });
+            orderBindingSource.Add(new Order() { No = "S18", Service = "Running Shoes", Harga = "250000" });
             total_harga += 250000;
             subtotal_txt.Text = total_harga.ToString();
         }
 
         private void button17_Click(object sender, EventArgs e)
         {
-            orderBindingSource.Add(new Order() { No = "S12", Service = "Basketball Shoes", Harga = "250000" });
+            orderBindingSource.Add(new Order() { No = "S19", Service = "Basketball Shoes", Harga = "250000" });
             total_harga += 250000;
             subtotal_txt.Text = total_harga.ToString();
         }
@@ -194,6 +198,25 @@ namespace Tikhe_POS
         private void button23_Click(object sender, EventArgs e)
         {
             Payment form = new Payment();
+            form.Show();Hide();
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            MainMenu form = new MainMenu();
+            form.Show();Hide();
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            label11.Text = "";
+            label12.Text = "";
+            label13.Text = "";
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            Customer form = new Customer();
             form.Show();Hide();
         }
     }
