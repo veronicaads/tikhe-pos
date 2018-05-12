@@ -32,11 +32,15 @@
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pass_txt = new System.Windows.Forms.TextBox();
             this.user_txt = new System.Windows.Forms.TextBox();
             this.nama_txt = new System.Windows.Forms.TextBox();
+            this.hp_txt = new System.Windows.Forms.TextBox();
             this.email_txt = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -47,10 +51,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.pass_txt = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.hp_txt = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -111,7 +111,14 @@
             this.groupBox1.Size = new System.Drawing.Size(350, 360);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Info Supplier";
+            this.groupBox1.Text = "Info Employee";
+            // 
+            // pass_txt
+            // 
+            this.pass_txt.Location = new System.Drawing.Point(119, 83);
+            this.pass_txt.Name = "pass_txt";
+            this.pass_txt.Size = new System.Drawing.Size(198, 24);
+            this.pass_txt.TabIndex = 5;
             // 
             // user_txt
             // 
@@ -126,6 +133,13 @@
             this.nama_txt.Name = "nama_txt";
             this.nama_txt.Size = new System.Drawing.Size(198, 24);
             this.nama_txt.TabIndex = 5;
+            // 
+            // hp_txt
+            // 
+            this.hp_txt.Location = new System.Drawing.Point(119, 219);
+            this.hp_txt.Name = "hp_txt";
+            this.hp_txt.Size = new System.Drawing.Size(198, 24);
+            this.hp_txt.TabIndex = 5;
             // 
             // email_txt
             // 
@@ -151,6 +165,24 @@
             this.label5.Size = new System.Drawing.Size(68, 18);
             this.label5.TabIndex = 4;
             this.label5.Text = "No. HP ";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(19, 39);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(85, 18);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Username";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(20, 129);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(52, 18);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "Nama";
             // 
             // label3
             // 
@@ -273,38 +305,6 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(618, 32);
             this.textBox1.TabIndex = 22;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(19, 39);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(85, 18);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Username";
-            // 
-            // pass_txt
-            // 
-            this.pass_txt.Location = new System.Drawing.Point(119, 83);
-            this.pass_txt.Name = "pass_txt";
-            this.pass_txt.Size = new System.Drawing.Size(198, 24);
-            this.pass_txt.TabIndex = 5;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(20, 129);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(52, 18);
-            this.label8.TabIndex = 4;
-            this.label8.Text = "Nama";
-            // 
-            // hp_txt
-            // 
-            this.hp_txt.Location = new System.Drawing.Point(119, 219);
-            this.hp_txt.Name = "hp_txt";
-            this.hp_txt.Size = new System.Drawing.Size(198, 24);
-            this.hp_txt.TabIndex = 5;
             // 
             // Employee
             // 
