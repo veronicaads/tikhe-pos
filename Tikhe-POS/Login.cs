@@ -42,10 +42,14 @@ namespace Tikhe_POS
                 MainMenu form = new MainMenu();
                 form.Show(); Hide();
             }
+            else if(String.Compare(username,"admin")==0 && String.Compare(password, "shoebox") == 0)
+            {
+                MenuNormal form = new MenuNormal();
+                form.Show();Hide();
+            }
             else
             {
                 MessageBox.Show("Username atau Password tidak sesuai. Silahkan ulangi!");
-
             }
         }
 
