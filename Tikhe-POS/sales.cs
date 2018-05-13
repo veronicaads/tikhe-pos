@@ -219,5 +219,10 @@ namespace Tikhe_POS
             Customer form = new Customer();
             form.Show();Hide();
         }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            //Cari di Database
+        }
     }
 }
