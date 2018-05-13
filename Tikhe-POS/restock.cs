@@ -113,5 +113,10 @@ namespace Tikhe_POS
             MainMenu form = new MainMenu();
             form.Show(); Hide();
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            //Cari di Database
+        }
     }
 }
