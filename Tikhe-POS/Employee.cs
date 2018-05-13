@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FirebaseNet.Database;
 
 namespace Tikhe_POS
 {
     public partial class Employee : Form
     {
+        
         public Employee()
         {
             InitializeComponent();
@@ -25,11 +27,22 @@ namespace Tikhe_POS
 
         private void button3_Click(object sender, EventArgs e)
         {
-            user_txt.Text = "";
-            pass_txt.Text = "";
-            nama_txt.Text = "";
-            email_txt.Text = "";
-            hp_txt.Text = "";
+            String username = user_txt.Text;
+            String password = pass_txt.Text;
+            String nama = nama_txt.Text;
+            //String email = email_txt.Text;
+            String hp = hp_txt.Text;
+            FirebaseDB firebaseDB = new FirebaseDB("https://mobile-shoebox.firebaseio.com/");
+            FirebaseDB firebaseDBEployees = firebaseDB.Node("Employees");
+            var data = @"{  
+                            
+                                    'Employees': {  
+                                        'City': 'Hyderabad',  
+                                        'Name': 'Ashish'  
+                                        }
+                                   
+                          }";
+            firebaseDBEployees.Post(data);
         }
     }
 }
