@@ -132,11 +132,11 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(92, 9);
+            this.label2.Location = new System.Drawing.Point(152, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(222, 28);
+            this.label2.Size = new System.Drawing.Size(148, 28);
             this.label2.TabIndex = 8;
-            this.label2.Text = "Welcome, Nama Employee";
+            this.label2.Text = "Welcome, Admin";
             // 
             // supplier_btn
             // 

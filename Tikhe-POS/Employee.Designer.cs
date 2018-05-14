@@ -117,6 +117,7 @@
             // 
             this.pass_txt.Location = new System.Drawing.Point(119, 83);
             this.pass_txt.Name = "pass_txt";
+            this.pass_txt.PasswordChar = '*';
             this.pass_txt.Size = new System.Drawing.Size(198, 24);
             this.pass_txt.TabIndex = 5;
             // 
@@ -249,6 +250,7 @@
             this.button22.TabIndex = 3;
             this.button22.Text = "Add";
             this.button22.UseVisualStyleBackColor = false;
+            this.button22.Click += new System.EventHandler(this.button22_Click);
             // 
             // label2
             // 

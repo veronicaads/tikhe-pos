@@ -27,22 +27,20 @@ namespace Tikhe_POS
 
         private void button3_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
             String username = user_txt.Text;
             String password = pass_txt.Text;
             String nama = nama_txt.Text;
-            //String email = email_txt.Text;
+            String email = email_txt.Text;
             String hp = hp_txt.Text;
-            FirebaseDB firebaseDB = new FirebaseDB("https://mobile-shoebox.firebaseio.com/");
-            FirebaseDB firebaseDBEployees = firebaseDB.Node("Employees");
-            var data = @"{  
-                            
-                                    'Employees': {  
-                                        'City': 'Hyderabad',  
-                                        'Name': 'Ashish'  
-                                        }
-                                   
-                          }";
-            firebaseDBEployees.Post(data);
+            FirebaseDB firebaseDB = new FirebaseDB("https://mobile-shoebox.firebaseio.com/Employees");
+            FirebaseDB firebaseDBEmployees = firebaseDB.Node(username);
+            var data = @"{'username' : '" + username + "','password' : '" + password +"'}";
+            firebaseDBEmployees.Put(data);
         }
     }
 }

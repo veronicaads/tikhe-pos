@@ -135,8 +135,10 @@
             this.password_edit.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.password_edit.Location = new System.Drawing.Point(182, 161);
             this.password_edit.Name = "password_edit";
+            this.password_edit.PasswordChar = '*';
             this.password_edit.Size = new System.Drawing.Size(157, 27);
             this.password_edit.TabIndex = 3;
+            this.password_edit.TextChanged += new System.EventHandler(this.password_edit_TextChanged);
             // 
             // label5
             // 
