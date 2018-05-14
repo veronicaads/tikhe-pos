@@ -45,6 +45,13 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button22 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nama = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Produk = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.alamatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.merekDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vendorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -56,13 +63,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.personBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nama = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Produk = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.alamatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.merekDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vendorBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -245,6 +245,53 @@
             this.dataGridView1.TabIndex = 14;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 30;
+            // 
+            // Nama
+            // 
+            this.Nama.DataPropertyName = "Nama";
+            this.Nama.HeaderText = "Nama";
+            this.Nama.Name = "Nama";
+            this.Nama.ReadOnly = true;
+            this.Nama.Width = 140;
+            // 
+            // HP
+            // 
+            this.HP.DataPropertyName = "HP";
+            this.HP.HeaderText = "HP";
+            this.HP.Name = "HP";
+            // 
+            // Produk
+            // 
+            this.Produk.DataPropertyName = "Produk";
+            this.Produk.HeaderText = "Produk";
+            this.Produk.Name = "Produk";
+            this.Produk.Width = 105;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            // 
+            // alamatDataGridViewTextBoxColumn
+            // 
+            this.alamatDataGridViewTextBoxColumn.DataPropertyName = "Alamat";
+            this.alamatDataGridViewTextBoxColumn.HeaderText = "Alamat";
+            this.alamatDataGridViewTextBoxColumn.Name = "alamatDataGridViewTextBoxColumn";
+            // 
+            // merekDataGridViewTextBoxColumn
+            // 
+            this.merekDataGridViewTextBoxColumn.DataPropertyName = "Merek";
+            this.merekDataGridViewTextBoxColumn.HeaderText = "Merek";
+            this.merekDataGridViewTextBoxColumn.Name = "merekDataGridViewTextBoxColumn";
+            // 
             // vendorBindingSource
             // 
             this.vendorBindingSource.DataSource = typeof(Tikhe_POS.Vendor);
@@ -324,9 +371,9 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(54)))), ((int)(((byte)(89)))));
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(2, 40);
+            this.panel1.Location = new System.Drawing.Point(-2, 40);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(762, 55);
+            this.panel1.Size = new System.Drawing.Size(808, 55);
             this.panel1.TabIndex = 10;
             // 
             // label6
@@ -363,53 +410,6 @@
             // 
             this.personBindingSource.DataSource = typeof(Tikhe_POS.Person);
             // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 30;
-            // 
-            // Nama
-            // 
-            this.Nama.DataPropertyName = "Nama";
-            this.Nama.HeaderText = "Nama";
-            this.Nama.Name = "Nama";
-            this.Nama.ReadOnly = true;
-            this.Nama.Width = 140;
-            // 
-            // HP
-            // 
-            this.HP.DataPropertyName = "HP";
-            this.HP.HeaderText = "HP";
-            this.HP.Name = "HP";
-            // 
-            // Produk
-            // 
-            this.Produk.DataPropertyName = "Produk";
-            this.Produk.HeaderText = "Produk";
-            this.Produk.Name = "Produk";
-            this.Produk.Width = 105;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            // 
-            // alamatDataGridViewTextBoxColumn
-            // 
-            this.alamatDataGridViewTextBoxColumn.DataPropertyName = "Alamat";
-            this.alamatDataGridViewTextBoxColumn.HeaderText = "Alamat";
-            this.alamatDataGridViewTextBoxColumn.Name = "alamatDataGridViewTextBoxColumn";
-            // 
-            // merekDataGridViewTextBoxColumn
-            // 
-            this.merekDataGridViewTextBoxColumn.DataPropertyName = "Merek";
-            this.merekDataGridViewTextBoxColumn.HeaderText = "Merek";
-            this.merekDataGridViewTextBoxColumn.Name = "merekDataGridViewTextBoxColumn";
-            // 
             // Supplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
@@ -428,6 +428,9 @@
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "Supplier";
             this.Text = "Supplier";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Supplier_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Supplier_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Supplier_MouseUp);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vendorBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);

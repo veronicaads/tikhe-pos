@@ -35,6 +35,9 @@
             this.button18 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.wanita_but = new System.Windows.Forms.RadioButton();
+            this.pria_but = new System.Windows.Forms.RadioButton();
             this.alamat_txt = new System.Windows.Forms.TextBox();
             this.nama_txt = new System.Windows.Forms.TextBox();
             this.email_txt = new System.Windows.Forms.TextBox();
@@ -43,6 +46,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
@@ -50,24 +54,20 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button22 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.pria_but = new System.Windows.Forms.RadioButton();
-            this.wanita_but = new System.Windows.Forms.RadioButton();
-            this.Alamat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MerkSepatu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.namaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jenisKelaminDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Alamat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MerkSepatu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.personBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button7 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -156,6 +156,38 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Info Customer";
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.wanita_but);
+            this.groupBox2.Controls.Add(this.pria_but);
+            this.groupBox2.Location = new System.Drawing.Point(129, 54);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(198, 38);
+            this.groupBox2.TabIndex = 6;
+            this.groupBox2.TabStop = false;
+            // 
+            // wanita_but
+            // 
+            this.wanita_but.AutoSize = true;
+            this.wanita_but.Location = new System.Drawing.Point(106, 11);
+            this.wanita_but.Name = "wanita_but";
+            this.wanita_but.Size = new System.Drawing.Size(78, 22);
+            this.wanita_but.TabIndex = 0;
+            this.wanita_but.TabStop = true;
+            this.wanita_but.Text = "Wanita";
+            this.wanita_but.UseVisualStyleBackColor = true;
+            // 
+            // pria_but
+            // 
+            this.pria_but.AutoSize = true;
+            this.pria_but.Location = new System.Drawing.Point(16, 12);
+            this.pria_but.Name = "pria_but";
+            this.pria_but.Size = new System.Drawing.Size(56, 22);
+            this.pria_but.TabIndex = 0;
+            this.pria_but.TabStop = true;
+            this.pria_but.Text = "Pria";
+            this.pria_but.UseVisualStyleBackColor = true;
+            // 
             // alamat_txt
             // 
             this.alamat_txt.Location = new System.Drawing.Point(129, 98);
@@ -218,6 +250,15 @@
             this.label5.Size = new System.Drawing.Size(68, 18);
             this.label5.TabIndex = 4;
             this.label5.Text = "No. HP ";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(13, 65);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(113, 18);
+            this.label9.TabIndex = 4;
+            this.label9.Text = "Jenis Kelamin";
             // 
             // label4
             // 
@@ -316,88 +357,6 @@
             this.dataGridView1.TabIndex = 7;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(13, 117);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(618, 32);
-            this.textBox1.TabIndex = 8;
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.Purple;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(647, 117);
-            this.button7.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(91, 32);
-            this.button7.TabIndex = 9;
-            this.button7.Text = "Search";
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(13, 65);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(113, 18);
-            this.label9.TabIndex = 4;
-            this.label9.Text = "Jenis Kelamin";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.wanita_but);
-            this.groupBox2.Controls.Add(this.pria_but);
-            this.groupBox2.Location = new System.Drawing.Point(129, 54);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(198, 38);
-            this.groupBox2.TabIndex = 6;
-            this.groupBox2.TabStop = false;
-            // 
-            // pria_but
-            // 
-            this.pria_but.AutoSize = true;
-            this.pria_but.Location = new System.Drawing.Point(16, 12);
-            this.pria_but.Name = "pria_but";
-            this.pria_but.Size = new System.Drawing.Size(56, 22);
-            this.pria_but.TabIndex = 0;
-            this.pria_but.TabStop = true;
-            this.pria_but.Text = "Pria";
-            this.pria_but.UseVisualStyleBackColor = true;
-            // 
-            // wanita_but
-            // 
-            this.wanita_but.AutoSize = true;
-            this.wanita_but.Location = new System.Drawing.Point(106, 11);
-            this.wanita_but.Name = "wanita_but";
-            this.wanita_but.Size = new System.Drawing.Size(78, 22);
-            this.wanita_but.TabIndex = 0;
-            this.wanita_but.TabStop = true;
-            this.wanita_but.Text = "Wanita";
-            this.wanita_but.UseVisualStyleBackColor = true;
-            // 
-            // Alamat
-            // 
-            this.Alamat.DataPropertyName = "Alamat";
-            this.Alamat.HeaderText = "Alamat";
-            this.Alamat.Name = "Alamat";
-            // 
-            // MerkSepatu
-            // 
-            this.MerkSepatu.DataPropertyName = "MerkSepatu";
-            this.MerkSepatu.HeaderText = "MerkSepatu";
-            this.MerkSepatu.Name = "MerkSepatu";
-            // 
-            // Email
-            // 
-            this.Email.DataPropertyName = "Email";
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            // 
             // iDDataGridViewTextBoxColumn
             // 
             this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
@@ -428,9 +387,50 @@
             this.hPDataGridViewTextBoxColumn.Name = "hPDataGridViewTextBoxColumn";
             this.hPDataGridViewTextBoxColumn.Width = 115;
             // 
+            // Alamat
+            // 
+            this.Alamat.DataPropertyName = "Alamat";
+            this.Alamat.HeaderText = "Alamat";
+            this.Alamat.Name = "Alamat";
+            // 
+            // MerkSepatu
+            // 
+            this.MerkSepatu.DataPropertyName = "MerkSepatu";
+            this.MerkSepatu.HeaderText = "MerkSepatu";
+            this.MerkSepatu.Name = "MerkSepatu";
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            // 
             // personBindingSource
             // 
             this.personBindingSource.DataSource = typeof(Tikhe_POS.Person);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(13, 117);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(618, 32);
+            this.textBox1.TabIndex = 8;
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.Purple;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.ForeColor = System.Drawing.Color.White;
+            this.button7.Location = new System.Drawing.Point(647, 117);
+            this.button7.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(91, 32);
+            this.button7.TabIndex = 9;
+            this.button7.Text = "Search";
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // Customer
             // 
@@ -448,13 +448,16 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Customer";
             this.Text = "Customer";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Customer_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Customer_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Customer_MouseUp);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.personBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

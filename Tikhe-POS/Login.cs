@@ -87,5 +87,51 @@ namespace Tikhe_POS
         {
 
         }
+        int TogMove;
+        int SumbuX, SumbuY;
+        private void Login_MouseDown(object sender, MouseEventArgs e)
+        {
+            TogMove = 1;
+            SumbuX = e.X;
+            SumbuY = e.Y;
+        }
+
+        private void Login_MouseUp(object sender, MouseEventArgs e)
+        {
+            TogMove = 0;
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            TogMove = 1;
+            SumbuX = e.X;
+            SumbuY = e.Y;
+        }
+
+        private void panel1_MouseUp(object sender, MouseEventArgs e)
+        {
+            TogMove = 0;
+        }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (TogMove == 1)
+            {
+                this.SetDesktopLocation(MousePosition.X - SumbuX, MousePosition.Y - SumbuY);
+            }
+        }
+
+        private void Login_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (TogMove == 1)
+            {
+                this.SetDesktopLocation(MousePosition.X - SumbuX, MousePosition.Y - SumbuY);
+            }
+        }
     }
 }

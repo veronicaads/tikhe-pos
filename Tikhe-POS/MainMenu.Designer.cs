@@ -279,6 +279,9 @@
             this.Name = "MainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " T-POS";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainMenu_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainMenu_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MainMenu_MouseUp);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

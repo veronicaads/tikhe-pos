@@ -118,5 +118,26 @@ namespace Tikhe_POS
         {
             //Cari di Database
         }
+        int TogMove;
+        int X, Y;
+        private void restock_MouseDown(object sender, MouseEventArgs e)
+        {
+            TogMove = 1;
+            X = e.X;
+            Y = e.Y;
+        }
+
+        private void restock_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (TogMove == 1)
+            {
+                this.SetDesktopLocation(MousePosition.X - X, MousePosition.Y - Y);
+            }
+        }
+
+        private void restock_MouseUp(object sender, MouseEventArgs e)
+        {
+            TogMove = 0;
+        }
     }
 }

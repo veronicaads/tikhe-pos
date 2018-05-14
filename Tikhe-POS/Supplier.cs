@@ -109,5 +109,26 @@ namespace Tikhe_POS
             selectedRow = dataGridView1.CurrentCell.RowIndex;
             dataGridView1.Rows.RemoveAt(selectedRow);
         }
+        int TogMove;
+        int X, Y;
+        private void Supplier_MouseDown(object sender, MouseEventArgs e)
+        {
+            TogMove = 1;
+            X = e.X;
+            Y = e.Y;
+        }
+
+        private void Supplier_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (TogMove == 1)
+            {
+                this.SetDesktopLocation(MousePosition.X - X, MousePosition.Y - Y);
+            }
+        }
+
+        private void Supplier_MouseUp(object sender, MouseEventArgs e)
+        {
+            TogMove = 0;
+        }
     }
 }

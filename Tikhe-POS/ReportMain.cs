@@ -57,5 +57,26 @@ namespace Tikhe_POS
             MainMenu form = new MainMenu();
             form.Show(); Hide();
         }
+        int TogMove;
+        int X, Y;
+        private void ReportMain_MouseDown(object sender, MouseEventArgs e)
+        {
+            TogMove = 1;
+            X = e.X;
+            Y = e.Y;
+        }
+
+        private void ReportMain_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (TogMove == 1)
+            {
+                this.SetDesktopLocation(MousePosition.X - X, MousePosition.Y - Y);
+            }
+        }
+
+        private void ReportMain_MouseUp(object sender, MouseEventArgs e)
+        {
+            TogMove = 0;
+        }
     }
 }

@@ -345,6 +345,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ReportMain";
             this.Text = "ReportMain";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ReportMain_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ReportMain_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ReportMain_MouseUp);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.graph_report.ResumeLayout(false);

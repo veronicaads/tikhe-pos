@@ -69,5 +69,26 @@ namespace Tikhe_POS
             Employee form = new Employee();
             form.Show(); Hide();
         }
+        int TogMove;
+        int X, Y;
+        private void MainMenu_MouseDown(object sender, MouseEventArgs e)
+        {
+            TogMove = 1;
+            X = e.X;
+            Y = e.Y;
+        }
+
+        private void MainMenu_MouseUp(object sender, MouseEventArgs e)
+        {
+            TogMove = 0;
+        }
+
+        private void MainMenu_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (TogMove == 1)
+            {
+                this.SetDesktopLocation(MousePosition.X - X, MousePosition.Y - Y);
+            }
+        }
     }
 }

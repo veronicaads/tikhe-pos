@@ -217,6 +217,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MenuNormal";
             this.Text = "MenuNormal";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MenuNormal_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MenuNormal_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MenuNormal_MouseUp);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

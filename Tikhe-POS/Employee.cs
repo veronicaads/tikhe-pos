@@ -42,5 +42,26 @@ namespace Tikhe_POS
             var data = @"{'username' : '" + username + "','password' : '" + password +"'}";
             firebaseDBEmployees.Put(data);
         }
+        int TogMove;
+        int X, Y;
+        private void Employee_MouseDown(object sender, MouseEventArgs e)
+        {
+            TogMove = 1;
+            X = e.X;
+            Y = e.Y;
+        }
+
+        private void Employee_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (TogMove == 1)
+            {
+                this.SetDesktopLocation(MousePosition.X - X, MousePosition.Y - Y);
+            }
+        }
+
+        private void Employee_MouseUp(object sender, MouseEventArgs e)
+        {
+            TogMove = 0;
+        }
     }
 }

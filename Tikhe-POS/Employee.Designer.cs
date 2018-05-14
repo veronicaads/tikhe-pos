@@ -326,6 +326,9 @@
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "Employee";
             this.Text = "Employee";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Employee_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Employee_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Employee_MouseUp);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
