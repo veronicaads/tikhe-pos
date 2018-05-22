@@ -448,6 +448,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Customer";
             this.Text = "Customer";
+            this.Load += new System.EventHandler(this.Customer_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Customer_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Customer_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Customer_MouseUp);

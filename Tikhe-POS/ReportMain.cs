@@ -74,6 +74,44 @@ namespace Tikhe_POS
             }
         }
 
+        private void order_graphic_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void ReportMain_Load(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void order_graphic_MouseClick(object sender, MouseEventArgs e)
+        {
+            ReportInput RI = new ReportInput();
+            RI.Show();
+        }
+
+        private void service_summary_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void service_summary_MouseClick(object sender, MouseEventArgs e)
+        {
+            ReportInput RI = new ReportInput();
+            RI.Show();
+        }
+
+        private void service_detail_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void service_detail_MouseClick(object sender, MouseEventArgs e)
+        {
+            ReportInput RI = new ReportInput();
+            RI.Show();
+        }
+
         private void ReportMain_MouseUp(object sender, MouseEventArgs e)
         {
             TogMove = 0;

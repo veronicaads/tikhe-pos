@@ -56,6 +56,7 @@ namespace Tikhe_POS
                     dynamic stuff = JObject.Parse(getResponse.JSONContent);
                     String usernameDB = stuff.username;
                     String passwordDB = stuff.password;
+                    MessageBox.Show(usernameDB + passwordDB);
                     if (String.Compare(password, passwordDB) == 0)
                     {
                         MenuNormal form = new MenuNormal();
@@ -64,9 +65,7 @@ namespace Tikhe_POS
                     else
                     {
                         MessageBox.Show("Username atau Password Tidak Sesuai. Silangkan Ulangi!");
-                    }
-                   
-
+                    }                 
                 }
                 catch (Exception error)
                 {

@@ -124,6 +124,12 @@
     <Compile Include="Employee.Designer.cs">
       <DependentUpon>Employee.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportInput.Designer.cs">
+      <DependentUpon>ReportInput.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +211,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ReportInput.resx">
+      <DependentUpon>ReportInput.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportMain.resx">
       <DependentUpon>ReportMain.cs</DependentUpon>
     </EmbeddedResource>

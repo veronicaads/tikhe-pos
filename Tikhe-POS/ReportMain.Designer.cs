@@ -133,6 +133,8 @@
             this.order_graphic.Text = "Service Orders";
             this.order_graphic.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.order_graphic.UseVisualStyleBackColor = true;
+            this.order_graphic.CheckedChanged += new System.EventHandler(this.order_graphic_CheckedChanged);
+            this.order_graphic.MouseClick += new System.Windows.Forms.MouseEventHandler(this.order_graphic_MouseClick);
             // 
             // customer_graphic
             // 
@@ -204,6 +206,8 @@
             this.service_summary.Text = "Service Orders";
             this.service_summary.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.service_summary.UseVisualStyleBackColor = true;
+            this.service_summary.CheckedChanged += new System.EventHandler(this.service_summary_CheckedChanged);
+            this.service_summary.MouseClick += new System.Windows.Forms.MouseEventHandler(this.service_summary_MouseClick);
             // 
             // customer_summary
             // 
@@ -253,6 +257,8 @@
             this.service_detail.Text = "Service Orders";
             this.service_detail.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.service_detail.UseVisualStyleBackColor = true;
+            this.service_detail.CheckedChanged += new System.EventHandler(this.service_detail_CheckedChanged);
+            this.service_detail.MouseClick += new System.Windows.Forms.MouseEventHandler(this.service_detail_MouseClick);
             // 
             // customer_detail
             // 
@@ -345,6 +351,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ReportMain";
             this.Text = "ReportMain";
+            this.Load += new System.EventHandler(this.ReportMain_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ReportMain_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ReportMain_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ReportMain_MouseUp);

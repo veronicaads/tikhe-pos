@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FirebaseNet.Database;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -40,7 +41,9 @@ namespace Tikhe_POS
         int id_vendor=0;
         private void button22_Click(object sender, EventArgs e)
         {
-
+            FirebaseDB firebaseDB = new FirebaseDB("https://mobile-shoebox.firebaseio.com/Customers");
+            FirebaseDB firebaseCustomer = firebaseDB.Node(nama_txt.Text);
+            var data = "";
             if (nama_txt.Text == "" || alamat_txt.Text == "" || email_txt.Text == "" || hp_txt.Text == "" || vendor_txt.Text == "" || textBox2.Text=="")
             {
                 MessageBox.Show("Semua Wajib Diisi !", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -50,6 +53,8 @@ namespace Tikhe_POS
             else
             {
                 vendorBindingSource.Add(new Vendor() { ID = id_vendor.ToString(), Nama = nama_txt.Text, HP = hp_txt.Text, Produk = vendor_txt.Text, Alamat = alamat_txt.Text, Email = email_txt.Text, Merek = textBox2.Text });
+                data = @"{'id':'" + id_vendor + "','Nama' : '" + nama_txt.Text + "','Alamat' : '" + alamat_txt.Text + "','Hp' : '" + hp_txt.Text + "','Email' : '" + email_txt.Text + "','Produk' : '" + vendor_txt.Text + "','Merek' : '" + textBox2.Text + "'}";
+                firebaseCustomer.Put(data);
                 id_vendor++;
             }
             nama_txt.Text = "";
@@ -62,6 +67,7 @@ namespace Tikhe_POS
         int selectedRow;
         private void button1_Click(object sender, EventArgs e)
         {
+            
             if (nama_txt.Text == "" || alamat_txt.Text == "" || email_txt.Text == "" || hp_txt.Text == "" || vendor_txt.Text == "" || textBox2.Text == "")
             {
                 MessageBox.Show("Semua Wajib Diisi !", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);

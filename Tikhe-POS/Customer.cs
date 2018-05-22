@@ -8,15 +8,27 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using FirebaseNet.Database;
+using Newtonsoft.Json.Linq;
 
 namespace Tikhe_POS
 {
     public partial class Customer : Form
     {
+        String nama;
+        String alamat;
+        String hp;
+        String email;
+        String merek;
+        String gender;
         public Customer()
         {
             InitializeComponent();
+            nama = nama_txt.Text;
+            alamat = alamat_txt.Text;
+            hp = hp_txt.Text;
+            email = email_txt.Text;
+            merek = merk_txt.Text;
 
         }
 
@@ -37,7 +49,14 @@ namespace Tikhe_POS
         
         private void button22_Click(object sender, EventArgs e)
         {
-
+            nama = nama_txt.Text;
+            alamat = alamat_txt.Text;
+            hp = hp_txt.Text;
+            email = email_txt.Text;
+            merek = merk_txt.Text;
+            FirebaseDB firebaseDB = new FirebaseDB("https://mobile-shoebox.firebaseio.com/Customers");
+            FirebaseDB firebaseCustomer = firebaseDB.Node(nama);
+            var data="";
             if (nama_txt.Text == "" || alamat_txt.Text == "" || email_txt.Text == "" || hp_txt.Text == "" || merk_txt.Text == "" || !pria_but.Checked && !wanita_but.Checked)
             {
                 MessageBox.Show("Semua Wajib Diisi !", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -49,15 +68,17 @@ namespace Tikhe_POS
                 if (pria_but.Checked)
                 {
                     personBindingSource.Add(new Person() { ID = id_cust.ToString(), Nama = nama_txt.Text, JenisKelamin = "P", Alamat = alamat_txt.Text, Email = email_txt.Text, HP = hp_txt.Text, MerkSepatu = merk_txt.Text });
-                    String gender = "Pria";
-
+                    gender = "Pria";
+                    data = @"{'id':'"+id_cust+"','nama' : '" + nama + "','alamat' : '" + alamat + "','hp' : '" + hp + "','email' : '" + email + "','merk' : '" + merek + "','gender' : '" + gender + "'}";
                 }
                 else
                 {
                     personBindingSource.Add(new Person() { ID = id_cust.ToString(), Nama = nama_txt.Text, JenisKelamin = "W", Alamat = alamat_txt.Text, Email = email_txt.Text, HP = hp_txt.Text, MerkSepatu = merk_txt.Text });
-                    String gender = "Wanita";
+                    gender = "Wanita";
+                    data = @"{'id':'" + id_cust + "','nama' : '" + nama + "','alamat' : '" + alamat + "','hp' : '" + hp + "','email' : '" + email + "','merk' : '" + merek + "','gender' : '" + gender + "'}";
                 }
                 id_cust++;
+                firebaseCustomer.Put(data);
             }
 
             nama_txt.Text = "";
@@ -136,6 +157,24 @@ namespace Tikhe_POS
             if (TogMove == 1)
             {
                 this.SetDesktopLocation(MousePosition.X - X, MousePosition.Y - Y);
+            }
+        }
+
+        private void Customer_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                FirebaseDB firebaseDB = new FirebaseDB("https://mobile-shoebox.firebaseio.com/");
+                FirebaseDB firebaseCustomer = firebaseDB.Node("Customers");
+                FirebaseResponse customer = firebaseCustomer.Get();
+                dynamic stuff = JObject.Parse(customer.JSONContent);
+                MessageBox.Show(stuff);
+                
+                personBindingSource.Add(new Person() { ID = id_cust.ToString(), Nama = nama, JenisKelamin = gender, Alamat = alamat, Email = email, HP = hp, MerkSepatu = merek });
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
             }
         }
 
