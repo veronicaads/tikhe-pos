@@ -21,6 +21,8 @@ namespace Tikhe_POS
         String email;
         String merek;
         String gender;
+        String id_customer;
+        int Count_Customer=0;
         public Customer()
         {
             InitializeComponent();
@@ -40,7 +42,7 @@ namespace Tikhe_POS
             email_txt.Text = "";
             merk_txt.Text = "";
         }
-        int id_cust = 0;
+        int id_cust;
         private void button18_Click(object sender, EventArgs e)
         {
             MainMenu form = new MainMenu();
@@ -54,8 +56,11 @@ namespace Tikhe_POS
             hp = hp_txt.Text;
             email = email_txt.Text;
             merek = merk_txt.Text;
+
+            
+
             FirebaseDB firebaseDB = new FirebaseDB("https://mobile-shoebox.firebaseio.com/Customers");
-            FirebaseDB firebaseCustomer = firebaseDB.Node(nama);
+            FirebaseDB firebaseCustomer = firebaseDB.Node("C"+id_cust);
             var data="";
             if (nama_txt.Text == "" || alamat_txt.Text == "" || email_txt.Text == "" || hp_txt.Text == "" || merk_txt.Text == "" || !pria_but.Checked && !wanita_but.Checked)
             {
@@ -86,6 +91,11 @@ namespace Tikhe_POS
             hp_txt.Text = "";
             email_txt.Text = "";
             merk_txt.Text = "";
+
+            FirebaseDB firebase = new FirebaseDB("https://mobile-shoebox.firebaseio.com/Customer_Status");
+            var count = "";
+            count = @"{'count':'" + id_cust + "'}";
+            firebase.Put(count);
         }
         int selectedRow;
 
@@ -140,8 +150,9 @@ namespace Tikhe_POS
             if(textBox1.Text=="") MessageBox.Show("Kosong !", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
-                
+                String search = textBox1.Text;
             }
+            
         }
         int TogMove;
         int X, Y;
@@ -164,18 +175,46 @@ namespace Tikhe_POS
         {
             try
             {
-                FirebaseDB firebaseDB = new FirebaseDB("https://mobile-shoebox.firebaseio.com/");
-                FirebaseDB firebaseCustomer = firebaseDB.Node("Customers");
-                FirebaseResponse customer = firebaseCustomer.Get();
-                dynamic stuff = JObject.Parse(customer.JSONContent);
-                MessageBox.Show(stuff);
-                
-                personBindingSource.Add(new Person() { ID = id_cust.ToString(), Nama = nama, JenisKelamin = gender, Alamat = alamat, Email = email, HP = hp, MerkSepatu = merek });
+                FirebaseDB firebase = new FirebaseDB("https://mobile-shoebox.firebaseio.com/Customer_Status");
+                FirebaseResponse getResponse = firebase.Get();
+                dynamic stuff = JObject.Parse(getResponse.JSONContent);
+                String jumlah = stuff.count;
+                id_cust = Convert.ToInt32(jumlah);
+
+                FirebaseDB firebaseDB = new FirebaseDB("https://mobile-shoebox.firebaseio.com/Customers");
+                for(int i = 0; i < id_cust; i++)
+                {
+                    FirebaseDB firebaseCustomer = firebaseDB.Node("C"+i);
+                    FirebaseResponse customer = firebaseCustomer.Get();
+                    dynamic stiff = JObject.Parse(customer.JSONContent);
+                    personBindingSource.Add(new Person() { ID = "C" + i, Nama = stiff.nama, JenisKelamin = stiff.gender, Alamat = stiff.alamat, Email = stiff.email, HP = stiff.hp, MerkSepatu = stiff.merek });
+
+                }
+
+
+
             }
             catch (Exception error)
             {
                 MessageBox.Show(error.Message);
             }
+        }
+
+        //DataTable dbset;
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+            
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            /*string searchValue = textBox1.Text;
+            dbset = new DataTable();
+            DataView dv = new DataView(dbset);
+            dv.RowFilter = String.Format("Nama LIKE '%{0}%'", textBox1.Text);
+            dataGridView1.DataSource = dv;*/
         }
 
         private void Customer_MouseUp(object sender, MouseEventArgs e)
