@@ -39,11 +39,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.clear_btn = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button22 = new System.Windows.Forms.Button();
+            this.delete_btn = new System.Windows.Forms.Button();
+            this.update_btn = new System.Windows.Forms.Button();
+            this.add_btn = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nama = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,7 +54,7 @@
             this.merekDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vendorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.merek_txt = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button18 = new System.Windows.Forms.Button();
@@ -152,20 +152,20 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Nama";
             // 
-            // button3
+            // clear_btn
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(266, 336);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(66, 40);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Clear";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.clear_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.clear_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.clear_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clear_btn.ForeColor = System.Drawing.Color.White;
+            this.clear_btn.Location = new System.Drawing.Point(266, 336);
+            this.clear_btn.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.clear_btn.Name = "clear_btn";
+            this.clear_btn.Size = new System.Drawing.Size(66, 40);
+            this.clear_btn.TabIndex = 3;
+            this.clear_btn.Text = "Clear";
+            this.clear_btn.UseVisualStyleBackColor = false;
+            this.clear_btn.Click += new System.EventHandler(this.button3_Click);
             // 
             // button7
             // 
@@ -181,50 +181,50 @@
             this.button7.Text = "Search";
             this.button7.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // delete_btn
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(186, 336);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(66, 40);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Delete";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.delete_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.delete_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.delete_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.delete_btn.ForeColor = System.Drawing.Color.White;
+            this.delete_btn.Location = new System.Drawing.Point(186, 336);
+            this.delete_btn.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.delete_btn.Name = "delete_btn";
+            this.delete_btn.Size = new System.Drawing.Size(66, 40);
+            this.delete_btn.TabIndex = 3;
+            this.delete_btn.Text = "Delete";
+            this.delete_btn.UseVisualStyleBackColor = false;
+            this.delete_btn.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button1
+            // update_btn
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(103, 336);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(67, 40);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Update";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.update_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.update_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.update_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.update_btn.ForeColor = System.Drawing.Color.White;
+            this.update_btn.Location = new System.Drawing.Point(103, 336);
+            this.update_btn.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.update_btn.Name = "update_btn";
+            this.update_btn.Size = new System.Drawing.Size(67, 40);
+            this.update_btn.TabIndex = 3;
+            this.update_btn.Text = "Update";
+            this.update_btn.UseVisualStyleBackColor = false;
+            this.update_btn.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button22
+            // add_btn
             // 
-            this.button22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button22.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button22.ForeColor = System.Drawing.Color.White;
-            this.button22.Location = new System.Drawing.Point(15, 336);
-            this.button22.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(72, 40);
-            this.button22.TabIndex = 3;
-            this.button22.Text = "Add";
-            this.button22.UseVisualStyleBackColor = false;
-            this.button22.Click += new System.EventHandler(this.button22_Click);
+            this.add_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.add_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.add_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.add_btn.ForeColor = System.Drawing.Color.White;
+            this.add_btn.Location = new System.Drawing.Point(15, 336);
+            this.add_btn.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.add_btn.Name = "add_btn";
+            this.add_btn.Size = new System.Drawing.Size(72, 40);
+            this.add_btn.TabIndex = 3;
+            this.add_btn.Text = "Add";
+            this.add_btn.UseVisualStyleBackColor = false;
+            this.add_btn.Click += new System.EventHandler(this.button22_Click);
             // 
             // dataGridView1
             // 
@@ -301,7 +301,7 @@
             this.groupBox1.Controls.Add(this.alamat_txt);
             this.groupBox1.Controls.Add(this.nama_txt);
             this.groupBox1.Controls.Add(this.email_txt);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.merek_txt);
             this.groupBox1.Controls.Add(this.hp_txt);
             this.groupBox1.Controls.Add(this.vendor_txt);
             this.groupBox1.Controls.Add(this.label8);
@@ -310,10 +310,10 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.button22);
+            this.groupBox1.Controls.Add(this.clear_btn);
+            this.groupBox1.Controls.Add(this.delete_btn);
+            this.groupBox1.Controls.Add(this.update_btn);
+            this.groupBox1.Controls.Add(this.add_btn);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(15, 169);
             this.groupBox1.Name = "groupBox1";
@@ -322,12 +322,12 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Info Supplier";
             // 
-            // textBox2
+            // merek_txt
             // 
-            this.textBox2.Location = new System.Drawing.Point(128, 244);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(198, 24);
-            this.textBox2.TabIndex = 5;
+            this.merek_txt.Location = new System.Drawing.Point(128, 244);
+            this.merek_txt.Name = "merek_txt";
+            this.merek_txt.Size = new System.Drawing.Size(198, 24);
+            this.merek_txt.TabIndex = 5;
             // 
             // label9
             // 
@@ -428,6 +428,7 @@
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "Supplier";
             this.Text = "Supplier";
+            this.Load += new System.EventHandler(this.Supplier_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Supplier_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Supplier_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Supplier_MouseUp);
@@ -455,11 +456,11 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button clear_btn;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button22;
+        private System.Windows.Forms.Button delete_btn;
+        private System.Windows.Forms.Button update_btn;
+        private System.Windows.Forms.Button add_btn;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
@@ -469,7 +470,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.BindingSource personBindingSource;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox merek_txt;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.BindingSource vendorBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;

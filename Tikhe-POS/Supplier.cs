@@ -8,11 +8,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FirebaseNet.Database;
+using Newtonsoft.Json.Linq;
 
 namespace Tikhe_POS
 {
+
     public partial class Supplier : Form
     {
+        String nama, alamat, hp, email, merek, gender;
+        int id_sup;
+        int selectedRow;
+        FirebaseDB firebaseDB = new FirebaseDB("https://mobile-shoebox.firebaseio.com/Supplier");
+        FirebaseDB firebase = new FirebaseDB("https://mobile-shoebox.firebaseio.com/Supplier_Status");
+
         public Supplier()
         {
             InitializeComponent();
@@ -31,20 +40,18 @@ namespace Tikhe_POS
             email_txt.Text = "";
             hp_txt.Text = "";
             vendor_txt.Text = "";
-            textBox2.Text = "";
+            merek_txt.Text = "";
         }
 
         private void label5_Click(object sender, EventArgs e)
         {
 
         }
-        int id_vendor=0;
         private void button22_Click(object sender, EventArgs e)
         {
-            FirebaseDB firebaseDB = new FirebaseDB("https://mobile-shoebox.firebaseio.com/Customers");
-            FirebaseDB firebaseCustomer = firebaseDB.Node(nama_txt.Text);
+            FirebaseDB firebaseSupplier = firebaseDB.Node("S"+id_sup);
             var data = "";
-            if (nama_txt.Text == "" || alamat_txt.Text == "" || email_txt.Text == "" || hp_txt.Text == "" || vendor_txt.Text == "" || textBox2.Text=="")
+            if (nama_txt.Text == "" || alamat_txt.Text == "" || email_txt.Text == "" || hp_txt.Text == "" || vendor_txt.Text == "" || merek_txt.Text=="")
             {
                 MessageBox.Show("Semua Wajib Diisi !", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 MainMenu form = new MainMenu();
@@ -52,23 +59,27 @@ namespace Tikhe_POS
             }
             else
             {
-                vendorBindingSource.Add(new Vendor() { ID = id_vendor.ToString(), Nama = nama_txt.Text, HP = hp_txt.Text, Produk = vendor_txt.Text, Alamat = alamat_txt.Text, Email = email_txt.Text, Merek = textBox2.Text });
-                data = @"{'id':'" + id_vendor + "','Nama' : '" + nama_txt.Text + "','Alamat' : '" + alamat_txt.Text + "','Hp' : '" + hp_txt.Text + "','Email' : '" + email_txt.Text + "','Produk' : '" + vendor_txt.Text + "','Merek' : '" + textBox2.Text + "'}";
-                firebaseCustomer.Put(data);
-                id_vendor++;
+                vendorBindingSource.Add(new Vendor() { ID = id_sup.ToString(), Nama = nama_txt.Text, HP = hp_txt.Text, Produk = vendor_txt.Text, Alamat = alamat_txt.Text, Email = email_txt.Text, Merek = merek_txt.Text });
+                data = @"{'id':'" + id_sup + "','nama' : '" + nama_txt.Text + "','alamat' : '" + alamat_txt.Text + "','hp' : '" + hp_txt.Text + "','email' : '" + email_txt.Text + "','produk' : '" + vendor_txt.Text + "','merek' : '" + merek_txt.Text + "'}";
+                firebaseSupplier.Put(data);
+                id_sup++;
             }
             nama_txt.Text = "";
             alamat_txt.Text = "";
-            textBox2.Text = "";
+            merek_txt.Text = "";
             hp_txt.Text = "";
             email_txt.Text = "";
             vendor_txt.Text = "";
+
+            var count = "";
+            count = @"{'count':'" + id_sup + "'}";
+            firebase.Put(count);
         }
-        int selectedRow;
+        
         private void button1_Click(object sender, EventArgs e)
         {
             
-            if (nama_txt.Text == "" || alamat_txt.Text == "" || email_txt.Text == "" || hp_txt.Text == "" || vendor_txt.Text == "" || textBox2.Text == "")
+            if (nama_txt.Text == "" || alamat_txt.Text == "" || email_txt.Text == "" || hp_txt.Text == "" || vendor_txt.Text == "" || merek_txt.Text == "")
             {
                 MessageBox.Show("Semua Wajib Diisi !", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 MainMenu form = new MainMenu();
@@ -82,13 +93,21 @@ namespace Tikhe_POS
                 newRow.Cells[4].Value = email_txt.Text;
                 newRow.Cells[2].Value = hp_txt.Text;
                 newRow.Cells[3].Value = vendor_txt.Text;
-                newRow.Cells[6].Value = textBox2.Text;
+                newRow.Cells[6].Value = merek_txt.Text;
+
+                int X = selectedRow + 1;
+
+                FirebaseDB firebaseSupplier = firebaseDB.Node(newRow.Cells[0].Value.ToString());
+                var data = "";
+                data = @"{'id':'" + X + "','nama' : '" + nama_txt.Text + "','alamat' : '" + alamat_txt.Text + "','hp' : '" + hp_txt.Text + "','email' : '" + email_txt.Text + "','produk' : '" + vendor_txt.Text + "','merek' : '" + merek_txt.Text + "'}";
+                firebaseSupplier.Patch(data);
+
                 nama_txt.Text = "";
                 alamat_txt.Text = "";
                 hp_txt.Text = "";
                 email_txt.Text = "";
                 vendor_txt.Text = "";
-                textBox2.Text = "";
+                merek_txt.Text = "";
             }
         }
 
@@ -101,18 +120,28 @@ namespace Tikhe_POS
             email_txt.Text = row.Cells[4].Value.ToString();
             hp_txt.Text = row.Cells[2].Value.ToString();
             vendor_txt.Text = row.Cells[3].Value.ToString();
-            textBox2.Text = row.Cells[6].Value.ToString();
+            merek_txt.Text = row.Cells[6].Value.ToString();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            selectedRow = dataGridView1.CurrentCell.RowIndex;
+
+            DataGridViewRow newRow = dataGridView1.Rows[selectedRow];
+            FirebaseDB firebaseSupplier = firebaseDB.Node(newRow.Cells[0].Value.ToString());
+            MessageBox.Show(newRow.Cells[0].Value.ToString());
+            var data = "";
+            data = @"{'id':'XXX','nama' : '" + nama_txt.Text + "','alamat' : '" + alamat_txt.Text + "','hp' : '" + hp_txt.Text + "','email' : '" + email_txt.Text + "','produk' : '" + vendor_txt.Text + "','merek' : '" + merek_txt.Text + "'}";
+
+            firebaseSupplier.Patch(data);
+
             nama_txt.Text = "";
             alamat_txt.Text = "";
-            textBox2.Text = "";
+            merek_txt.Text = "";
             hp_txt.Text = "";
             email_txt.Text = "";
             vendor_txt.Text = "";
-            selectedRow = dataGridView1.CurrentCell.RowIndex;
+            
             dataGridView1.Rows.RemoveAt(selectedRow);
         }
         int TogMove;
@@ -129,6 +158,32 @@ namespace Tikhe_POS
             if (TogMove == 1)
             {
                 this.SetDesktopLocation(MousePosition.X - X, MousePosition.Y - Y);
+            }
+        }
+
+        private void Supplier_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                FirebaseResponse getResponse = firebase.Get();
+                dynamic stuff = JObject.Parse(getResponse.JSONContent);
+                String jumlah = stuff.count;
+                id_sup = Convert.ToInt32(jumlah);
+
+                for (int i = 0; i < id_sup; i++)
+                {
+                    FirebaseDB firebaseSuplier = firebaseDB.Node("S" + i);
+                    FirebaseResponse customer = firebaseSuplier.Get();
+                    dynamic stiff = JObject.Parse(customer.JSONContent);
+                    if (stiff.nama == "") continue;
+
+                    vendorBindingSource.Add(new Vendor() { ID = "S" + stiff.id, Nama = stiff.nama, HP = stiff.hp, Produk = stiff.produk, Alamat = stiff.alamat, Email = stiff.email, Merek = stiff.merk });
+                }
+
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
             }
         }
 
