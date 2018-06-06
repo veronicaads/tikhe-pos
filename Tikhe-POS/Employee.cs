@@ -27,7 +27,11 @@ namespace Tikhe_POS
 
         private void button3_Click(object sender, EventArgs e)
         {
-            
+            nama_txt.Text = "";
+            pass_txt.Text = "";
+            email_txt.Text = "";
+            hp_txt.Text = "";
+            user_txt.Text = "";
         }
 
         private void button22_Click(object sender, EventArgs e)

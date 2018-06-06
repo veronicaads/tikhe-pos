@@ -11,6 +11,7 @@ using FirebaseNet.Database;
 using Newtonsoft.Json.Linq;
 
 
+
 namespace Tikhe_POS
 {
     public partial class sales : Form
@@ -288,8 +289,7 @@ namespace Tikhe_POS
         int umn_order, pertamina_order, mercubuana_order, atmajaya_order;
         private void button23_Click(object sender, EventArgs e)
         {
-            Payment form = new Payment();
-            form.Show();
+            
 
             String tanggalmasuk = DateTime.Now.ToString("dd-MM-yy");
 
@@ -327,6 +327,9 @@ namespace Tikhe_POS
             data = @"{'UMN':'" + umn_order + "','atmajaya' : '" + atmajaya_order + "','laci' : '" + "occupied" + "','mercubuana' : '" + mercubuana_order + "','pertamina' : '" + pertamina_order + "','umn' : '" +umn_order+"'}";
             firebase.Patch(data);
 
+            total_harga = Convert.ToInt32(total_txt.Text);
+            Payment form = new Payment(total_harga, order_id);
+            form.Show();Hide();
         }
 
         private void button24_Click(object sender, EventArgs e)

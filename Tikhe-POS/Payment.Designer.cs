@@ -87,6 +87,7 @@
             this.button3.TabIndex = 1;
             this.button3.Text = "X";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // username_edit
             // 
@@ -95,6 +96,8 @@
             this.username_edit.Name = "username_edit";
             this.username_edit.Size = new System.Drawing.Size(157, 27);
             this.username_edit.TabIndex = 9;
+            this.username_edit.TextChanged += new System.EventHandler(this.username_edit_TextChanged);
+            this.username_edit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.username_edit_KeyPress);
             // 
             // label3
             // 
@@ -136,6 +139,7 @@
             this.login_btn.TabIndex = 5;
             this.login_btn.Text = "Invoice";
             this.login_btn.UseVisualStyleBackColor = false;
+            this.login_btn.Click += new System.EventHandler(this.login_btn_Click);
             // 
             // comboBox1
             // 
@@ -223,6 +227,7 @@
             this.label8.Size = new System.Drawing.Size(16, 18);
             this.label8.TabIndex = 12;
             this.label8.Text = "0";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // Payment
             // 
@@ -245,6 +250,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Payment";
             this.Text = "Payment";
+            this.Load += new System.EventHandler(this.Payment_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Payment_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Payment_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Payment_MouseUp);
