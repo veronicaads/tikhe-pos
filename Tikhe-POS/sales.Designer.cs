@@ -61,8 +61,10 @@
             this.button12 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.combo_customer = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.cabang_combo = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.button20 = new System.Windows.Forms.Button();
@@ -85,12 +87,18 @@
             this.button24 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.noDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.serviceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.orderBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.orderBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.orderBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
+            this.orderBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
+            this.vendorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.noDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subServiceDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hargaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label15 = new System.Windows.Forms.Label();
+            this.serviceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -98,7 +106,13 @@
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vendorBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -508,10 +522,10 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.combo_customer);
             this.groupBox4.Controls.Add(this.comboBox2);
             this.groupBox4.Controls.Add(this.label15);
-            this.groupBox4.Controls.Add(this.textBox2);
-            this.groupBox4.Controls.Add(this.comboBox1);
+            this.groupBox4.Controls.Add(this.cabang_combo);
             this.groupBox4.Controls.Add(this.label13);
             this.groupBox4.Controls.Add(this.label12);
             this.groupBox4.Controls.Add(this.button20);
@@ -531,26 +545,60 @@
             this.groupBox4.Text = "Info Customer";
             this.groupBox4.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // textBox2
+            // combo_customer
             // 
-            this.textBox2.Location = new System.Drawing.Point(12, 29);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(207, 24);
-            this.textBox2.TabIndex = 6;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.combo_customer.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.combo_customer.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.combo_customer.FormattingEnabled = true;
+            this.combo_customer.Location = new System.Drawing.Point(12, 25);
+            this.combo_customer.Name = "combo_customer";
+            this.combo_customer.Size = new System.Drawing.Size(216, 26);
+            this.combo_customer.TabIndex = 9;
+            this.combo_customer.SelectedIndexChanged += new System.EventHandler(this.combo_customer_SelectedIndexChanged);
+            this.combo_customer.TextChanged += new System.EventHandler(this.combo_customer_TextChanged);
             // 
-            // comboBox1
+            // comboBox2
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Adidas",
+            "Nike",
+            "Diadora",
+            "Skecher",
+            "Winderman",
+            "Wakai",
+            "Others"});
+            this.comboBox2.Location = new System.Drawing.Point(130, 184);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(192, 26);
+            this.comboBox2.TabIndex = 8;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(6, 194);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(104, 16);
+            this.label15.TabIndex = 7;
+            this.label15.Text = "Merek Sepatu";
+            this.label15.Click += new System.EventHandler(this.label15_Click);
+            // 
+            // cabang_combo
+            // 
+            this.cabang_combo.FormattingEnabled = true;
+            this.cabang_combo.Items.AddRange(new object[] {
             "UMN",
             "Mercubuana",
             "Pertamina",
+            "Atmajaya",
             "Other.."});
-            this.comboBox1.Location = new System.Drawing.Point(130, 141);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(192, 26);
-            this.comboBox1.TabIndex = 5;
+            this.cabang_combo.Location = new System.Drawing.Point(130, 141);
+            this.cabang_combo.Name = "cabang_combo";
+            this.cabang_combo.Size = new System.Drawing.Size(192, 26);
+            this.cabang_combo.TabIndex = 5;
             // 
             // label13
             // 
@@ -567,7 +615,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(127, 73);
+            this.label12.Location = new System.Drawing.Point(127, 83);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(56, 16);
@@ -579,10 +627,10 @@
             this.button20.BackColor = System.Drawing.Color.Gray;
             this.button20.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button20.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button20.Location = new System.Drawing.Point(244, 29);
+            this.button20.Location = new System.Drawing.Point(244, 24);
             this.button20.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(78, 24);
+            this.button20.Size = new System.Drawing.Size(78, 26);
             this.button20.TabIndex = 2;
             this.button20.Text = "Remove";
             this.button20.UseVisualStyleBackColor = false;
@@ -614,7 +662,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(9, 73);
+            this.label4.Location = new System.Drawing.Point(9, 83);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 16);
@@ -694,6 +742,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 24);
             this.textBox1.TabIndex = 2;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // total_txt
             // 
@@ -704,6 +753,7 @@
             this.total_txt.Size = new System.Drawing.Size(16, 18);
             this.total_txt.TabIndex = 1;
             this.total_txt.Text = "0";
+            this.total_txt.Click += new System.EventHandler(this.total_txt_Click);
             // 
             // diskon_txt
             // 
@@ -797,11 +847,12 @@
             this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.noDataGridViewTextBoxColumn,
-            this.serviceDataGridViewTextBoxColumn,
+            this.noDataGridViewTextBoxColumn2,
+            this.subServiceDataGridViewTextBoxColumn1,
             this.hargaDataGridViewTextBoxColumn,
-            this.Delete});
-            this.dataGridView2.DataSource = this.orderBindingSource;
+            this.Delete,
+            this.serviceDataGridViewTextBoxColumn});
+            this.dataGridView2.DataSource = this.orderBindingSource1;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -830,75 +881,76 @@
             this.noDataGridViewTextBoxColumn.DataPropertyName = "No";
             this.noDataGridViewTextBoxColumn.HeaderText = "No";
             this.noDataGridViewTextBoxColumn.Name = "noDataGridViewTextBoxColumn";
-            this.noDataGridViewTextBoxColumn.ReadOnly = true;
-            this.noDataGridViewTextBoxColumn.Width = 35;
+            this.noDataGridViewTextBoxColumn.Width = 40;
             // 
-            // serviceDataGridViewTextBoxColumn
+            // orderBindingSource1
             // 
-            this.serviceDataGridViewTextBoxColumn.DataPropertyName = "Service";
-            this.serviceDataGridViewTextBoxColumn.HeaderText = "Service";
-            this.serviceDataGridViewTextBoxColumn.Name = "serviceDataGridViewTextBoxColumn";
-            this.serviceDataGridViewTextBoxColumn.ReadOnly = true;
-            this.serviceDataGridViewTextBoxColumn.Width = 130;
+            this.orderBindingSource1.DataSource = typeof(Tikhe_POS.Order);
+            // 
+            // orderBindingSource
+            // 
+            this.orderBindingSource.DataSource = typeof(Tikhe_POS.Order);
+            // 
+            // orderBindingSource2
+            // 
+            this.orderBindingSource2.DataSource = typeof(Tikhe_POS.Order);
+            // 
+            // orderBindingSource3
+            // 
+            this.orderBindingSource3.DataSource = typeof(Tikhe_POS.Order);
+            // 
+            // orderBindingSource4
+            // 
+            this.orderBindingSource4.DataSource = typeof(Tikhe_POS.Order);
+            // 
+            // orderBindingSource5
+            // 
+            this.orderBindingSource5.DataSource = typeof(Tikhe_POS.Order);
+            // 
+            // vendorBindingSource
+            // 
+            this.vendorBindingSource.DataSource = typeof(Tikhe_POS.Vendor);
+            // 
+            // noDataGridViewTextBoxColumn2
+            // 
+            this.noDataGridViewTextBoxColumn2.DataPropertyName = "No";
+            this.noDataGridViewTextBoxColumn2.HeaderText = "No";
+            this.noDataGridViewTextBoxColumn2.Name = "noDataGridViewTextBoxColumn2";
+            this.noDataGridViewTextBoxColumn2.ReadOnly = true;
+            this.noDataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.noDataGridViewTextBoxColumn2.Width = 30;
+            // 
+            // subServiceDataGridViewTextBoxColumn1
+            // 
+            this.subServiceDataGridViewTextBoxColumn1.DataPropertyName = "SubService";
+            this.subServiceDataGridViewTextBoxColumn1.HeaderText = "SubService";
+            this.subServiceDataGridViewTextBoxColumn1.Name = "subServiceDataGridViewTextBoxColumn1";
+            this.subServiceDataGridViewTextBoxColumn1.Width = 120;
             // 
             // hargaDataGridViewTextBoxColumn
             // 
             this.hargaDataGridViewTextBoxColumn.DataPropertyName = "Harga";
             this.hargaDataGridViewTextBoxColumn.HeaderText = "Harga";
             this.hargaDataGridViewTextBoxColumn.Name = "hargaDataGridViewTextBoxColumn";
-            this.hargaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.hargaDataGridViewTextBoxColumn.Width = 105;
             // 
             // Delete
             // 
-            this.Delete.DataPropertyName = "No";
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.Delete.DefaultCellStyle = dataGridViewCellStyle2;
             this.Delete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Delete.HeaderText = "";
+            this.Delete.HeaderText = "Delete";
             this.Delete.Name = "Delete";
-            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Delete.Text = "X";
-            this.Delete.ToolTipText = "Delete";
-            this.Delete.UseColumnTextForButtonValue = true;
-            this.Delete.Width = 30;
+            this.Delete.Width = 40;
             // 
-            // orderBindingSource
+            // serviceDataGridViewTextBoxColumn
             // 
-            this.orderBindingSource.DataSource = typeof(Tikhe_POS.Order);
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Adidas",
-            "Nike",
-            "Diadora",
-            "Skecher",
-            "Winderman",
-            "Wakai",
-            "Others"});
-            this.comboBox2.Location = new System.Drawing.Point(130, 184);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(192, 26);
-            this.comboBox2.TabIndex = 8;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(6, 194);
-            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(104, 16);
-            this.label15.TabIndex = 7;
-            this.label15.Text = "Merek Sepatu";
-            this.label15.Click += new System.EventHandler(this.label15_Click);
+            this.serviceDataGridViewTextBoxColumn.DataPropertyName = "Service";
+            this.serviceDataGridViewTextBoxColumn.HeaderText = "Service";
+            this.serviceDataGridViewTextBoxColumn.Name = "serviceDataGridViewTextBoxColumn";
             // 
             // sales
             // 
@@ -921,6 +973,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "sales";
             this.Text = "sales";
+            this.Load += new System.EventHandler(this.sales_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.sales_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.sales_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.sales_MouseUp);
@@ -934,7 +987,13 @@
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vendorBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -990,15 +1049,23 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn noDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn serviceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hargaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewButtonColumn Delete;
         private System.Windows.Forms.Button button20;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cabang_combo;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.ComboBox combo_customer;
+        private System.Windows.Forms.BindingSource orderBindingSource1;
+        private System.Windows.Forms.BindingSource orderBindingSource2;
+        private System.Windows.Forms.BindingSource orderBindingSource3;
+        private System.Windows.Forms.BindingSource orderBindingSource4;
+        private System.Windows.Forms.BindingSource orderBindingSource5;
+        private System.Windows.Forms.BindingSource vendorBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn noDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn noDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn subServiceDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hargaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewButtonColumn Delete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn serviceDataGridViewTextBoxColumn;
     }
 }

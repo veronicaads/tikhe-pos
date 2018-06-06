@@ -50,7 +50,7 @@ namespace Tikhe_POS
             alamat = alamat_txt.Text;
             hp = hp_txt.Text;
             email = email_txt.Text;
-            
+            String tglmasuk = DateTime.Now.ToString("dd-MM-yy");
             FirebaseDB firebaseCustomer = firebaseDB.Node("C"+id_cust);
             var data="";
             if (nama_txt.Text == "" || alamat_txt.Text == "" || email_txt.Text == "" || hp_txt.Text == "" || !pria_but.Checked && !wanita_but.Checked)
@@ -65,13 +65,13 @@ namespace Tikhe_POS
                 {
                     personBindingSource.Add(new Person() { ID = "C"+id_cust.ToString(), Nama = nama_txt.Text, JenisKelamin = "Pria", Alamat = alamat_txt.Text, Email = email_txt.Text, HP = hp_txt.Text });
                     gender = "Pria";
-                    data = @"{'id':'"+id_cust+"','nama' : '" + nama + "','alamat' : '" + alamat + "','hp' : '" + hp + "','email' : '" + email + "','gender' : '" + gender + "'}";
+                    data = @"{'id':'"+id_cust+"','nama' : '" + nama + "','alamat' : '" + alamat + "','hp' : '" + hp + "','email' : '" + email + "','gender' : '" + gender + "','tanggal_masuk' : '" + tglmasuk + "'}";
                 }
                 else
                 {
                     personBindingSource.Add(new Person() { ID = "C"+id_cust.ToString(), Nama = nama_txt.Text, JenisKelamin = "Wanita", Alamat = alamat_txt.Text, Email = email_txt.Text, HP = hp_txt.Text });
                     gender = "Wanita";
-                    data = @"{'id':'" + id_cust + "','nama' : '" + nama + "','alamat' : '" + alamat + "','hp' : '" + hp + "','email' : '" + email + "','gender' : '" + gender + "'}";
+                    data = @"{'id':'" + id_cust + "','nama' : '" + nama + "','alamat' : '" + alamat + "','hp' : '" + hp + "','email' : '" + email + "','gender' : '" + gender + "','tanggal_masuk' : '" + tglmasuk + "'}";
                 }
                 id_cust++;
                 firebaseCustomer.Put(data);

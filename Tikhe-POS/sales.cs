@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FirebaseNet.Database;
+using Newtonsoft.Json.Linq;
+
 
 namespace Tikhe_POS
 {
@@ -26,16 +29,22 @@ namespace Tikhe_POS
 
         private void fast_clean_btn_Click(object sender, EventArgs e)
         {
-            orderBindingSource.Add(new Order() { No = "S01", Service = "Fast Clean", Harga = "30000" });
+            orderBindingSource1.Add(new Order() { No = "S01", SubService = "Fast Clean", Harga = "30000", Service="Reclean"});
             total_harga += 30000;
             subtotal_txt.Text = total_harga.ToString();
+            total_txt.Text = total_harga.ToString();
+            subservice.Add("Fast Clean");
+            service.Add("Reclean");
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            orderBindingSource.Add(new Order() { No = "S04", Service = "Ordinary Sizing", Harga = "10000" });
+            orderBindingSource1.Add(new Order() { No = "S04", SubService = "Ordinary Sizing", Harga = "10000", Service = "Reclean" });
             total_harga += 10000;
             subtotal_txt.Text = total_harga.ToString();
+            total_txt.Text = total_harga.ToString();
+            subservice.Add("Ordinary Sizing");
+            service.Add("Repair");
         }
 
         private void button18_Click(object sender, EventArgs e)
@@ -44,20 +53,28 @@ namespace Tikhe_POS
             form.Show();
             Hide();
         }
+        List<string> service = new List<string>();
+        List<string> subservice = new List<string>();
+
 
         private void button1_Click(object sender, EventArgs e)
         {
-            orderBindingSource.Add(new Order() { No = "S02", Service = "Deep Clean", Harga = "50000" });
+            orderBindingSource1.Add(new Order() { No = "S02", SubService = "Deep Clean", Harga = "50000", Service="Reclean"});
             total_harga += 50000;
             subtotal_txt.Text = total_harga.ToString();
-
+            total_txt.Text = total_harga.ToString();
+            subservice.Add("Deep Clean");
+            service.Add("Reclean");
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            orderBindingSource.Add(new Order() { No = "S03", Service = "Unyellowing", Harga = "20000" });
+            orderBindingSource1.Add(new Order() { No = "S03", SubService = "Unyellowing", Harga = "20000", Service="Reclean" });
             total_harga += 20000;
             subtotal_txt.Text = total_harga.ToString();
+            total_txt.Text = total_harga.ToString();
+            subservice.Add("Unyellowing");
+            service.Add("Reclean");
         }
         int selectedRows;
         String tmp;
@@ -73,132 +90,243 @@ namespace Tikhe_POS
                     tmp = row.Cells[2].Value.ToString();
                     total_harga = total_harga - Convert.ToInt32(tmp);
                     subtotal_txt.Text = total_harga.ToString();
-                    orderBindingSource.RemoveCurrent();
+                    total_txt.Text = total_harga.ToString();
+                    orderBindingSource1.RemoveCurrent();
+                    service.Remove(row.Cells[4].Value.ToString());
+                    subservice.Remove(row.Cells[1].Value.ToString());
                 }
             }
         }
 
         private void full_sizing_btn_Click(object sender, EventArgs e)
         {
-            orderBindingSource.Add(new Order() { No = "S05", Service = "Full Sizing", Harga = "15000" });
+            orderBindingSource1.Add(new Order() { No = "S05", SubService = "Full Sizing", Harga = "15000", Service="Repair" });
             total_harga += 15000;
             subtotal_txt.Text = total_harga.ToString();
+            total_txt.Text = total_harga.ToString();
+            subservice.Add("Full Sizing");
+            service.Add("Reclean");
+
         }
 
         private void ordinary_sewing_btn_Click(object sender, EventArgs e)
         {
-            orderBindingSource.Add(new Order() { No = "S06", Service = "Ordinary Sewing", Harga = "30000" });
+            orderBindingSource1.Add(new Order() { No = "S06", SubService = "Ordinary Sewing", Harga = "30000", Service="Repair" });
             total_harga += 30000;
             subtotal_txt.Text = total_harga.ToString();
+            total_txt.Text = total_harga.ToString();
+            subservice.Add("Ordinary Sewing");
+            service.Add("Repair");
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            orderBindingSource.Add(new Order() { No = "S07", Service = "Full Sewing", Harga = "30000" });
+            orderBindingSource1.Add(new Order() { No = "S07", SubService = "Full Sewing", Harga = "30000", Service = "Repair" });
             total_harga += 30000;
             subtotal_txt.Text = total_harga.ToString();
+            total_txt.Text = total_harga.ToString();
+            subservice.Add("Full Sewing");
+            service.Add("Repair");
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
-            orderBindingSource.Add(new Order() { No = "S08", Service = "Remove Out Sol", Harga = "100000" });
+            orderBindingSource1.Add(new Order() { No = "S08", SubService = "Remove Out Sol", Harga = "100000", Service = "Repair" });
             total_harga += 100000;
             subtotal_txt.Text = total_harga.ToString();
+            total_txt.Text = total_harga.ToString();
+            subservice.Add("Remove Out Sol");
+            service.Add("Repair");
+
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
-            orderBindingSource.Add(new Order() { No = "S09", Service = "Leather Patch", Harga = "30000" });
+            orderBindingSource1.Add(new Order() { No = "S09", SubService = "Leather Patch", Harga = "30000", Service = "Repair" });
             total_harga += 30000;
             subtotal_txt.Text = total_harga.ToString();
+            total_txt.Text = total_harga.ToString();
+            subservice.Add("Leather Patch");
+            service.Add("Repair");
         }
 
         private void button21_Click(object sender, EventArgs e)
         {
-            orderBindingSource.Add(new Order() { No = "S10", Service = "Remove In Sol", Harga = "20000" });
+            orderBindingSource1.Add(new Order() { No = "S10", SubService = "Remove In Sol", Harga = "20000", Service = "Repair" });
             total_harga += 20000;
             subtotal_txt.Text = total_harga.ToString();
+            total_txt.Text = total_harga.ToString();
+            total_txt.Text = subtotal_txt.Text;
+            subservice.Add("Remove In Sol");
+            service.Add("Repair");
         }
 
         private void button22_Click(object sender, EventArgs e)
         {
-            orderBindingSource.Add(new Order() { No = "S11", Service = "Leather Pressing", Harga = "50000" });
+            orderBindingSource1.Add(new Order() { No = "S11", SubService = "Leather Pressing", Harga = "50000", Service = "Repair" });
             total_harga += 50000;
             subtotal_txt.Text = total_harga.ToString();
+            total_txt.Text = total_harga.ToString();
+            subservice.Add("Leather Pressing");
+            service.Add("Repair");
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            orderBindingSource.Add(new Order() { No = "S12", Service = "Dress Shoes", Harga = "120000" });
+            orderBindingSource1.Add(new Order() { No = "S12", SubService = "Dress Shoes", Harga = "120000", Service="Repaint" });
             total_harga += 120000;
             subtotal_txt.Text = total_harga.ToString();
+            total_txt.Text = total_harga.ToString();
+            subservice.Add("Dress Shoes");
+            service.Add("Repaint");
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            orderBindingSource.Add(new Order() { No = "S12", Service = "Casual Shoes", Harga = "120000" });
+            orderBindingSource1.Add(new Order() { No = "S12", SubService = "Casual Shoes", Harga = "120000", Service = "Repaint" });
             total_harga += 120000;
             subtotal_txt.Text = total_harga.ToString();
+            total_txt.Text = total_harga.ToString();
+            subservice.Add("Casual Shoes");
+            service.Add("Repaint");
+
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            orderBindingSource.Add(new Order() { No = "S13", Service = "Work Shoes", Harga = "120000" });
+            orderBindingSource1.Add(new Order() { No = "S13", SubService = "Work Shoes", Harga = "120000", Service = "Repaint" });
             total_harga += 120000;
             subtotal_txt.Text = total_harga.ToString();
+            total_txt.Text = total_harga.ToString();
+            subservice.Add("Work Shoes");
+            service.Add("Repaint");
+
+
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
-            orderBindingSource.Add(new Order() { No = "S14", Service = "Dance Shoes", Harga = "250000" });
+            orderBindingSource1.Add(new Order() { No = "S14", SubService = "Dance Shoes", Harga = "250000", Service = "Repaint" });
             total_harga += 250000;
             subtotal_txt.Text = total_harga.ToString();
+            total_txt.Text = total_harga.ToString();
+            subservice.Add("Dance Shoes");
+            service.Add("Repaint");
+
         }
 
         private void button13_Click(object sender, EventArgs e)
         {
-            orderBindingSource.Add(new Order() { No = "S15", Service = "Boots", Harga = "150000" });
+            orderBindingSource1.Add(new Order() { No = "S15", SubService = "Boots", Harga = "150000", Service = "Repaint" });
             total_harga += 150000;
             subtotal_txt.Text = total_harga.ToString();
+            total_txt.Text = total_harga.ToString();
+            subservice.Add("Boots");
+            service.Add("Repaint");
+
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
-            orderBindingSource.Add(new Order() { No = "S16", Service = "Sandals", Harga = "50000" });
+            orderBindingSource1.Add(new Order() { No = "S16", SubService = "Sandals", Harga = "50000", Service = "Repaint" });
             total_harga += 50000;
             subtotal_txt.Text = total_harga.ToString();
+            total_txt.Text = total_harga.ToString();
+            subservice.Add("Sandals");
+            service.Add("Repaint");
+
         }
 
         private void button15_Click(object sender, EventArgs e)
         {
-            orderBindingSource.Add(new Order() { No = "S17", Service = "Slippers", Harga = "80000" });
+            orderBindingSource1.Add(new Order() { No = "S17", SubService = "Slippers", Harga = "80000", Service = "Repaint" });
             total_harga += 80000;
             subtotal_txt.Text = total_harga.ToString();
+            total_txt.Text = total_harga.ToString();
+            subservice.Add("Slippers");
+            service.Add("Repaint");
+
+
         }
 
         private void button16_Click(object sender, EventArgs e)
         {
-            orderBindingSource.Add(new Order() { No = "S18", Service = "Running Shoes", Harga = "250000" });
+            orderBindingSource1.Add(new Order() { No = "S18", SubService = "Running Shoes", Harga = "250000", Service = "Repaint" });
             total_harga += 250000;
             subtotal_txt.Text = total_harga.ToString();
+            total_txt.Text = total_harga.ToString();
+            subservice.Add("Running Shoes");
+            service.Add("Repaint");
+
         }
 
         private void button17_Click(object sender, EventArgs e)
         {
-            orderBindingSource.Add(new Order() { No = "S19", Service = "Basketball Shoes", Harga = "250000" });
+            orderBindingSource1.Add(new Order() { No = "S19", SubService = "Basketball Shoes", Harga = "250000", Service = "Repaint" });
             total_harga += 250000;
             subtotal_txt.Text = total_harga.ToString();
+            total_txt.Text = total_harga.ToString();
+            subservice.Add("Basketball Shoes");
+            service.Add("Repaint");
+
+        }
+
+        private string generate_orderid(string a, int id)
+        {
+            String data="";
+            if (id < 9 && id >= 0) data = a + "000" + id;
+            else if (id > 9 && id <100) data = a + "00" + id;
+            else if (id > 99 && id < 1000) data = a + "0" + id;
+            else if (id > 999 && id < 10000) data = a + id;
+            return data;
         }
 
         private void subtotal_txt_Click(object sender, EventArgs e)
         {
 
         }
-
+        int umn_order, pertamina_order, mercubuana_order, atmajaya_order;
         private void button23_Click(object sender, EventArgs e)
         {
             Payment form = new Payment();
-            form.Show();Hide();
+            form.Show();
+
+            String tanggalmasuk = DateTime.Now.ToString("dd-MM-yy");
+
+            FirebaseDB firebaseDB = new FirebaseDB("https://mobile-shoebox.firebaseio.com/orders_store");
+
+            FirebaseDB firebase = new FirebaseDB("https://mobile-shoebox.firebaseio.com/order_keys");
+
+            FirebaseResponse getResponse = firebase.Get();
+            String order_id="";
+            var data = "";
+            var pesanan = "";
+            dynamic stuff = JObject.Parse(getResponse.JSONContent);
+             umn_order = Convert.ToInt32(stuff.umn);
+             pertamina_order = Convert.ToInt32(stuff.pertamina);
+             mercubuana_order = Convert.ToInt32(stuff.mercubuana);
+             atmajaya_order = Convert.ToInt32(stuff.atmajaya);
+
+            for(int i = 0; i < service.Count; i++)
+            {
+                if (cabang_combo.Text.Equals("UMN")) { umn_order += 1; order_id = generate_orderid("u", umn_order); }
+                else if (cabang_combo.Text.Equals("Pertamina")) { pertamina_order += 1; order_id = generate_orderid("p", pertamina_order); }
+                else if (cabang_combo.Text.Equals("Mercubuana")) { mercubuana_order += 1; order_id = generate_orderid("m", mercubuana_order); }
+                else if (cabang_combo.Text.Equals("Atmajaya")) { atmajaya_order += 1; order_id = generate_orderid("a", atmajaya_order); }
+                else if (cabang_combo.Text.Equals("Others"))
+                {
+
+                }
+
+                pesanan = @"{'customer':'" + combo_customer.Text + "','biaya':'" + total_txt.Text + "','pembayaran' : '" + "-" + "','cabang' : '" + cabang_combo.Text + "','merek_sepatu' : '" + comboBox2.Text + "','orderid' : '" + order_id + "','service' : '" + service[i] + "','subservice' : '" + subservice[i] + "','diskon' : '" + diskon_txt.Text + "','tanggal_masuk' : '" + tanggalmasuk + "'}";
+
+                FirebaseDB Orders = firebaseDB.Node(order_id);
+                Orders.Put(pesanan);
+            }
+            
+            data = @"{'UMN':'" + umn_order + "','atmajaya' : '" + atmajaya_order + "','laci' : '" + "occupied" + "','mercubuana' : '" + mercubuana_order + "','pertamina' : '" + pertamina_order + "','umn' : '" +umn_order+"'}";
+            firebase.Patch(data);
+
         }
 
         private void button24_Click(object sender, EventArgs e)
@@ -249,6 +377,67 @@ namespace Tikhe_POS
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+        List<string> nama_kalian = new List<string>();
+        List<string> alamat = new List<string>();
+        List<string> no_hp = new List<string>();
+        int id_cust;
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            diskon_txt.Text = (Convert.ToInt32(textBox1.Text) * Convert.ToInt32(subtotal_txt.Text)/100).ToString();
+            total_txt.Text= (Convert.ToInt32(subtotal_txt.Text) - Convert.ToInt32(diskon_txt.Text)).ToString();
+        }
+
+        private void total_txt_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sales_Load(object sender, EventArgs e)
+        {
+            
+
+
+            try
+            {
+                FirebaseDB firebase = new FirebaseDB("https://mobile-shoebox.firebaseio.com/Customer_Status");
+                FirebaseResponse getResponse = firebase.Get();
+                dynamic stuff = JObject.Parse(getResponse.JSONContent);
+                String jumlah = stuff.count;
+                id_cust = Convert.ToInt32(jumlah);
+
+                for (int i = 0; i < id_cust; i++)
+                {
+                    FirebaseDB firebaseDB = new FirebaseDB("https://mobile-shoebox.firebaseio.com/Customers");
+                    FirebaseDB firebaseCustomer = firebaseDB.Node("C" + i);
+                    FirebaseResponse customer = firebaseCustomer.Get();
+                    dynamic stiff = JObject.Parse(customer.JSONContent);
+                    if (stiff.nama == "") continue;
+
+                    nama_kalian.Add((string)stiff.nama);
+                    alamat.Add((string)stiff.alamat);
+                    no_hp.Add((string)stiff.hp);
+
+                    combo_customer.Items.Add((string)stiff.nama);
+
+                }
+
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
+            }
+
+        }
+
+        private void combo_customer_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void combo_customer_TextChanged(object sender, EventArgs e)
+        {
         }
 
         private void sales_MouseUp(object sender, MouseEventArgs e)

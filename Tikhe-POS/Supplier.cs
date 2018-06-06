@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FirebaseNet.Database;
 using Newtonsoft.Json.Linq;
 
 namespace Tikhe_POS
@@ -16,7 +15,6 @@ namespace Tikhe_POS
 
     public partial class Supplier : Form
     {
-        String nama, alamat, hp, email, merek, gender;
         int id_sup;
         int selectedRow;
         FirebaseDB firebaseDB = new FirebaseDB("https://mobile-shoebox.firebaseio.com/Supplier");

@@ -10,6 +10,7 @@ namespace Tikhe_POS
     {
         public string No { get; set; }
         public string Service { get; set; }
+        public string SubService { get; set; }
         public string Harga { get; set; }
     }
 }
