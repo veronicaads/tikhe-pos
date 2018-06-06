@@ -44,42 +44,52 @@ namespace Tikhe_POS
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
-            comboBox2.Items.Clear();
-            if (comboBox3.SelectedIndex == 0) {
-                comboBox2.Items.Clear();
-                comboBox2.Items.Add("All");
-                comboBox2.Items.Add("Deep Clean");
-                comboBox2.Items.Add("Fast Clean");
-                comboBox2.Items.Add("Unyellowing");
+            subservice.Items.Clear();
+            if (service.SelectedIndex == 0) {
+                subservice.Items.Clear();
+                subservice.Items.Add("All");
+                subservice.Items.Add("Deep Clean");
+                subservice.Items.Add("Fast Clean");
+                subservice.Items.Add("Unyellowing");
             }
-            else if (comboBox3.SelectedIndex == 1)
+            else if (service.SelectedIndex == 1)
             {
-                comboBox2.Items.Clear();
-                comboBox2.Items.Add("All");
-                comboBox2.Items.Add("Dress Shoes");
-                comboBox2.Items.Add("Casual Shoes");
-                comboBox2.Items.Add("Workshoes");
-                comboBox2.Items.Add("Dance Shoes");
-                comboBox2.Items.Add("Boots");
-                comboBox2.Items.Add("Sandals");
-                comboBox2.Items.Add("Slippers");
-                comboBox2.Items.Add("Running Shoes");
-                comboBox2.Items.Add("BasketBall Shoes");
+                subservice.Items.Clear();
+                subservice.Items.Add("All");
+                subservice.Items.Add("Dress Shoes");
+                subservice.Items.Add("Casual Shoes");
+                subservice.Items.Add("Workshoes");
+                subservice.Items.Add("Dance Shoes");
+                subservice.Items.Add("Boots");
+                subservice.Items.Add("Sandals");
+                subservice.Items.Add("Slippers");
+                subservice.Items.Add("Running Shoes");
+                subservice.Items.Add("BasketBall Shoes");
             }
-            else if (comboBox3.SelectedIndex == 2)
+            else if (service.SelectedIndex == 2)
             {
-                comboBox2.Items.Clear();
-                comboBox2.Items.Add("All");
-                comboBox2.Items.Add("Ordinary Sizing");
-                comboBox2.Items.Add("Full Sizing");
-                comboBox2.Items.Add("Ordinary Sewing");
-                comboBox2.Items.Add("Full Sewing");
-                comboBox2.Items.Add("Remove Out Sol");
-                comboBox2.Items.Add("Leather Patch");
-                comboBox2.Items.Add("Remove In Sol");
-                comboBox2.Items.Add("Leather Pressing");
+                subservice.Items.Clear();
+                subservice.Items.Add("All");
+                subservice.Items.Add("Ordinary Sizing");
+                subservice.Items.Add("Full Sizing");
+                subservice.Items.Add("Ordinary Sewing");
+                subservice.Items.Add("Full Sewing");
+                subservice.Items.Add("Remove Out Sol");
+                subservice.Items.Add("Leather Patch");
+                subservice.Items.Add("Remove In Sol");
+                subservice.Items.Add("Leather Pressing");
             }
             
         }
-    }
+
+		private void submitbutton_Click(object sender, EventArgs e)
+		{
+			Properties.Settings.Default.cabang = cabang.Text;
+			Properties.Settings.Default.servis = service.Text;
+			Properties.Settings.Default.subservis = subservice.Text;
+			Chart chart = new Chart();
+			chart.Show();
+
+		}
+	}
 }
