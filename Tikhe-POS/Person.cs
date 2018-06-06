@@ -13,7 +13,6 @@ namespace Tikhe_POS
         public string Email { get; set; }
         public string Alamat { get; set; }
         public string HP { get; set; }
-        public string MerkSepatu { get; set; }
         public string JenisKelamin { get; set; }
     }
 }

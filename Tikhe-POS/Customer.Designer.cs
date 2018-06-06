@@ -42,8 +42,6 @@
             this.nama_txt = new System.Windows.Forms.TextBox();
             this.email_txt = new System.Windows.Forms.TextBox();
             this.hp_txt = new System.Windows.Forms.TextBox();
-            this.merk_txt = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -54,16 +52,20 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button22 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Alamat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MerkSepatu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.personBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button7 = new System.Windows.Forms.Button();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.namaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jenisKelaminDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.personBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.iDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.namaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.alamatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hPDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.merkSepatuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jenisKelaminDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -137,8 +139,6 @@
             this.groupBox1.Controls.Add(this.nama_txt);
             this.groupBox1.Controls.Add(this.email_txt);
             this.groupBox1.Controls.Add(this.hp_txt);
-            this.groupBox1.Controls.Add(this.merk_txt);
-            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label9);
@@ -217,22 +217,6 @@
             this.hp_txt.Size = new System.Drawing.Size(198, 24);
             this.hp_txt.TabIndex = 5;
             // 
-            // merk_txt
-            // 
-            this.merk_txt.Location = new System.Drawing.Point(129, 281);
-            this.merk_txt.Name = "merk_txt";
-            this.merk_txt.Size = new System.Drawing.Size(198, 24);
-            this.merk_txt.TabIndex = 5;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 287);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(103, 18);
-            this.label8.TabIndex = 4;
-            this.label8.Text = "Merk Sepatu";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -284,7 +268,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(267, 338);
+            this.button3.Location = new System.Drawing.Point(267, 318);
             this.button3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(66, 40);
@@ -299,7 +283,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(187, 338);
+            this.button2.Location = new System.Drawing.Point(187, 318);
             this.button2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(66, 40);
@@ -314,7 +298,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(104, 338);
+            this.button1.Location = new System.Drawing.Point(104, 318);
             this.button1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(67, 40);
@@ -329,7 +313,7 @@
             this.button22.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button22.ForeColor = System.Drawing.Color.White;
-            this.button22.Location = new System.Drawing.Point(16, 338);
+            this.button22.Location = new System.Drawing.Point(16, 318);
             this.button22.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button22.Name = "button22";
             this.button22.Size = new System.Drawing.Size(72, 40);
@@ -343,13 +327,13 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDDataGridViewTextBoxColumn,
-            this.namaDataGridViewTextBoxColumn,
-            this.jenisKelaminDataGridViewTextBoxColumn,
-            this.hPDataGridViewTextBoxColumn,
-            this.Alamat,
-            this.MerkSepatu,
-            this.Email});
+            this.iDDataGridViewTextBoxColumn1,
+            this.namaDataGridViewTextBoxColumn1,
+            this.emailDataGridViewTextBoxColumn,
+            this.alamatDataGridViewTextBoxColumn,
+            this.hPDataGridViewTextBoxColumn1,
+            this.merkSepatuDataGridViewTextBoxColumn,
+            this.jenisKelaminDataGridViewTextBoxColumn1});
             this.dataGridView1.DataSource = this.personBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(369, 178);
             this.dataGridView1.Name = "dataGridView1";
@@ -357,23 +341,9 @@
             this.dataGridView1.TabIndex = 7;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // Alamat
+            // personBindingSource
             // 
-            this.Alamat.DataPropertyName = "Alamat";
-            this.Alamat.HeaderText = "Alamat";
-            this.Alamat.Name = "Alamat";
-            // 
-            // MerkSepatu
-            // 
-            this.MerkSepatu.DataPropertyName = "MerkSepatu";
-            this.MerkSepatu.HeaderText = "MerkSepatu";
-            this.MerkSepatu.Name = "MerkSepatu";
-            // 
-            // Email
-            // 
-            this.Email.DataPropertyName = "Email";
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
+            this.personBindingSource.DataSource = typeof(Tikhe_POS.Person);
             // 
             // textBox1
             // 
@@ -430,9 +400,48 @@
             this.hPDataGridViewTextBoxColumn.Name = "hPDataGridViewTextBoxColumn";
             this.hPDataGridViewTextBoxColumn.Width = 115;
             // 
-            // personBindingSource
+            // iDDataGridViewTextBoxColumn1
             // 
-            this.personBindingSource.DataSource = typeof(Tikhe_POS.Person);
+            this.iDDataGridViewTextBoxColumn1.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn1.Name = "iDDataGridViewTextBoxColumn1";
+            this.iDDataGridViewTextBoxColumn1.Width = 30;
+            // 
+            // namaDataGridViewTextBoxColumn1
+            // 
+            this.namaDataGridViewTextBoxColumn1.DataPropertyName = "Nama";
+            this.namaDataGridViewTextBoxColumn1.HeaderText = "Nama";
+            this.namaDataGridViewTextBoxColumn1.Name = "namaDataGridViewTextBoxColumn1";
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            // 
+            // alamatDataGridViewTextBoxColumn
+            // 
+            this.alamatDataGridViewTextBoxColumn.DataPropertyName = "Alamat";
+            this.alamatDataGridViewTextBoxColumn.HeaderText = "Alamat";
+            this.alamatDataGridViewTextBoxColumn.Name = "alamatDataGridViewTextBoxColumn";
+            // 
+            // hPDataGridViewTextBoxColumn1
+            // 
+            this.hPDataGridViewTextBoxColumn1.DataPropertyName = "HP";
+            this.hPDataGridViewTextBoxColumn1.HeaderText = "HP";
+            this.hPDataGridViewTextBoxColumn1.Name = "hPDataGridViewTextBoxColumn1";
+            // 
+            // merkSepatuDataGridViewTextBoxColumn
+            // 
+            this.merkSepatuDataGridViewTextBoxColumn.DataPropertyName = "MerkSepatu";
+            this.merkSepatuDataGridViewTextBoxColumn.HeaderText = "MerkSepatu";
+            this.merkSepatuDataGridViewTextBoxColumn.Name = "merkSepatuDataGridViewTextBoxColumn";
+            // 
+            // jenisKelaminDataGridViewTextBoxColumn1
+            // 
+            this.jenisKelaminDataGridViewTextBoxColumn1.DataPropertyName = "JenisKelamin";
+            this.jenisKelaminDataGridViewTextBoxColumn1.HeaderText = "JenisKelamin";
+            this.jenisKelaminDataGridViewTextBoxColumn1.Name = "jenisKelaminDataGridViewTextBoxColumn1";
             // 
             // Customer
             // 
@@ -488,8 +497,6 @@
         private System.Windows.Forms.TextBox nama_txt;
         private System.Windows.Forms.TextBox email_txt;
         private System.Windows.Forms.TextBox hp_txt;
-        private System.Windows.Forms.TextBox merk_txt;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -501,8 +508,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn namaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn jenisKelaminDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn hPDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Alamat;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MerkSepatu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn namaDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn alamatDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hPDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn merkSepatuDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jenisKelaminDataGridViewTextBoxColumn1;
     }
 }

@@ -241,6 +241,16 @@ namespace Tikhe_POS
             }
         }
 
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void sales_MouseUp(object sender, MouseEventArgs e)
         {
             TogMove = 0;
