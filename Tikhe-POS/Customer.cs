@@ -166,9 +166,10 @@ namespace Tikhe_POS
             else
             {
                 String search = textBox1.Text;
-            }
+			}
             
         }
+
         int TogMove;
         int X, Y;
         private void Customer_MouseDown(object sender, MouseEventArgs e)
@@ -178,7 +179,12 @@ namespace Tikhe_POS
             Y = e.Y;
         }
 
-        private void Customer_MouseMove(object sender, MouseEventArgs e)
+		private void dataGridView1_Sorted(object sender, EventArgs e)
+		{
+
+		}
+
+		private void Customer_MouseMove(object sender, MouseEventArgs e)
         {
             if (TogMove == 1)
             {
@@ -202,7 +208,7 @@ namespace Tikhe_POS
                     dynamic stiff = JObject.Parse(customer.JSONContent);
                     if (stiff.nama=="") continue;
                     
-                    personBindingSource.Add(new Person() { ID = "C" + stiff.id, Nama = stiff.nama, JenisKelamin = stiff.gender, Alamat = stiff.alamat, Email = stiff.email, HP = stiff.hp });
+                    personBindingSource.Add(new Person() { ID = stiff.id, Nama = stiff.nama, JenisKelamin = stiff.gender, Alamat = stiff.alamat, Email = stiff.email, HP = stiff.hp });
                 }
 
 
@@ -222,8 +228,30 @@ namespace Tikhe_POS
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+			FirebaseResponse customer = firebaseDB.Get();
+			dynamic stuff = JObject.Parse(customer.JSONContent);
+			IEnumerable<JToken> name =  stuff.SelectTokens("$..[?(@.nama >= '"+ textBox1.Text +"')]");
+			String search_nama = textBox1.Text;
+			String sub_search_name = search_nama.Substring(0, search_nama.Length);
+			personBindingSource.Clear();
+			foreach (JToken item in name) { 
+				dynamic items = JObject.Parse(item.ToString());
+				String id = items.id;
+				String nama_sub = items.nama;
+				String nama_disub = nama_sub.Substring(0, search_nama.Length);
+				if (id.Equals("XXX")) { }
+				else
+				{
+					if (nama_disub.Equals(sub_search_name)) {
+						personBindingSource.Add(new Person() { ID = items.id, Nama = items.nama, JenisKelamin = items.gender, Alamat = items.alamat, Email = items.email, HP = items.hp });
+					}
+					
 
-        }
+				}
+			}
+
+
+		}
 
         private void Customer_MouseUp(object sender, MouseEventArgs e)
         {
