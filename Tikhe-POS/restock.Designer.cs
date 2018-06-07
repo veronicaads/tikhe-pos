@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button18 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -63,19 +63,27 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.noDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.serviceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hargaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Jenis_Barang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.noDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hargaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stokBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
+            this.stokBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.stokBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.stokBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.stokBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stokBindingSource4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stokBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stokBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stokBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stokBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -141,7 +149,7 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.textBox1);
+            this.groupBox4.Controls.Add(this.comboBox1);
             this.groupBox4.Controls.Add(this.label13);
             this.groupBox4.Controls.Add(this.label12);
             this.groupBox4.Controls.Add(this.label11);
@@ -157,13 +165,17 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Info Supplier";
             // 
-            // textBox1
+            // comboBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 28);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(183, 26);
-            this.textBox1.TabIndex = 8;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(12, 28);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(186, 28);
+            this.comboBox1.TabIndex = 9;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox1_KeyPress);
             // 
             // label13
             // 
@@ -268,7 +280,7 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(91, 52);
             this.button5.TabIndex = 2;
-            this.button5.Text = "Pewangi";
+            this.button5.Text = "Cat Sepatu";
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -366,7 +378,7 @@
             this.button23.Name = "button23";
             this.button23.Size = new System.Drawing.Size(130, 48);
             this.button23.TabIndex = 11;
-            this.button23.Text = "Payment";
+            this.button23.Text = "Add";
             this.button23.UseVisualStyleBackColor = false;
             this.button23.Click += new System.EventHandler(this.button23_Click);
             // 
@@ -404,6 +416,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 26);
             this.textBox2.TabIndex = 10;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // total_txt
             // 
@@ -472,42 +485,29 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.noDataGridViewTextBoxColumn,
-            this.serviceDataGridViewTextBoxColumn,
+            this.Jenis_Barang,
             this.hargaDataGridViewTextBoxColumn,
             this.Delete});
-            this.dataGridView1.DataSource = this.stokBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(37, 353);
+            this.dataGridView1.DataSource = this.stokBindingSource4;
+            this.dataGridView1.Location = new System.Drawing.Point(37, 340);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(352, 214);
             this.dataGridView1.TabIndex = 14;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // noDataGridViewTextBoxColumn
+            // Jenis_Barang
             // 
-            this.noDataGridViewTextBoxColumn.DataPropertyName = "No";
-            this.noDataGridViewTextBoxColumn.HeaderText = "No";
-            this.noDataGridViewTextBoxColumn.Name = "noDataGridViewTextBoxColumn";
-            this.noDataGridViewTextBoxColumn.Width = 30;
-            // 
-            // serviceDataGridViewTextBoxColumn
-            // 
-            this.serviceDataGridViewTextBoxColumn.DataPropertyName = "Service";
-            this.serviceDataGridViewTextBoxColumn.HeaderText = "Service";
-            this.serviceDataGridViewTextBoxColumn.Name = "serviceDataGridViewTextBoxColumn";
-            this.serviceDataGridViewTextBoxColumn.Width = 140;
-            // 
-            // hargaDataGridViewTextBoxColumn
-            // 
-            this.hargaDataGridViewTextBoxColumn.DataPropertyName = "Harga";
-            this.hargaDataGridViewTextBoxColumn.HeaderText = "Harga";
-            this.hargaDataGridViewTextBoxColumn.Name = "hargaDataGridViewTextBoxColumn";
+            this.Jenis_Barang.DataPropertyName = "Jenis_Barang";
+            this.Jenis_Barang.HeaderText = "Jenis_Barang";
+            this.Jenis_Barang.Name = "Jenis_Barang";
+            this.Jenis_Barang.Width = 140;
             // 
             // Delete
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Red;
-            this.Delete.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Red;
+            this.Delete.DefaultCellStyle = dataGridViewCellStyle1;
             this.Delete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Delete.HeaderText = "";
             this.Delete.Name = "Delete";
@@ -518,6 +518,27 @@
             this.Delete.UseColumnTextForButtonValue = true;
             this.Delete.Width = 40;
             // 
+            // noDataGridViewTextBoxColumn
+            // 
+            this.noDataGridViewTextBoxColumn.DataPropertyName = "No";
+            this.noDataGridViewTextBoxColumn.HeaderText = "No";
+            this.noDataGridViewTextBoxColumn.Name = "noDataGridViewTextBoxColumn";
+            this.noDataGridViewTextBoxColumn.Width = 30;
+            // 
+            // hargaDataGridViewTextBoxColumn
+            // 
+            this.hargaDataGridViewTextBoxColumn.DataPropertyName = "Harga";
+            this.hargaDataGridViewTextBoxColumn.HeaderText = "Harga";
+            this.hargaDataGridViewTextBoxColumn.Name = "hargaDataGridViewTextBoxColumn";
+            // 
+            // stokBindingSource4
+            // 
+            this.stokBindingSource4.DataSource = typeof(Tikhe_POS.Stok);
+            // 
+            // stokBindingSource3
+            // 
+            this.stokBindingSource3.DataSource = typeof(Tikhe_POS.Stok);
+            // 
             // stokBindingSource
             // 
             this.stokBindingSource.DataSource = typeof(Tikhe_POS.Stok);
@@ -525,6 +546,14 @@
             // orderBindingSource
             // 
             this.orderBindingSource.DataSource = typeof(Tikhe_POS.Order);
+            // 
+            // stokBindingSource1
+            // 
+            this.stokBindingSource1.DataSource = typeof(Tikhe_POS.Stok);
+            // 
+            // stokBindingSource2
+            // 
+            this.stokBindingSource2.DataSource = typeof(Tikhe_POS.Stok);
             // 
             // restock
             // 
@@ -544,6 +573,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "restock";
             this.Text = "restock";
+            this.Load += new System.EventHandler(this.restock_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.restock_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.restock_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.restock_MouseUp);
@@ -555,8 +585,12 @@
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stokBindingSource4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stokBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stokBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stokBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stokBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -590,11 +624,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.BindingSource stokBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn noDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn serviceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hargaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewButtonColumn Delete;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label total_txt;
@@ -603,5 +633,14 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.BindingSource stokBindingSource1;
+        private System.Windows.Forms.BindingSource stokBindingSource2;
+        private System.Windows.Forms.BindingSource stokBindingSource3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn noDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Jenis_Barang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hargaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewButtonColumn Delete;
+        private System.Windows.Forms.BindingSource stokBindingSource4;
     }
 }

@@ -50,7 +50,8 @@ namespace Tikhe_POS
             alamat = alamat_txt.Text;
             hp = hp_txt.Text;
             email = email_txt.Text;
-            String tglmasuk = DateTime.Now.ToString("dd-MM-yy");
+            String tglmasuk = DateTime.Now.ToString("yy-M-dd");
+            String tmp = "C" + id_cust;
             FirebaseDB firebaseCustomer = firebaseDB.Node("C"+id_cust);
             var data="";
             if (nama_txt.Text == "" || alamat_txt.Text == "" || email_txt.Text == "" || hp_txt.Text == "" || !pria_but.Checked && !wanita_but.Checked)
@@ -65,13 +66,13 @@ namespace Tikhe_POS
                 {
                     personBindingSource.Add(new Person() { ID = "C"+id_cust.ToString(), Nama = nama_txt.Text, JenisKelamin = "Pria", Alamat = alamat_txt.Text, Email = email_txt.Text, HP = hp_txt.Text });
                     gender = "Pria";
-                    data = @"{'id':'"+id_cust+"','nama' : '" + nama + "','alamat' : '" + alamat + "','hp' : '" + hp + "','email' : '" + email + "','gender' : '" + gender + "','tanggal_masuk' : '" + tglmasuk + "'}";
+                    data = @"{'id':'"+tmp+"','nama' : '" + nama + "','alamat' : '" + alamat + "','hp' : '" + hp + "','email' : '" + email + "','gender' : '" + gender + "','tanggal_masuk' : '" + tglmasuk + "'}";
                 }
                 else
                 {
                     personBindingSource.Add(new Person() { ID = "C"+id_cust.ToString(), Nama = nama_txt.Text, JenisKelamin = "Wanita", Alamat = alamat_txt.Text, Email = email_txt.Text, HP = hp_txt.Text });
                     gender = "Wanita";
-                    data = @"{'id':'" + id_cust + "','nama' : '" + nama + "','alamat' : '" + alamat + "','hp' : '" + hp + "','email' : '" + email + "','gender' : '" + gender + "','tanggal_masuk' : '" + tglmasuk + "'}";
+                    data = @"{'id':'" + tmp + "','nama' : '" + nama + "','alamat' : '" + alamat + "','hp' : '" + hp + "','email' : '" + email + "','gender' : '" + gender + "','tanggal_masuk' : '" + tglmasuk + "'}";
                 }
                 id_cust++;
                 firebaseCustomer.Put(data);
@@ -92,9 +93,9 @@ namespace Tikhe_POS
             selectedRow = e.RowIndex;
             DataGridViewRow row = dataGridView1.Rows[selectedRow];
             nama_txt.Text = row.Cells[1].Value.ToString();
-            alamat_txt.Text = row.Cells[4].Value.ToString();
-            email_txt.Text = row.Cells[6].Value.ToString();
-            hp_txt.Text = row.Cells[3].Value.ToString();
+            alamat_txt.Text = row.Cells[3].Value.ToString();
+            email_txt.Text = row.Cells[4].Value.ToString();
+            hp_txt.Text = row.Cells[5].Value.ToString();
             if (row.Cells[2].Value.ToString().Equals("Pria")){pria_but.Checked = true;}
             else wanita_but.Checked = true;
         }
@@ -108,17 +109,22 @@ namespace Tikhe_POS
             else
             {
                 DataGridViewRow newRow = dataGridView1.Rows[selectedRow];
-                newRow.Cells[1].Value = nama_txt.Text;
-                newRow.Cells[4].Value = alamat_txt.Text;
-                newRow.Cells[6].Value = email_txt.Text;
-                newRow.Cells[3].Value = hp_txt.Text;
-                
 
-                int X = selectedRow + 1;
-                
                 FirebaseDB firebaseCustomer = firebaseDB.Node(newRow.Cells[0].Value.ToString());
+                FirebaseResponse customer = firebaseCustomer.Get();
+                dynamic stiff = JObject.Parse(customer.JSONContent);
+
+                newRow.Cells[1].Value = nama_txt.Text;
+                newRow.Cells[3].Value = alamat_txt.Text;
+                newRow.Cells[4].Value = email_txt.Text;
+                newRow.Cells[5].Value = hp_txt.Text;
+                
+                if (pria_but.Checked) gender = "Pria";
+                else gender = "Wanita";
+                newRow.Cells[2].Value = gender;
+
                 var data = "";
-                data = @"{'id':'" + X + "','nama' : '" + nama_txt.Text + "','alamat' : '" + alamat_txt.Text + "','hp' : '" + hp_txt.Text + "','email' : '" + email_txt.Text + "','gender' : '" + gender + "'}";
+                data = @"{'id':'" + stiff.id + "','nama' : '" + nama_txt.Text + "','alamat' : '" + alamat_txt.Text + "','hp' : '" + hp_txt.Text + "','email' : '" + email_txt.Text + "','gender' : '" + gender + "'}";
                 firebaseCustomer.Patch(data);
 
                 nama_txt.Text = "";
@@ -135,21 +141,22 @@ namespace Tikhe_POS
         {
             
             selectedRow = dataGridView1.CurrentCell.RowIndex;
+            
+            nama_txt.Text = "";
+            alamat_txt.Text = "";
+            hp_txt.Text = "";
+            email_txt.Text = "";
+
+            gender = "";
 
             DataGridViewRow newRow = dataGridView1.Rows[selectedRow];
             FirebaseDB firebaseDB = new FirebaseDB("https://mobile-shoebox.firebaseio.com/Customers");
             FirebaseDB firebaseCustomer = firebaseDB.Node(newRow.Cells[0].Value.ToString());
             MessageBox.Show(newRow.Cells[0].Value.ToString());
             var data = "";
-            data = @"{'id':'" + "XXX" + "','nama' : '" + nama_txt.Text + "','alamat' : '" + alamat_txt.Text + "','hp' : '" + hp_txt.Text + "','email' : '" + email_txt.Text + "','gender' : '" + gender + "'}";
-
+            data = @"{'id':'" + "XXX" + "','nama' : '" + nama_txt.Text + "','alamat' : '" + alamat_txt.Text + "','hp' : '" + hp_txt.Text + "','email' : '" + email_txt.Text + "','gender' : '" + gender + "','tanggal_masuk' : '"+""+"'}";
             firebaseCustomer.Patch(data);
-            nama_txt.Text = "";
-            alamat_txt.Text = "";
-            hp_txt.Text = "";
-            email_txt.Text = "";
-            
-            gender = "";
+
             dataGridView1.Rows.RemoveAt(selectedRow);
         }
 
@@ -178,7 +185,7 @@ namespace Tikhe_POS
                 this.SetDesktopLocation(MousePosition.X - X, MousePosition.Y - Y);
             }
         }
-
+        
         private void Customer_Load(object sender, EventArgs e)
         {
             try
