@@ -24,8 +24,14 @@ namespace Tikhe_POS
 		{
 			DBConnect();
 		}
-		//fillChart method  
-		private void DBConnect()
+
+        private void pets_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //fillChart method  
+        private void DBConnect()
 		{
 			FirebaseDB firebaseDB = new FirebaseDB("https://mobile-shoebox.firebaseio.com/");
 			FirebaseDB firebaseDBOrder = firebaseDB.Node("orders");
