@@ -32,6 +32,8 @@
 			System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
 			System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
 			System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+			System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+			System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
 			System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
 			this.pets = new System.Windows.Forms.DataVisualization.Charting.Chart();
 			((System.ComponentModel.ISupportInitialize)(this.pets)).BeginInit();
@@ -52,8 +54,16 @@
 			series2.ChartArea = "ChartArea1";
 			series2.Legend = "Legend1";
 			series2.Name = "UMN";
+			series3.ChartArea = "ChartArea1";
+			series3.Legend = "Legend1";
+			series3.Name = "Atmajaya";
+			series4.ChartArea = "ChartArea1";
+			series4.Legend = "Legend1";
+			series4.Name = "Pertamina";
 			this.pets.Series.Add(series1);
 			this.pets.Series.Add(series2);
+			this.pets.Series.Add(series3);
+			this.pets.Series.Add(series4);
 			this.pets.Size = new System.Drawing.Size(300, 300);
 			this.pets.TabIndex = 0;
 			this.pets.Text = "chart1";

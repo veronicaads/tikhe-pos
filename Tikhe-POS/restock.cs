@@ -50,8 +50,8 @@ namespace Tikhe_POS
 
         private void button23_Click(object sender, EventArgs e)
         {
-            Payment form = new Payment();
-            form.Show(); Hide();
+        //    Payment form = new Payment();
+         //   form.Show(); Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)

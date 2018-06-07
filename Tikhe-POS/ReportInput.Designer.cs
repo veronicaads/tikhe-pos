@@ -29,21 +29,22 @@
         private void InitializeComponent()
         {
 			this.label1 = new System.Windows.Forms.Label();
-			this.label3 = new System.Windows.Forms.Label();
-			this.label4 = new System.Windows.Forms.Label();
-			this.label5 = new System.Windows.Forms.Label();
 			this.submit_button = new System.Windows.Forms.Button();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.label6 = new System.Windows.Forms.Label();
 			this.label7 = new System.Windows.Forms.Label();
-			this.cabang = new System.Windows.Forms.ComboBox();
-			this.subservice = new System.Windows.Forms.ComboBox();
-			this.service = new System.Windows.Forms.ComboBox();
 			this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
 			this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
 			this.label8 = new System.Windows.Forms.Label();
 			this.label9 = new System.Windows.Forms.Label();
 			this.button3 = new System.Windows.Forms.Button();
+			this.label3 = new System.Windows.Forms.Label();
+			this.label4 = new System.Windows.Forms.Label();
+			this.label5 = new System.Windows.Forms.Label();
+			this.cabang = new System.Windows.Forms.ComboBox();
+			this.subservice = new System.Windows.Forms.ComboBox();
+			this.service = new System.Windows.Forms.ComboBox();
+			this.label2 = new System.Windows.Forms.Label();
 			this.panel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -59,42 +60,9 @@
 			this.label1.Text = "Report Input";
 			this.label1.Click += new System.EventHandler(this.label1_Click);
 			// 
-			// label3
-			// 
-			this.label3.AutoSize = true;
-			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label3.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-			this.label3.Location = new System.Drawing.Point(38, 214);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(89, 16);
-			this.label3.TabIndex = 2;
-			this.label3.Text = "Service Type";
-			// 
-			// label4
-			// 
-			this.label4.AutoSize = true;
-			this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label4.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-			this.label4.Location = new System.Drawing.Point(37, 247);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(113, 16);
-			this.label4.TabIndex = 3;
-			this.label4.Text = "SubService Type";
-			// 
-			// label5
-			// 
-			this.label5.AutoSize = true;
-			this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label5.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-			this.label5.Location = new System.Drawing.Point(37, 281);
-			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(94, 16);
-			this.label5.TabIndex = 4;
-			this.label5.Text = "Store Location";
-			// 
 			// submit_button
 			// 
-			this.submit_button.Location = new System.Drawing.Point(160, 320);
+			this.submit_button.Location = new System.Drawing.Point(161, 318);
 			this.submit_button.Name = "submit_button";
 			this.submit_button.Size = new System.Drawing.Size(109, 31);
 			this.submit_button.TabIndex = 5;
@@ -137,57 +105,25 @@
 			this.label7.TabIndex = 1;
 			this.label7.Text = "Tikhe - Report";
 			// 
-			// cabang
-			// 
-			this.cabang.FormattingEnabled = true;
-			this.cabang.Items.AddRange(new object[] {
-            "UMN",
-            "Mercubuana",
-            "Pertamina",
-            "Atma Jaya"});
-			this.cabang.Location = new System.Drawing.Point(161, 278);
-			this.cabang.Name = "cabang";
-			this.cabang.Size = new System.Drawing.Size(207, 21);
-			this.cabang.TabIndex = 7;
-			this.cabang.Text = "Location";
-			this.cabang.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-			// 
-			// subservice
-			// 
-			this.subservice.FormattingEnabled = true;
-			this.subservice.Location = new System.Drawing.Point(161, 245);
-			this.subservice.Name = "subservice";
-			this.subservice.Size = new System.Drawing.Size(207, 21);
-			this.subservice.TabIndex = 8;
-			this.subservice.Text = "Subservice";
-			// 
-			// service
-			// 
-			this.service.FormattingEnabled = true;
-			this.service.Items.AddRange(new object[] {
-            "Reclean",
-            "Repaint",
-            "Repair"});
-			this.service.Location = new System.Drawing.Point(160, 213);
-			this.service.Name = "service";
-			this.service.Size = new System.Drawing.Size(208, 21);
-			this.service.TabIndex = 9;
-			this.service.Text = "Service";
-			this.service.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
-			// 
 			// dateTimePicker1
 			// 
-			this.dateTimePicker1.Location = new System.Drawing.Point(160, 152);
+			this.dateTimePicker1.CustomFormat = "";
+			this.dateTimePicker1.Location = new System.Drawing.Point(161, 153);
 			this.dateTimePicker1.Name = "dateTimePicker1";
 			this.dateTimePicker1.Size = new System.Drawing.Size(208, 20);
 			this.dateTimePicker1.TabIndex = 14;
+			this.dateTimePicker1.Value = new System.DateTime(2018, 6, 7, 0, 0, 0, 0);
+			this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
 			// 
 			// dateTimePicker2
 			// 
+			this.dateTimePicker2.CustomFormat = "";
 			this.dateTimePicker2.Location = new System.Drawing.Point(161, 182);
 			this.dateTimePicker2.Name = "dateTimePicker2";
 			this.dateTimePicker2.Size = new System.Drawing.Size(207, 20);
 			this.dateTimePicker2.TabIndex = 15;
+			this.dateTimePicker2.Value = new System.DateTime(2018, 6, 7, 0, 0, 0, 0);
+			this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
 			// 
 			// label8
 			// 
@@ -225,12 +161,98 @@
 			this.button3.UseVisualStyleBackColor = true;
 			this.button3.Click += new System.EventHandler(this.button3_Click);
 			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label3.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+			this.label3.Location = new System.Drawing.Point(38, 279);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(110, 16);
+			this.label3.TabIndex = 2;
+			this.label3.Text = "Application Type";
+			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label4.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+			this.label4.Location = new System.Drawing.Point(37, 247);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(89, 16);
+			this.label4.TabIndex = 3;
+			this.label4.Text = "Service Type";
+			this.label4.Click += new System.EventHandler(this.label4_Click);
+			// 
+			// label5
+			// 
+			this.label5.AutoSize = true;
+			this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label5.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+			this.label5.Location = new System.Drawing.Point(37, 212);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(94, 16);
+			this.label5.TabIndex = 4;
+			this.label5.Text = "Store Location";
+			// 
+			// cabang
+			// 
+			this.cabang.FormattingEnabled = true;
+			this.cabang.Items.AddRange(new object[] {
+            "UMN",
+            "Mercubuana",
+            "Pertamina",
+            "Atma Jaya"});
+			this.cabang.Location = new System.Drawing.Point(161, 212);
+			this.cabang.Name = "cabang";
+			this.cabang.Size = new System.Drawing.Size(207, 21);
+			this.cabang.TabIndex = 7;
+			this.cabang.Text = "Location";
+			this.cabang.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+			// 
+			// subservice
+			// 
+			this.subservice.FormattingEnabled = true;
+			this.subservice.Items.AddRange(new object[] {
+            "Reclean",
+            "Repair",
+            "Repaint"});
+			this.subservice.Location = new System.Drawing.Point(161, 245);
+			this.subservice.Name = "subservice";
+			this.subservice.Size = new System.Drawing.Size(207, 21);
+			this.subservice.TabIndex = 8;
+			this.subservice.Text = "Reclean";
+			// 
+			// service
+			// 
+			this.service.FormattingEnabled = true;
+			this.service.Items.AddRange(new object[] {
+            "Store",
+            "Mobile"});
+			this.service.Location = new System.Drawing.Point(161, 278);
+			this.service.Name = "service";
+			this.service.Size = new System.Drawing.Size(208, 21);
+			this.service.TabIndex = 9;
+			this.service.Text = "Mobile";
+			this.service.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+			this.label2.Location = new System.Drawing.Point(34, 375);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(334, 13);
+			this.label2.TabIndex = 19;
+			this.label2.Text = "*Service dan Aplication Type hanya berlaku jika Store Location dipilih";
+			// 
 			// ReportInput
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(89)))), ((int)(((byte)(134)))));
 			this.ClientSize = new System.Drawing.Size(406, 397);
+			this.Controls.Add(this.label2);
 			this.Controls.Add(this.button3);
 			this.Controls.Add(this.label9);
 			this.Controls.Add(this.label8);
@@ -258,20 +280,21 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button submit_button;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox cabang;
-        private System.Windows.Forms.ComboBox subservice;
-        private System.Windows.Forms.ComboBox service;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button3;
-    }
+		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.Label label5;
+		private System.Windows.Forms.ComboBox cabang;
+		private System.Windows.Forms.ComboBox subservice;
+		private System.Windows.Forms.ComboBox service;
+		private System.Windows.Forms.Label label2;
+	}
 }
