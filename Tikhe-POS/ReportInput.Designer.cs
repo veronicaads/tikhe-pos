@@ -222,6 +222,7 @@
 			this.subservice.Size = new System.Drawing.Size(207, 21);
 			this.subservice.TabIndex = 8;
 			this.subservice.Text = "Reclean";
+			this.subservice.SelectedIndexChanged += new System.EventHandler(this.subservis_clicked);
 			// 
 			// service
 			// 
@@ -234,6 +235,7 @@
 			this.service.Size = new System.Drawing.Size(208, 21);
 			this.service.TabIndex = 9;
 			this.service.Text = "Mobile";
+			this.service.SelectedIndexChanged += new System.EventHandler(this.servis_clicked);
 			// 
 			// label2
 			// 

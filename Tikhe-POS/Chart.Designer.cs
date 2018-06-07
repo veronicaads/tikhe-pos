@@ -82,7 +82,7 @@
 			this.pets.Series.Add(series5);
 			this.pets.Series.Add(series6);
 			this.pets.Series.Add(series7);
-			this.pets.Size = new System.Drawing.Size(300, 300);
+			this.pets.Size = new System.Drawing.Size(541, 525);
 			this.pets.TabIndex = 0;
 			this.pets.Text = "chart1";
 			title1.Name = "Branch Sales";
@@ -92,7 +92,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(323, 450);
+			this.ClientSize = new System.Drawing.Size(568, 304);
 			this.Controls.Add(this.pets);
 			this.Name = "Chart";
 			this.Text = "Chart";

@@ -67,7 +67,17 @@ namespace Tikhe_POS
 
 		private void label4_Click(object sender, EventArgs e)
 		{
+			Properties.Settings.Default.servis = service.Text;
+		}
 
+		private void servis_clicked(object sender, EventArgs e)
+		{
+
+		}
+
+		private void subservis_clicked(object sender, EventArgs e)
+		{
+			Properties.Settings.Default.subservis = subservice.Text;
 		}
 	}
 }
