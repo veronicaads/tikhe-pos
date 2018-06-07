@@ -85,10 +85,24 @@ namespace Tikhe_POS
 		private void submitbutton_Click(object sender, EventArgs e)
 		{
 			Properties.Settings.Default.cabang = cabang.Text;
-			Properties.Settings.Default.servis = service.Text;
-			Properties.Settings.Default.subservis = subservice.Text;
+			Properties.Settings.Default.tgl_awal = this.dateTimePicker1.Value.ToString("yy-M-dd");
+			Properties.Settings.Default.tgl_akhir = this.dateTimePicker2.Value.ToString("yy-M-dd");
 			Chart chart = new Chart();
 			chart.Show();
+		}
+
+		private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+		{
+			Properties.Settings.Default.tgl_awal = this.dateTimePicker1.Value.ToString("yy-M-dd");
+		}
+
+		private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+		{
+			Properties.Settings.Default.tgl_akhir = this.dateTimePicker2.Value.ToString("yy-M-dd");
+		}
+
+		private void label4_Click(object sender, EventArgs e)
+		{
 
 		}
 	}
