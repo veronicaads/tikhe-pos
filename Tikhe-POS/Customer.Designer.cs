@@ -52,20 +52,19 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button22 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.personBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button7 = new System.Windows.Forms.Button();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.namaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jenisKelaminDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.personBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.namaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.alamatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hPDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.merkSepatuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jenisKelaminDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.alamatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hPDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -329,21 +328,16 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn1,
             this.namaDataGridViewTextBoxColumn1,
-            this.emailDataGridViewTextBoxColumn,
+            this.jenisKelaminDataGridViewTextBoxColumn1,
             this.alamatDataGridViewTextBoxColumn,
-            this.hPDataGridViewTextBoxColumn1,
-            this.merkSepatuDataGridViewTextBoxColumn,
-            this.jenisKelaminDataGridViewTextBoxColumn1});
+            this.emailDataGridViewTextBoxColumn,
+            this.hPDataGridViewTextBoxColumn1});
             this.dataGridView1.DataSource = this.personBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(369, 178);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(369, 395);
             this.dataGridView1.TabIndex = 7;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // personBindingSource
-            // 
-            this.personBindingSource.DataSource = typeof(Tikhe_POS.Person);
             // 
             // textBox1
             // 
@@ -400,6 +394,10 @@
             this.hPDataGridViewTextBoxColumn.Name = "hPDataGridViewTextBoxColumn";
             this.hPDataGridViewTextBoxColumn.Width = 115;
             // 
+            // personBindingSource
+            // 
+            this.personBindingSource.DataSource = typeof(Tikhe_POS.Person);
+            // 
             // iDDataGridViewTextBoxColumn1
             // 
             this.iDDataGridViewTextBoxColumn1.DataPropertyName = "ID";
@@ -413,11 +411,11 @@
             this.namaDataGridViewTextBoxColumn1.HeaderText = "Nama";
             this.namaDataGridViewTextBoxColumn1.Name = "namaDataGridViewTextBoxColumn1";
             // 
-            // emailDataGridViewTextBoxColumn
+            // jenisKelaminDataGridViewTextBoxColumn1
             // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.jenisKelaminDataGridViewTextBoxColumn1.DataPropertyName = "JenisKelamin";
+            this.jenisKelaminDataGridViewTextBoxColumn1.HeaderText = "JenisKelamin";
+            this.jenisKelaminDataGridViewTextBoxColumn1.Name = "jenisKelaminDataGridViewTextBoxColumn1";
             // 
             // alamatDataGridViewTextBoxColumn
             // 
@@ -425,23 +423,17 @@
             this.alamatDataGridViewTextBoxColumn.HeaderText = "Alamat";
             this.alamatDataGridViewTextBoxColumn.Name = "alamatDataGridViewTextBoxColumn";
             // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            // 
             // hPDataGridViewTextBoxColumn1
             // 
             this.hPDataGridViewTextBoxColumn1.DataPropertyName = "HP";
             this.hPDataGridViewTextBoxColumn1.HeaderText = "HP";
             this.hPDataGridViewTextBoxColumn1.Name = "hPDataGridViewTextBoxColumn1";
-            // 
-            // merkSepatuDataGridViewTextBoxColumn
-            // 
-            this.merkSepatuDataGridViewTextBoxColumn.DataPropertyName = "MerkSepatu";
-            this.merkSepatuDataGridViewTextBoxColumn.HeaderText = "MerkSepatu";
-            this.merkSepatuDataGridViewTextBoxColumn.Name = "merkSepatuDataGridViewTextBoxColumn";
-            // 
-            // jenisKelaminDataGridViewTextBoxColumn1
-            // 
-            this.jenisKelaminDataGridViewTextBoxColumn1.DataPropertyName = "JenisKelamin";
-            this.jenisKelaminDataGridViewTextBoxColumn1.HeaderText = "JenisKelamin";
-            this.jenisKelaminDataGridViewTextBoxColumn1.Name = "jenisKelaminDataGridViewTextBoxColumn1";
             // 
             // Customer
             // 
@@ -508,12 +500,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn namaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn jenisKelaminDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn hPDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn merkSepatuDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn namaDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn alamatDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hPDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn merkSepatuDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn jenisKelaminDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn alamatDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hPDataGridViewTextBoxColumn1;
     }
 }

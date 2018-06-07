@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FirebaseNet.Database;
 using Newtonsoft.Json.Linq;
+using System.IO;
 
 namespace Tikhe_POS
 {
@@ -76,17 +77,12 @@ namespace Tikhe_POS
 
         private void username_edit_TextChanged(object sender, EventArgs e)
         {
-
+            label7.Text = (Convert.ToInt32(username_edit.Text) - total_harga).ToString();
         }
 
         private void username_edit_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&(e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
-
-            label7.Text = (Convert.ToInt32(username_edit.Text) - total_harga).ToString();
+            //label7.Text = (Convert.ToInt32(username_edit.Text) - total_harga).ToString();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -120,6 +116,32 @@ namespace Tikhe_POS
             var data = "";
             data = @"{'customer':'" + tmp[2] + "','biaya':'" + tmp[0] + "','pembayaran' : '" + comboBox1.Text + "','cabang' : '" + tmp[1] + "','merek_sepatu' : '" + tmp[4] + "','orderid' : '" + tmp[5] + "','service' : '" + tmp[7] + "','subservice' : '" + tmp[8] + "','diskon' : '" + tmp[3] + "','tanggal_masuk' : '" + tmp[9] + "'}";
             isi.Patch(data);
+
+            /*
+            using (StreamWriter sw = new StreamWriter("D:/" + order + ".txt"))
+            {
+
+                sw.WriteLine("==========================================================================");
+                sw.WriteLine("==================================SHOEBOX================================");
+                sw.WriteLine("==========================================================================");
+                sw.WriteLine("");
+                sw.WriteLine("Nama Customer  : " + tmp[2]);
+                sw.WriteLine("Merek Sepatu  : " + tmp[4]);
+                sw.WriteLine(""); sw.WriteLine("");
+                sw.WriteLine("--------------------------------------------------------------------------");
+                sw.WriteLine("Service : " + stuff.service);
+                sw.WriteLine("SubService : " + stuff.subservice);
+                sw.WriteLine(""); sw.WriteLine("");
+                sw.WriteLine("Diskon : " + stuff.diskon);
+                sw.WriteLine("Biaya : " + stuff.biaya);
+                sw.WriteLine("==========================================================================");
+                sw.WriteLine("==========================================================================");
+                sw.Flush();
+                sw.Close(); 
+            }*/
+
+            MainMenu balik = new MainMenu();
+            balik.Show();Hide();
         }
 
         private void panel1_MouseUp(object sender, MouseEventArgs e)

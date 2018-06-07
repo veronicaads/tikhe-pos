@@ -48,6 +48,7 @@ namespace Tikhe_POS
         private void button22_Click(object sender, EventArgs e)
         {
             FirebaseDB firebaseSupplier = firebaseDB.Node("S"+id_sup);
+            String tmp = "S" + id_sup;
             var data = "";
             if (nama_txt.Text == "" || alamat_txt.Text == "" || email_txt.Text == "" || hp_txt.Text == "" || vendor_txt.Text == "" || merek_txt.Text=="")
             {
@@ -57,8 +58,8 @@ namespace Tikhe_POS
             }
             else
             {
-                vendorBindingSource.Add(new Vendor() { ID = id_sup.ToString(), Nama = nama_txt.Text, HP = hp_txt.Text, Produk = vendor_txt.Text, Alamat = alamat_txt.Text, Email = email_txt.Text, Merek = merek_txt.Text });
-                data = @"{'id':'" + id_sup + "','nama' : '" + nama_txt.Text + "','alamat' : '" + alamat_txt.Text + "','hp' : '" + hp_txt.Text + "','email' : '" + email_txt.Text + "','produk' : '" + vendor_txt.Text + "','merek' : '" + merek_txt.Text + "'}";
+                vendorBindingSource.Add(new Vendor() { ID = "S"+id_sup.ToString(), Nama = nama_txt.Text, HP = hp_txt.Text, Produk = vendor_txt.Text, Alamat = alamat_txt.Text, Email = email_txt.Text, Merek = merek_txt.Text });
+                data = @"{'id':'" + tmp + "','nama' : '" + nama_txt.Text + "','alamat' : '" + alamat_txt.Text + "','hp' : '" + hp_txt.Text + "','email' : '" + email_txt.Text + "','produk' : '" + vendor_txt.Text + "','merek' : '" + merek_txt.Text + "'}";
                 firebaseSupplier.Put(data);
                 id_sup++;
             }
@@ -93,11 +94,12 @@ namespace Tikhe_POS
                 newRow.Cells[3].Value = vendor_txt.Text;
                 newRow.Cells[6].Value = merek_txt.Text;
 
-                int X = selectedRow + 1;
-
                 FirebaseDB firebaseSupplier = firebaseDB.Node(newRow.Cells[0].Value.ToString());
+                FirebaseResponse coba = firebaseSupplier.Get();
+                dynamic stuff = JObject.Parse(coba.JSONContent);
+                
                 var data = "";
-                data = @"{'id':'" + X + "','nama' : '" + nama_txt.Text + "','alamat' : '" + alamat_txt.Text + "','hp' : '" + hp_txt.Text + "','email' : '" + email_txt.Text + "','produk' : '" + vendor_txt.Text + "','merek' : '" + merek_txt.Text + "'}";
+                data = @"{'id':'" + stuff.id + "','nama' : '" + nama_txt.Text + "','alamat' : '" + alamat_txt.Text + "','hp' : '" + hp_txt.Text + "','email' : '" + email_txt.Text + "','produk' : '" + vendor_txt.Text + "','merek' : '" + merek_txt.Text + "'}";
                 firebaseSupplier.Patch(data);
 
                 nama_txt.Text = "";
@@ -124,6 +126,12 @@ namespace Tikhe_POS
         private void button2_Click(object sender, EventArgs e)
         {
             selectedRow = dataGridView1.CurrentCell.RowIndex;
+            nama_txt.Text = "";
+            alamat_txt.Text = "";
+            merek_txt.Text = "";
+            hp_txt.Text = "";
+            email_txt.Text = "";
+            vendor_txt.Text = "";
 
             DataGridViewRow newRow = dataGridView1.Rows[selectedRow];
             FirebaseDB firebaseSupplier = firebaseDB.Node(newRow.Cells[0].Value.ToString());
@@ -133,12 +141,7 @@ namespace Tikhe_POS
 
             firebaseSupplier.Patch(data);
 
-            nama_txt.Text = "";
-            alamat_txt.Text = "";
-            merek_txt.Text = "";
-            hp_txt.Text = "";
-            email_txt.Text = "";
-            vendor_txt.Text = "";
+            
             
             dataGridView1.Rows.RemoveAt(selectedRow);
         }
@@ -175,7 +178,7 @@ namespace Tikhe_POS
                     dynamic stiff = JObject.Parse(customer.JSONContent);
                     if (stiff.nama == "") continue;
 
-                    vendorBindingSource.Add(new Vendor() { ID = "S" + stiff.id, Nama = stiff.nama, HP = stiff.hp, Produk = stiff.produk, Alamat = stiff.alamat, Email = stiff.email, Merek = stiff.merk });
+                    vendorBindingSource.Add(new Vendor() { ID = "S" + stiff.id, Nama = stiff.nama, HP = stiff.hp, Produk = stiff.produk, Alamat = stiff.alamat, Email = stiff.email, Merek = stiff.merek });
                 }
 
             }

@@ -9,7 +9,7 @@ namespace Tikhe_POS
     class Stok
     {
             public string No { get; set; }
-            public string Service { get; set; }
+            public string Jenis_Barang { get; set; }
             public string Harga { get; set; }
     }
 }
