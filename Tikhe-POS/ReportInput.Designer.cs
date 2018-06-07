@@ -234,7 +234,6 @@
 			this.service.Size = new System.Drawing.Size(208, 21);
 			this.service.TabIndex = 9;
 			this.service.Text = "Mobile";
-			this.service.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
 			// 
 			// label2
 			// 

@@ -29,11 +29,15 @@
 		private void InitializeComponent()
 		{
 			System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+			System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
 			System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
 			System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
 			System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
 			System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
 			System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+			System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+			System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+			System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
 			System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
 			this.pets = new System.Windows.Forms.DataVisualization.Charting.Chart();
 			((System.ComponentModel.ISupportInitialize)(this.pets)).BeginInit();
@@ -42,7 +46,9 @@
 			// pets
 			// 
 			chartArea1.Name = "ChartArea1";
+			chartArea2.Name = "ChartArea2";
 			this.pets.ChartAreas.Add(chartArea1);
+			this.pets.ChartAreas.Add(chartArea2);
 			legend1.Name = "Legend1";
 			this.pets.Legends.Add(legend1);
 			this.pets.Location = new System.Drawing.Point(12, 12);
@@ -60,10 +66,22 @@
 			series4.ChartArea = "ChartArea1";
 			series4.Legend = "Legend1";
 			series4.Name = "Pertamina";
+			series5.ChartArea = "ChartArea1";
+			series5.Legend = "Legend1";
+			series5.Name = "Reclean";
+			series6.ChartArea = "ChartArea1";
+			series6.Legend = "Legend1";
+			series6.Name = "Repair";
+			series7.ChartArea = "ChartArea1";
+			series7.Legend = "Legend1";
+			series7.Name = "Repaint";
 			this.pets.Series.Add(series1);
 			this.pets.Series.Add(series2);
 			this.pets.Series.Add(series3);
 			this.pets.Series.Add(series4);
+			this.pets.Series.Add(series5);
+			this.pets.Series.Add(series6);
+			this.pets.Series.Add(series7);
 			this.pets.Size = new System.Drawing.Size(300, 300);
 			this.pets.TabIndex = 0;
 			this.pets.Text = "chart1";
