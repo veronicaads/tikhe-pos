@@ -70,5 +70,29 @@ namespace Tikhe_POS.Properties {
                 this["totalharga_order"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string servis {
+            get {
+                return ((string)(this["servis"]));
+            }
+            set {
+                this["servis"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string subservis {
+            get {
+                return ((string)(this["subservis"]));
+            }
+            set {
+                this["subservis"] = value;
+            }
+        }
     }
 }
