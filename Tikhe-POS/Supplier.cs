@@ -140,9 +140,6 @@ namespace Tikhe_POS
             data = @"{'id':'XXX','nama' : '" + nama_txt.Text + "','alamat' : '" + alamat_txt.Text + "','hp' : '" + hp_txt.Text + "','email' : '" + email_txt.Text + "','produk' : '" + vendor_txt.Text + "','merek' : '" + merek_txt.Text + "'}";
 
             firebaseSupplier.Patch(data);
-
-            
-            
             dataGridView1.Rows.RemoveAt(selectedRow);
         }
         int TogMove;
@@ -168,6 +165,7 @@ namespace Tikhe_POS
             {
                 FirebaseResponse getResponse = firebase.Get();
                 dynamic stuff = JObject.Parse(getResponse.JSONContent);
+				//MessageBox.Show(getResponse.JSONContent);
                 String jumlah = stuff.count;
                 id_sup = Convert.ToInt32(jumlah);
 
@@ -178,7 +176,7 @@ namespace Tikhe_POS
                     dynamic stiff = JObject.Parse(customer.JSONContent);
                     if (stiff.nama == "") continue;
 
-                    vendorBindingSource.Add(new Vendor() { ID = "S" + stiff.id, Nama = stiff.nama, HP = stiff.hp, Produk = stiff.produk, Alamat = stiff.alamat, Email = stiff.email, Merek = stiff.merek });
+                    vendorBindingSource.Add(new Vendor() { ID = stiff.id, Nama = stiff.nama, HP = stiff.hp, Produk = stiff.produk, Alamat = stiff.alamat, Email = stiff.email, Merek = stiff.merek });
                 }
 
             }
@@ -188,7 +186,32 @@ namespace Tikhe_POS
             }
         }
 
-        private void Supplier_MouseUp(object sender, MouseEventArgs e)
+		private void textBox1_TextChanged(object sender, EventArgs e)
+		{
+			FirebaseResponse vendor = firebaseDB.Get();
+			dynamic stuff = JObject.Parse(vendor.JSONContent);
+			IEnumerable<JToken> name = stuff.SelectTokens("$..[?(@.nama >= '" + textBox1.Text + "')]");
+			String search_nama = textBox1.Text;
+			String sub_search_name = search_nama.Substring(0, search_nama.Length);
+			vendorBindingSource.Clear();
+			foreach (JToken item in name)
+			{
+				dynamic items = JObject.Parse(item.ToString());
+				String id = items.id;
+				String nama_sub = items.nama;
+				String nama_disub = nama_sub.Substring(0, search_nama.Length);
+				if (id.Equals("XXX")) { }
+				else
+				{
+					if (nama_disub.Equals(sub_search_name))
+					{
+						vendorBindingSource.Add(new Vendor() { ID =  items.id, Nama = items.nama, HP = items.hp, Produk = items.produk, Alamat = items.alamat, Email = items.email, Merek = items.merek });
+					}
+				}
+			}
+		}
+
+		private void Supplier_MouseUp(object sender, MouseEventArgs e)
         {
             TogMove = 0;
         }

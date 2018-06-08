@@ -45,6 +45,7 @@ namespace Tikhe_POS
             FirebaseDB firebaseDBEmployees = firebaseDB.Node(username);
             var data = @"{'username' : '" + username + "','password' : '" + password +"'}";
             firebaseDBEmployees.Put(data);
+			MessageBox.Show("Data berhasil ditambahkan");
         }
         int TogMove;
         int X, Y;

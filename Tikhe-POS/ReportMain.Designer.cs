@@ -40,14 +40,14 @@
 			this.detail = new System.Windows.Forms.GroupBox();
 			this.service_detail = new System.Windows.Forms.RadioButton();
 			this.customer_detail = new System.Windows.Forms.RadioButton();
-			this.inventory = new System.Windows.Forms.GroupBox();
-			this.inventory_history = new System.Windows.Forms.RadioButton();
 			this.button18 = new System.Windows.Forms.Button();
+			this.radioButton1 = new System.Windows.Forms.RadioButton();
+			this.radioButton2 = new System.Windows.Forms.RadioButton();
+			this.radioButton3 = new System.Windows.Forms.RadioButton();
 			this.panel1.SuspendLayout();
 			this.graph_report.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.detail.SuspendLayout();
-			this.inventory.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// panel1
@@ -89,13 +89,15 @@
 			// 
 			// graph_report
 			// 
+			this.graph_report.Controls.Add(this.radioButton2);
+			this.graph_report.Controls.Add(this.radioButton1);
 			this.graph_report.Controls.Add(this.order_graphic);
 			this.graph_report.Controls.Add(this.customer_graphic);
 			this.graph_report.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.graph_report.ForeColor = System.Drawing.SystemColors.ControlLightLight;
 			this.graph_report.Location = new System.Drawing.Point(18, 157);
 			this.graph_report.Name = "graph_report";
-			this.graph_report.Size = new System.Drawing.Size(233, 94);
+			this.graph_report.Size = new System.Drawing.Size(409, 94);
 			this.graph_report.TabIndex = 2;
 			this.graph_report.TabStop = false;
 			this.graph_report.Text = "Graphical Reports";
@@ -104,7 +106,7 @@
 			// order_graphic
 			// 
 			this.order_graphic.AutoSize = true;
-			this.order_graphic.Location = new System.Drawing.Point(12, 56);
+			this.order_graphic.Location = new System.Drawing.Point(6, 57);
 			this.order_graphic.Name = "order_graphic";
 			this.order_graphic.Size = new System.Drawing.Size(136, 24);
 			this.order_graphic.TabIndex = 5;
@@ -120,11 +122,12 @@
 			this.customer_graphic.AutoSize = true;
 			this.customer_graphic.Location = new System.Drawing.Point(12, 26);
 			this.customer_graphic.Name = "customer_graphic";
-			this.customer_graphic.Size = new System.Drawing.Size(104, 24);
+			this.customer_graphic.Size = new System.Drawing.Size(143, 24);
 			this.customer_graphic.TabIndex = 5;
 			this.customer_graphic.TabStop = true;
-			this.customer_graphic.Text = "Customer";
+			this.customer_graphic.Text = "New Customer";
 			this.customer_graphic.UseVisualStyleBackColor = true;
+			this.customer_graphic.CheckedChanged += new System.EventHandler(this.customer_graphic_CheckedChanged);
 			// 
 			// label2
 			// 
@@ -151,13 +154,14 @@
 			// 
 			// detail
 			// 
+			this.detail.Controls.Add(this.radioButton3);
 			this.detail.Controls.Add(this.service_detail);
 			this.detail.Controls.Add(this.customer_detail);
 			this.detail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.detail.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-			this.detail.Location = new System.Drawing.Point(276, 157);
+			this.detail.Location = new System.Drawing.Point(18, 257);
 			this.detail.Name = "detail";
-			this.detail.Size = new System.Drawing.Size(200, 94);
+			this.detail.Size = new System.Drawing.Size(409, 94);
 			this.detail.TabIndex = 6;
 			this.detail.TabStop = false;
 			this.detail.Text = "Detail Reports";
@@ -182,35 +186,11 @@
 			this.customer_detail.AutoSize = true;
 			this.customer_detail.Location = new System.Drawing.Point(16, 26);
 			this.customer_detail.Name = "customer_detail";
-			this.customer_detail.Size = new System.Drawing.Size(118, 28);
+			this.customer_detail.Size = new System.Drawing.Size(117, 28);
 			this.customer_detail.TabIndex = 8;
 			this.customer_detail.TabStop = true;
-			this.customer_detail.Text = "Customers";
+			this.customer_detail.Text = "Item Order";
 			this.customer_detail.UseVisualStyleBackColor = true;
-			// 
-			// inventory
-			// 
-			this.inventory.Controls.Add(this.inventory_history);
-			this.inventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.inventory.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-			this.inventory.Location = new System.Drawing.Point(18, 269);
-			this.inventory.Name = "inventory";
-			this.inventory.Size = new System.Drawing.Size(458, 69);
-			this.inventory.TabIndex = 7;
-			this.inventory.TabStop = false;
-			this.inventory.Text = "Inventory Reports";
-			// 
-			// inventory_history
-			// 
-			this.inventory_history.AutoSize = true;
-			this.inventory_history.Location = new System.Drawing.Point(12, 28);
-			this.inventory_history.Name = "inventory_history";
-			this.inventory_history.Size = new System.Drawing.Size(269, 28);
-			this.inventory_history.TabIndex = 2;
-			this.inventory_history.TabStop = true;
-			this.inventory_history.Text = "Inventory Transaction History";
-			this.inventory_history.UseMnemonic = false;
-			this.inventory_history.UseVisualStyleBackColor = true;
 			// 
 			// button18
 			// 
@@ -226,14 +206,48 @@
 			this.button18.UseVisualStyleBackColor = false;
 			this.button18.Click += new System.EventHandler(this.button18_Click);
 			// 
+			// radioButton1
+			// 
+			this.radioButton1.AutoSize = true;
+			this.radioButton1.Location = new System.Drawing.Point(181, 26);
+			this.radioButton1.Name = "radioButton1";
+			this.radioButton1.Size = new System.Drawing.Size(164, 24);
+			this.radioButton1.TabIndex = 6;
+			this.radioButton1.TabStop = true;
+			this.radioButton1.Text = "Supplier Restock";
+			this.radioButton1.UseVisualStyleBackColor = true;
+			// 
+			// radioButton2
+			// 
+			this.radioButton2.AutoSize = true;
+			this.radioButton2.Location = new System.Drawing.Point(181, 57);
+			this.radioButton2.Name = "radioButton2";
+			this.radioButton2.Size = new System.Drawing.Size(113, 24);
+			this.radioButton2.TabIndex = 7;
+			this.radioButton2.TabStop = true;
+			this.radioButton2.Text = "Item Order";
+			this.radioButton2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+			this.radioButton2.UseVisualStyleBackColor = true;
+			// 
+			// radioButton3
+			// 
+			this.radioButton3.AutoSize = true;
+			this.radioButton3.Location = new System.Drawing.Point(181, 26);
+			this.radioButton3.Name = "radioButton3";
+			this.radioButton3.Size = new System.Drawing.Size(158, 28);
+			this.radioButton3.TabIndex = 10;
+			this.radioButton3.TabStop = true;
+			this.radioButton3.Text = "Inventory Order";
+			this.radioButton3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+			this.radioButton3.UseVisualStyleBackColor = true;
+			// 
 			// ReportMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(89)))), ((int)(((byte)(134)))));
-			this.ClientSize = new System.Drawing.Size(508, 360);
+			this.ClientSize = new System.Drawing.Size(450, 370);
 			this.Controls.Add(this.button18);
-			this.Controls.Add(this.inventory);
 			this.Controls.Add(this.detail);
 			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.label2);
@@ -254,8 +268,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.detail.ResumeLayout(false);
 			this.detail.PerformLayout();
-			this.inventory.ResumeLayout(false);
-			this.inventory.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -274,8 +286,9 @@
         private System.Windows.Forms.GroupBox detail;
         private System.Windows.Forms.RadioButton service_detail;
         private System.Windows.Forms.RadioButton customer_detail;
-        private System.Windows.Forms.GroupBox inventory;
-        private System.Windows.Forms.RadioButton inventory_history;
         private System.Windows.Forms.Button button18;
-    }
+		private System.Windows.Forms.RadioButton radioButton1;
+		private System.Windows.Forms.RadioButton radioButton2;
+		private System.Windows.Forms.RadioButton radioButton3;
+	}
 }

@@ -412,8 +412,19 @@ namespace Tikhe_POS
 
         private void combo_customer_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-        }
+			String customer = combo_customer.Text;
+			//MessageBox.Show(supplier);
+			FirebaseDB firebaseDB = new FirebaseDB("https://mobile-shoebox.firebaseio.com/Customers");
+			FirebaseResponse cust = firebaseDB.Get();
+			dynamic stuff = JObject.Parse(cust.JSONContent);
+			//MessageBox.Show(vendor.JSONContent);
+			JToken custs = stuff.SelectToken("$..[?(@.nama == '" + customer + "')]");
+			dynamic items = JObject.Parse(custs.ToString());
+			//MessageBox.Show(items);
+			label11.Text = items.nama;
+			label12.Text = items.alamat;
+			label13.Text = items.hp;
+		}
 
         private void combo_customer_TextChanged(object sender, EventArgs e)
         {

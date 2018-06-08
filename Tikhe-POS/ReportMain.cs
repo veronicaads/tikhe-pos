@@ -112,7 +112,12 @@ namespace Tikhe_POS
             RI.Show();
         }
 
-        private void ReportMain_MouseUp(object sender, MouseEventArgs e)
+		private void customer_graphic_CheckedChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void ReportMain_MouseUp(object sender, MouseEventArgs e)
         {
             TogMove = 0;
         }

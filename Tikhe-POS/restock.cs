@@ -201,8 +201,19 @@ namespace Tikhe_POS
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-        }
+			String supplier = comboBox1.Text;
+			//MessageBox.Show(supplier);
+			FirebaseDB firebaseDB = new FirebaseDB("https://mobile-shoebox.firebaseio.com/Supplier");
+			FirebaseResponse vendor = firebaseDB.Get();
+			dynamic stuff = JObject.Parse(vendor.JSONContent);
+			//MessageBox.Show(vendor.JSONContent);
+			JToken vendors = stuff.SelectToken("$..[?(@.nama == '" + supplier + "')]");
+			dynamic items = JObject.Parse(vendors.ToString());
+			//MessageBox.Show(items);
+			label11.Text = items.nama;
+			label12.Text = items.alamat;
+			label13.Text = items.hp;
+		}
         int id_supplier = 0;
         List<string> nama_kalian = new List<string>();
         List<string> alamat = new List<string>();
