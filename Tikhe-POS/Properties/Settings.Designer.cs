@@ -94,5 +94,29 @@ namespace Tikhe_POS.Properties {
                 this["subservis"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string tgl_awal_cs {
+            get {
+                return ((string)(this["tgl_awal_cs"]));
+            }
+            set {
+                this["tgl_awal_cs"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string tgl_akhir_cs {
+            get {
+                return ((string)(this["tgl_akhir_cs"]));
+            }
+            set {
+                this["tgl_akhir_cs"] = value;
+            }
+        }
     }
 }

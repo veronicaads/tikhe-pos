@@ -119,6 +119,12 @@
     <Compile Include="Customer.Designer.cs">
       <DependentUpon>Customer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cust_Chart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cust_Chart.Designer.cs">
+      <DependentUpon>Cust_Chart.cs</DependentUpon>
+    </Compile>
     <Compile Include="Employee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +136,12 @@
     </Compile>
     <Compile Include="Chart.Designer.cs">
       <DependentUpon>Chart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportInput_Customer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportInput_Customer.Designer.cs">
+      <DependentUpon>ReportInput_Customer.cs</DependentUpon>
     </Compile>
     <Compile Include="ReportInput.cs">
       <SubType>Form</SubType>
@@ -194,11 +206,17 @@
     <EmbeddedResource Include="Customer.resx">
       <DependentUpon>Customer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Cust_Chart.resx">
+      <DependentUpon>Cust_Chart.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Employee.resx">
       <DependentUpon>Employee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Chart.resx">
       <DependentUpon>Chart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportInput_Customer.resx">
+      <DependentUpon>ReportInput_Customer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>

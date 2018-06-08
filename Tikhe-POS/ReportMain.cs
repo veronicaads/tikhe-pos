@@ -114,7 +114,8 @@ namespace Tikhe_POS
 
 		private void customer_graphic_CheckedChanged(object sender, EventArgs e)
 		{
-
+			ReportInput_Customer Rs = new ReportInput_Customer();
+			Rs.Show();
 		}
 
 		private void ReportMain_MouseUp(object sender, MouseEventArgs e)
