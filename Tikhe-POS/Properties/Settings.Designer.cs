@@ -118,5 +118,17 @@ namespace Tikhe_POS.Properties {
                 this["tgl_akhir_cs"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string flag_form {
+            get {
+                return ((string)(this["flag_form"]));
+            }
+            set {
+                this["flag_form"] = value;
+            }
+        }
     }
 }

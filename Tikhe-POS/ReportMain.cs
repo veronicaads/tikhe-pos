@@ -116,6 +116,21 @@ namespace Tikhe_POS
 		{
 			ReportInput_Customer Rs = new ReportInput_Customer();
 			Rs.Show();
+			Properties.Settings.Default.flag_form = "Customer";
+		}
+
+		private void item_graph_CheckedChanged(object sender, EventArgs e)
+		{
+			ReportInput_Customer Rs = new ReportInput_Customer();
+			Rs.Show();
+			Properties.Settings.Default.flag_form = "Item";
+		}
+
+		private void restock_graph_CheckedChanged(object sender, EventArgs e)
+		{
+			ReportInput_Customer Rs = new ReportInput_Customer();
+			Rs.Show();
+			Properties.Settings.Default.flag_form = "Stock";
 		}
 
 		private void ReportMain_MouseUp(object sender, MouseEventArgs e)

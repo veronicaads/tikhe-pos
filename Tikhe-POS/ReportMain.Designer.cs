@@ -33,17 +33,17 @@
 			this.label6 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
 			this.graph_report = new System.Windows.Forms.GroupBox();
+			this.item_graph = new System.Windows.Forms.RadioButton();
+			this.restock_graph = new System.Windows.Forms.RadioButton();
 			this.order_graphic = new System.Windows.Forms.RadioButton();
 			this.customer_graphic = new System.Windows.Forms.RadioButton();
 			this.label2 = new System.Windows.Forms.Label();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.detail = new System.Windows.Forms.GroupBox();
+			this.radioButton3 = new System.Windows.Forms.RadioButton();
 			this.service_detail = new System.Windows.Forms.RadioButton();
 			this.customer_detail = new System.Windows.Forms.RadioButton();
 			this.button18 = new System.Windows.Forms.Button();
-			this.radioButton1 = new System.Windows.Forms.RadioButton();
-			this.radioButton2 = new System.Windows.Forms.RadioButton();
-			this.radioButton3 = new System.Windows.Forms.RadioButton();
 			this.panel1.SuspendLayout();
 			this.graph_report.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -89,8 +89,8 @@
 			// 
 			// graph_report
 			// 
-			this.graph_report.Controls.Add(this.radioButton2);
-			this.graph_report.Controls.Add(this.radioButton1);
+			this.graph_report.Controls.Add(this.item_graph);
+			this.graph_report.Controls.Add(this.restock_graph);
 			this.graph_report.Controls.Add(this.order_graphic);
 			this.graph_report.Controls.Add(this.customer_graphic);
 			this.graph_report.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -102,6 +102,31 @@
 			this.graph_report.TabStop = false;
 			this.graph_report.Text = "Graphical Reports";
 			this.graph_report.Enter += new System.EventHandler(this.groupBox1_Enter);
+			// 
+			// item_graph
+			// 
+			this.item_graph.AutoSize = true;
+			this.item_graph.Location = new System.Drawing.Point(181, 57);
+			this.item_graph.Name = "item_graph";
+			this.item_graph.Size = new System.Drawing.Size(113, 24);
+			this.item_graph.TabIndex = 7;
+			this.item_graph.TabStop = true;
+			this.item_graph.Text = "Item Order";
+			this.item_graph.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+			this.item_graph.UseVisualStyleBackColor = true;
+			this.item_graph.CheckedChanged += new System.EventHandler(this.item_graph_CheckedChanged);
+			// 
+			// restock_graph
+			// 
+			this.restock_graph.AutoSize = true;
+			this.restock_graph.Location = new System.Drawing.Point(181, 26);
+			this.restock_graph.Name = "restock_graph";
+			this.restock_graph.Size = new System.Drawing.Size(164, 24);
+			this.restock_graph.TabIndex = 6;
+			this.restock_graph.TabStop = true;
+			this.restock_graph.Text = "Supplier Restock";
+			this.restock_graph.UseVisualStyleBackColor = true;
+			this.restock_graph.CheckedChanged += new System.EventHandler(this.restock_graph_CheckedChanged);
 			// 
 			// order_graphic
 			// 
@@ -167,6 +192,18 @@
 			this.detail.Text = "Detail Reports";
 			this.detail.Enter += new System.EventHandler(this.groupBox1_Enter_1);
 			// 
+			// radioButton3
+			// 
+			this.radioButton3.AutoSize = true;
+			this.radioButton3.Location = new System.Drawing.Point(181, 26);
+			this.radioButton3.Name = "radioButton3";
+			this.radioButton3.Size = new System.Drawing.Size(158, 28);
+			this.radioButton3.TabIndex = 10;
+			this.radioButton3.TabStop = true;
+			this.radioButton3.Text = "Inventory Order";
+			this.radioButton3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+			this.radioButton3.UseVisualStyleBackColor = true;
+			// 
 			// service_detail
 			// 
 			this.service_detail.AutoSize = true;
@@ -205,41 +242,6 @@
 			this.button18.Text = "< Back";
 			this.button18.UseVisualStyleBackColor = false;
 			this.button18.Click += new System.EventHandler(this.button18_Click);
-			// 
-			// radioButton1
-			// 
-			this.radioButton1.AutoSize = true;
-			this.radioButton1.Location = new System.Drawing.Point(181, 26);
-			this.radioButton1.Name = "radioButton1";
-			this.radioButton1.Size = new System.Drawing.Size(164, 24);
-			this.radioButton1.TabIndex = 6;
-			this.radioButton1.TabStop = true;
-			this.radioButton1.Text = "Supplier Restock";
-			this.radioButton1.UseVisualStyleBackColor = true;
-			// 
-			// radioButton2
-			// 
-			this.radioButton2.AutoSize = true;
-			this.radioButton2.Location = new System.Drawing.Point(181, 57);
-			this.radioButton2.Name = "radioButton2";
-			this.radioButton2.Size = new System.Drawing.Size(113, 24);
-			this.radioButton2.TabIndex = 7;
-			this.radioButton2.TabStop = true;
-			this.radioButton2.Text = "Item Order";
-			this.radioButton2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-			this.radioButton2.UseVisualStyleBackColor = true;
-			// 
-			// radioButton3
-			// 
-			this.radioButton3.AutoSize = true;
-			this.radioButton3.Location = new System.Drawing.Point(181, 26);
-			this.radioButton3.Name = "radioButton3";
-			this.radioButton3.Size = new System.Drawing.Size(158, 28);
-			this.radioButton3.TabIndex = 10;
-			this.radioButton3.TabStop = true;
-			this.radioButton3.Text = "Inventory Order";
-			this.radioButton3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-			this.radioButton3.UseVisualStyleBackColor = true;
 			// 
 			// ReportMain
 			// 
@@ -287,8 +289,8 @@
         private System.Windows.Forms.RadioButton service_detail;
         private System.Windows.Forms.RadioButton customer_detail;
         private System.Windows.Forms.Button button18;
-		private System.Windows.Forms.RadioButton radioButton1;
-		private System.Windows.Forms.RadioButton radioButton2;
+		private System.Windows.Forms.RadioButton restock_graph;
+		private System.Windows.Forms.RadioButton item_graph;
 		private System.Windows.Forms.RadioButton radioButton3;
 	}
 }

@@ -53,6 +53,7 @@
 			this.button3.TabIndex = 26;
 			this.button3.Text = "X";
 			this.button3.UseVisualStyleBackColor = true;
+			this.button3.Click += new System.EventHandler(this.button3_Click);
 			// 
 			// panel1
 			// 
@@ -94,11 +95,11 @@
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-			this.label1.Location = new System.Drawing.Point(100, 33);
+			this.label1.Location = new System.Drawing.Point(141, 32);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(198, 24);
+			this.label1.Size = new System.Drawing.Size(117, 24);
 			this.label1.TabIndex = 19;
-			this.label1.Text = "Customer Report Input";
+			this.label1.Text = " Report Input";
 			// 
 			// label9
 			// 
