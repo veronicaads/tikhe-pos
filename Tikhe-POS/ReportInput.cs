@@ -46,13 +46,22 @@ namespace Tikhe_POS
 
 		private void submitbutton_Click(object sender, EventArgs e)
 		{
+			String flag = Properties.Settings.Default.flag_form;
 			Properties.Settings.Default.cabang = cabang.Text;
 			Properties.Settings.Default.servis = service.Text;
 			Properties.Settings.Default.subservis = subservice.Text;
 			Properties.Settings.Default.tgl_awal = this.dateTimePicker1.Value.ToString("yy-M-dd");
 			Properties.Settings.Default.tgl_akhir = this.dateTimePicker2.Value.ToString("yy-M-dd");
-			Chart chart = new Chart();
-			chart.Show();
+			if (flag.Equals("Graph_Service"))
+			{
+				Chart chart = new Chart();
+				chart.Show();
+			}
+			else {
+				Detail_serviceorder detail = new Detail_serviceorder();
+				detail.Show();
+			}
+			
 		}
 
 		private void dateTimePicker1_ValueChanged(object sender, EventArgs e)

@@ -88,7 +88,8 @@ namespace Tikhe_POS
         {
             ReportInput RI = new ReportInput();
             RI.Show();
-        }
+			Properties.Settings.Default.flag_form = "Graph_service";
+		}
 
         private void service_summary_CheckedChanged(object sender, EventArgs e)
         {
@@ -103,8 +104,10 @@ namespace Tikhe_POS
 
         private void service_detail_CheckedChanged(object sender, EventArgs e)
         {
-
-        }
+			ReportInput_Customer Rs = new ReportInput_Customer();
+			Rs.Show();
+			Properties.Settings.Default.flag_form = "Detail_service";
+		}
 
         private void service_detail_MouseClick(object sender, MouseEventArgs e)
         {

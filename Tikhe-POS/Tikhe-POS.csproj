@@ -137,6 +137,14 @@
     <Compile Include="Chart.Designer.cs">
       <DependentUpon>Chart.cs</DependentUpon>
     </Compile>
+    <Compile Include="Detail_serviceorder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Detail_serviceorder.Designer.cs">
+      <DependentUpon>Detail_serviceorder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrderTransaction.cs" />
+    <Compile Include="Transaction.cs" />
     <Compile Include="Restock_Graph.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -227,6 +235,9 @@
     <EmbeddedResource Include="Chart.resx">
       <DependentUpon>Chart.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Detail_serviceorder.resx">
+      <DependentUpon>Detail_serviceorder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Restock_Graph.resx">
       <DependentUpon>Restock_Graph.cs</DependentUpon>
     </EmbeddedResource>
@@ -275,8 +286,10 @@
     <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Order.datasource" />
+    <None Include="Properties\DataSources\OrderTransaction.datasource" />
     <None Include="Properties\DataSources\Person.datasource" />
     <None Include="Properties\DataSources\Stok.datasource" />
+    <None Include="Properties\DataSources\Transaction.datasource" />
     <None Include="Properties\DataSources\Vendor.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
