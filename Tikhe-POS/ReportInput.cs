@@ -57,10 +57,7 @@ namespace Tikhe_POS
 				Chart chart = new Chart();
 				chart.Show();
 			}
-			else {
-				Detail_serviceorder detail = new Detail_serviceorder();
-				detail.Show();
-			}
+
 			
 		}
 
@@ -89,26 +86,29 @@ namespace Tikhe_POS
 			Properties.Settings.Default.subservis = subservice.Text;
 		}
 
-        int TogMove;
-        int X, Y;
-        private void ReportInput_MouseDown(object sender, MouseEventArgs e)
-        {
-            TogMove = 1;
-            X = e.X;
-            Y = e.Y;
-        }
+		private void ReportInput_Load(object sender, EventArgs e)
+		{
 
-        private void ReportInput_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (TogMove == 1)
-            {
-                this.SetDesktopLocation(MousePosition.X - X, MousePosition.Y - Y);
-            }
-        }
+		}
 
-        private void ReportInput_MouseUp(object sender, MouseEventArgs e)
-        {
-            TogMove = 0;
-        }
-    }
+		private void panel1_Paint(object sender, PaintEventArgs e)
+		{
+
+		}
+
+		private void label8_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void label9_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void label5_Click(object sender, EventArgs e)
+		{
+
+		}
+	}
 }

@@ -143,6 +143,12 @@
     <Compile Include="Detail_serviceorder.Designer.cs">
       <DependentUpon>Detail_serviceorder.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportInputDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportInputDetail.Designer.cs">
+      <DependentUpon>ReportInputDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="OrderTransaction.cs" />
     <Compile Include="Transaction.cs" />
     <Compile Include="Restock_Graph.cs">
@@ -237,6 +243,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Detail_serviceorder.resx">
       <DependentUpon>Detail_serviceorder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportInputDetail.resx">
+      <DependentUpon>ReportInputDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Restock_Graph.resx">
       <DependentUpon>Restock_Graph.cs</DependentUpon>

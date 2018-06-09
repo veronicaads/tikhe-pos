@@ -104,15 +104,14 @@ namespace Tikhe_POS
 
         private void service_detail_CheckedChanged(object sender, EventArgs e)
         {
-			ReportInput_Customer Rs = new ReportInput_Customer();
-			Rs.Show();
-			Properties.Settings.Default.flag_form = "Detail_service";
+			ReportInputDetail rd = new ReportInputDetail();
+			rd.Show();
+			Properties.Settings.Default.flag_form = "service_order";
 		}
 
         private void service_detail_MouseClick(object sender, MouseEventArgs e)
         {
-            ReportInput RI = new ReportInput();
-            RI.Show();
+            
         }
 
 		private void customer_graphic_CheckedChanged(object sender, EventArgs e)
