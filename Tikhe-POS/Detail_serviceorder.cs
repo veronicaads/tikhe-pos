@@ -54,5 +54,27 @@ namespace Tikhe_POS
 				MessageBox.Show(error.Message);
 			}
 		}
-	}
+
+        int TogMove;
+        int X, Y;
+        private void Detail_serviceorder_MouseDown(object sender, MouseEventArgs e)
+        {
+            TogMove = 1;
+            X = e.X;
+            Y = e.Y;
+        }
+
+        private void Detail_serviceorder_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (TogMove == 1)
+            {
+                this.SetDesktopLocation(MousePosition.X - X, MousePosition.Y - Y);
+            }
+        }
+
+        private void Detail_serviceorder_MouseUp(object sender, MouseEventArgs e)
+        {
+            TogMove = 0;
+        }
+    }
 }

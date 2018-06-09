@@ -51,8 +51,32 @@ namespace Tikhe_POS
 
 		private void button3_Click(object sender, EventArgs e)
 		{
-			ReportInput_Customer rs = new ReportInput_Customer();
-			rs.Hide();
+            //ReportInput_Customer rs = new ReportInput_Customer();
+            //rs.Hide();
+            Hide();
 		}
-	}
+
+
+        int TogMove;
+        int X, Y;
+        private void ReportInput_Customer_MouseDown(object sender, MouseEventArgs e)
+        {
+            TogMove = 1;
+            X = e.X;
+            Y = e.Y;
+        }
+
+        private void ReportInput_Customer_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (TogMove == 1)
+            {
+                this.SetDesktopLocation(MousePosition.X - X, MousePosition.Y - Y);
+            }
+        }
+
+        private void ReportInput_Customer_MouseUp(object sender, MouseEventArgs e)
+        {
+            TogMove = 0;
+        }
+    }
 }

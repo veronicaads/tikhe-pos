@@ -32,6 +32,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.button18 = new System.Windows.Forms.Button();
             this.orderBinding = new System.Windows.Forms.DataGridView();
+            this.iDOrderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.applicationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serviceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subserviceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cabangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tanggalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.transactionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,14 +51,6 @@
             this.orderTransactionBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.transactionBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.orderTransactionBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.iDOrderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.applicationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.serviceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subserviceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cabangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tanggalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.orderBinding)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.transactionBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
@@ -103,6 +103,54 @@
             this.orderBinding.Name = "orderBinding";
             this.orderBinding.Size = new System.Drawing.Size(846, 400);
             this.orderBinding.TabIndex = 11;
+            // 
+            // iDOrderDataGridViewTextBoxColumn
+            // 
+            this.iDOrderDataGridViewTextBoxColumn.DataPropertyName = "IDOrder";
+            this.iDOrderDataGridViewTextBoxColumn.HeaderText = "IDOrder";
+            this.iDOrderDataGridViewTextBoxColumn.Name = "iDOrderDataGridViewTextBoxColumn";
+            // 
+            // applicationDataGridViewTextBoxColumn
+            // 
+            this.applicationDataGridViewTextBoxColumn.DataPropertyName = "Application";
+            this.applicationDataGridViewTextBoxColumn.HeaderText = "Application";
+            this.applicationDataGridViewTextBoxColumn.Name = "applicationDataGridViewTextBoxColumn";
+            // 
+            // serviceDataGridViewTextBoxColumn
+            // 
+            this.serviceDataGridViewTextBoxColumn.DataPropertyName = "Service";
+            this.serviceDataGridViewTextBoxColumn.HeaderText = "Service";
+            this.serviceDataGridViewTextBoxColumn.Name = "serviceDataGridViewTextBoxColumn";
+            // 
+            // subserviceDataGridViewTextBoxColumn
+            // 
+            this.subserviceDataGridViewTextBoxColumn.DataPropertyName = "Subservice";
+            this.subserviceDataGridViewTextBoxColumn.HeaderText = "Subservice";
+            this.subserviceDataGridViewTextBoxColumn.Name = "subserviceDataGridViewTextBoxColumn";
+            // 
+            // cabangDataGridViewTextBoxColumn
+            // 
+            this.cabangDataGridViewTextBoxColumn.DataPropertyName = "Cabang";
+            this.cabangDataGridViewTextBoxColumn.HeaderText = "Cabang";
+            this.cabangDataGridViewTextBoxColumn.Name = "cabangDataGridViewTextBoxColumn";
+            // 
+            // customerDataGridViewTextBoxColumn
+            // 
+            this.customerDataGridViewTextBoxColumn.DataPropertyName = "Customer";
+            this.customerDataGridViewTextBoxColumn.HeaderText = "Customer";
+            this.customerDataGridViewTextBoxColumn.Name = "customerDataGridViewTextBoxColumn";
+            // 
+            // tanggalDataGridViewTextBoxColumn
+            // 
+            this.tanggalDataGridViewTextBoxColumn.DataPropertyName = "Tanggal";
+            this.tanggalDataGridViewTextBoxColumn.HeaderText = "Tanggal";
+            this.tanggalDataGridViewTextBoxColumn.Name = "tanggalDataGridViewTextBoxColumn";
+            // 
+            // Total
+            // 
+            this.Total.DataPropertyName = "Total";
+            this.Total.HeaderText = "Total";
+            this.Total.Name = "Total";
             // 
             // transactionBindingSource
             // 
@@ -201,54 +249,6 @@
             // 
             this.orderTransactionBindingSource.DataSource = typeof(Tikhe_POS.OrderTransaction);
             // 
-            // iDOrderDataGridViewTextBoxColumn
-            // 
-            this.iDOrderDataGridViewTextBoxColumn.DataPropertyName = "IDOrder";
-            this.iDOrderDataGridViewTextBoxColumn.HeaderText = "IDOrder";
-            this.iDOrderDataGridViewTextBoxColumn.Name = "iDOrderDataGridViewTextBoxColumn";
-            // 
-            // applicationDataGridViewTextBoxColumn
-            // 
-            this.applicationDataGridViewTextBoxColumn.DataPropertyName = "Application";
-            this.applicationDataGridViewTextBoxColumn.HeaderText = "Application";
-            this.applicationDataGridViewTextBoxColumn.Name = "applicationDataGridViewTextBoxColumn";
-            // 
-            // serviceDataGridViewTextBoxColumn
-            // 
-            this.serviceDataGridViewTextBoxColumn.DataPropertyName = "Service";
-            this.serviceDataGridViewTextBoxColumn.HeaderText = "Service";
-            this.serviceDataGridViewTextBoxColumn.Name = "serviceDataGridViewTextBoxColumn";
-            // 
-            // subserviceDataGridViewTextBoxColumn
-            // 
-            this.subserviceDataGridViewTextBoxColumn.DataPropertyName = "Subservice";
-            this.subserviceDataGridViewTextBoxColumn.HeaderText = "Subservice";
-            this.subserviceDataGridViewTextBoxColumn.Name = "subserviceDataGridViewTextBoxColumn";
-            // 
-            // cabangDataGridViewTextBoxColumn
-            // 
-            this.cabangDataGridViewTextBoxColumn.DataPropertyName = "Cabang";
-            this.cabangDataGridViewTextBoxColumn.HeaderText = "Cabang";
-            this.cabangDataGridViewTextBoxColumn.Name = "cabangDataGridViewTextBoxColumn";
-            // 
-            // customerDataGridViewTextBoxColumn
-            // 
-            this.customerDataGridViewTextBoxColumn.DataPropertyName = "Customer";
-            this.customerDataGridViewTextBoxColumn.HeaderText = "Customer";
-            this.customerDataGridViewTextBoxColumn.Name = "customerDataGridViewTextBoxColumn";
-            // 
-            // tanggalDataGridViewTextBoxColumn
-            // 
-            this.tanggalDataGridViewTextBoxColumn.DataPropertyName = "Tanggal";
-            this.tanggalDataGridViewTextBoxColumn.HeaderText = "Tanggal";
-            this.tanggalDataGridViewTextBoxColumn.Name = "tanggalDataGridViewTextBoxColumn";
-            // 
-            // Total
-            // 
-            this.Total.DataPropertyName = "Total";
-            this.Total.HeaderText = "Total";
-            this.Total.Name = "Total";
-            // 
             // Detail_serviceorder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -269,6 +269,9 @@
             this.Name = "Detail_serviceorder";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Customer_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Detail_serviceorder_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Detail_serviceorder_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Detail_serviceorder_MouseUp);
             ((System.ComponentModel.ISupportInitialize)(this.orderBinding)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.transactionBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);

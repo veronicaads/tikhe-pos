@@ -257,6 +257,7 @@
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "Employee";
             this.Text = "Employee";
+            this.Load += new System.EventHandler(this.Employee_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Employee_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Employee_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Employee_MouseUp);
