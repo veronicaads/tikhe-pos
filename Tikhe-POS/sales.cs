@@ -36,6 +36,7 @@ namespace Tikhe_POS
             total_txt.Text = total_harga.ToString();
             subservice.Add("Fast Clean");
             service.Add("Reclean");
+            harga_sub.Add("30000");
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -46,6 +47,7 @@ namespace Tikhe_POS
             total_txt.Text = total_harga.ToString();
             subservice.Add("Ordinary Sizing");
             service.Add("Repair");
+            harga_sub.Add("10000");
         }
 
         private void button18_Click(object sender, EventArgs e)
@@ -56,6 +58,7 @@ namespace Tikhe_POS
         }
         List<string> service = new List<string>();
         List<string> subservice = new List<string>();
+        List<string> harga_sub = new List<string>();
 
 
         private void button1_Click(object sender, EventArgs e)
@@ -66,6 +69,7 @@ namespace Tikhe_POS
             total_txt.Text = total_harga.ToString();
             subservice.Add("Deep Clean");
             service.Add("Reclean");
+            harga_sub.Add("50000");
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -76,6 +80,7 @@ namespace Tikhe_POS
             total_txt.Text = total_harga.ToString();
             subservice.Add("Unyellowing");
             service.Add("Reclean");
+            harga_sub.Add("20000");
         }
         int selectedRows;
         String tmp;
@@ -88,13 +93,15 @@ namespace Tikhe_POS
                     selectedRows = e.RowIndex;
                     DataGridViewRow row = dataGridView2.Rows[selectedRows];
                     tmp = row.Cells[2].Value.ToString();
+                    harga_sub.Remove(tmp);
                     total_harga = total_harga - Convert.ToInt32(tmp);
                     subtotal_txt.Text = total_harga.ToString();
                     total_txt.Text = total_harga.ToString();
                     tmp = row.Cells[4].Value.ToString();
-                    orderBindingSource1.RemoveCurrent();
                     service.Remove(tmp);
                     subservice.Remove(tmp);
+                    orderBindingSource1.RemoveCurrent();
+                    
                 }
             }
         }
@@ -107,6 +114,7 @@ namespace Tikhe_POS
             total_txt.Text = total_harga.ToString();
             subservice.Add("Full Sizing");
             service.Add("Reclean");
+            harga_sub.Add("15000");
 
         }
 
@@ -118,6 +126,7 @@ namespace Tikhe_POS
             total_txt.Text = total_harga.ToString();
             subservice.Add("Ordinary Sewing");
             service.Add("Repair");
+            harga_sub.Add("30000");
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -128,6 +137,7 @@ namespace Tikhe_POS
             total_txt.Text = total_harga.ToString();
             subservice.Add("Full Sewing");
             service.Add("Repair");
+            harga_sub.Add("30000");
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -138,7 +148,7 @@ namespace Tikhe_POS
             total_txt.Text = total_harga.ToString();
             subservice.Add("Remove Out Sol");
             service.Add("Repair");
-
+            harga_sub.Add("100000");
         }
 
         private void button11_Click(object sender, EventArgs e)
@@ -149,6 +159,7 @@ namespace Tikhe_POS
             total_txt.Text = total_harga.ToString();
             subservice.Add("Leather Patch");
             service.Add("Repair");
+            harga_sub.Add("30000");
         }
 
         private void button21_Click(object sender, EventArgs e)
@@ -160,6 +171,7 @@ namespace Tikhe_POS
             total_txt.Text = subtotal_txt.Text;
             subservice.Add("Remove In Sol");
             service.Add("Repair");
+            harga_sub.Add("20000");
         }
 
         private void button22_Click(object sender, EventArgs e)
@@ -170,6 +182,7 @@ namespace Tikhe_POS
             total_txt.Text = total_harga.ToString();
             subservice.Add("Leather Pressing");
             service.Add("Repair");
+            harga_sub.Add("50000");
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -180,6 +193,7 @@ namespace Tikhe_POS
             total_txt.Text = total_harga.ToString();
             subservice.Add("1 Color");
             service.Add("Repaint");
+            harga_sub.Add("100000");
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -190,7 +204,7 @@ namespace Tikhe_POS
             total_txt.Text = total_harga.ToString();
             subservice.Add("2 Color");
             service.Add("Repaint");
-
+            harga_sub.Add("120000");
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -201,8 +215,7 @@ namespace Tikhe_POS
             total_txt.Text = total_harga.ToString();
             subservice.Add("3 Color");
             service.Add("Repaint");
-
-
+            harga_sub.Add("250000");
         }
 
         private void button13_Click(object sender, EventArgs e)
@@ -213,7 +226,7 @@ namespace Tikhe_POS
             total_txt.Text = total_harga.ToString();
             subservice.Add("Boost");
             service.Add("Repaint");
-
+            harga_sub.Add("70000");
         }
 
 
@@ -267,7 +280,8 @@ namespace Tikhe_POS
 
                     }
 
-                    pesanan = @"{'customer':'" + combo_customer.Text + "','biaya':'" + total_txt.Text + "','pembayaran' : '" + "-" + "','cabang' : '" + cabang_combo.Text + "','merek_sepatu' : '" + comboBox2.Text + "','orderid' : '" + order_id + "','service' : '" + service[i] + "','subService' : '" + subservice[i] + "','diskon' : '" + diskon_txt.Text + "','tanggal_masuk' : '" + tanggalmasuk + "'}";
+                    pesanan = @"{'customer':'" + combo_customer.Text + "','biaya':'" + harga_sub[i] + "','pembayaran' : '" + "-" + "','cabang' : '" + cabang_combo.Text + "','merek_sepatu' : '" + comboBox2.Text + "','orderid' : '" + order_id + "','service' : '" + service[i] + "','subService' : '" + subservice[i] + "','diskon' : '" + diskon_txt.Text + "','tanggal_masuk' : '" + tanggalmasuk + "'}";
+                    //pesanan = @"{'customer':'" + combo_customer.Text + "','biaya':'" + total_txt.Text + "','pembayaran' : '" + "-" + "','cabang' : '" + cabang_combo.Text + "','merek_sepatu' : '" + comboBox2.Text + "','orderid' : '" + order_id + "','service' : '" + service[i] + "','subService' : '" + subservice[i] + "','diskon' : '" + diskon_txt.Text + "','tanggal_masuk' : '" + tanggalmasuk + "'}";
 
                     FirebaseDB Orders = firebaseDB.Node(order_id);
                     Orders.Put(pesanan);
@@ -356,6 +370,7 @@ namespace Tikhe_POS
             total_txt.Text = total_harga.ToString();
             subservice.Add("Sabun 1");
             service.Add("Sabun");
+            harga_sub.Add("25000");
         }
 
         private void button5_Click_1(object sender, EventArgs e)
@@ -366,6 +381,7 @@ namespace Tikhe_POS
             total_txt.Text = total_harga.ToString();
             subservice.Add("Sabun 2");
             service.Add("Sabun");
+            harga_sub.Add("45000");
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -376,6 +392,7 @@ namespace Tikhe_POS
             total_txt.Text = total_harga.ToString();
             subservice.Add("Sabun 3");
             service.Add("Sabun");
+            harga_sub.Add("65000");
         }
 
         private void cabang_combo_SelectedIndexChanged(object sender, EventArgs e)

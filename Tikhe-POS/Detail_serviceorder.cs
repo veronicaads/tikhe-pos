@@ -38,13 +38,13 @@ namespace Tikhe_POS
 				String servis = Properties.Settings.Default.subservis;
 				String app_type = Properties.Settings.Default.servis;
 				JObject stuff = JObject.Parse(getResponse.JSONContent);
-				MessageBox.Show(getResponse.JSONContent);
+				//MessageBox.Show(getResponse.JSONContent);
 				IEnumerable<JToken> data= stuff.SelectTokens("$..[?(@.tanggal_masuk >= '" + tgl_awal + "' && @.tanggal_masuk < '" + tgl_akhir + "' )]");
 				foreach (JToken item in data) {
 					dynamic stuffs = JObject.Parse(item.ToString());
 					String total = stuffs.biaya;
 					MessageBox.Show(total);
-					transactionBindingSource.Clear();
+					//transactionBindingSource.Clear();
 					transactionBindingSource.Add(new Transaction() { IDOrder = stuffs.orderid, Application = "Store", Service = stuffs.service, Subservice = stuffs.subService,  Cabang = stuffs.cabang, Customer = stuffs.customer, Tanggal = stuffs.tanggal_masuk,Total = stuffs.biaya
 					});
 				}
