@@ -208,7 +208,7 @@ namespace Tikhe_POS
         private void button13_Click(object sender, EventArgs e)
         {
             orderBindingSource1.Add(new Order() { No = "S15", SubService = "Boost", Harga = "70000", Service = "Repaint" });
-            total_harga += 150000;
+            total_harga += 70000;
             subtotal_txt.Text = total_harga.ToString();
             total_txt.Text = total_harga.ToString();
             subservice.Add("Boost");
@@ -234,47 +234,52 @@ namespace Tikhe_POS
         int umn_order, pertamina_order, mercubuana_order, atmajaya_order;
         private void button23_Click(object sender, EventArgs e)
         {
-            
-
-            String tanggalmasuk = DateTime.Now.ToString("yy-M-dd");
-
-            FirebaseDB firebaseDB = new FirebaseDB("https://mobile-shoebox.firebaseio.com/orders_store");
-
-            FirebaseDB firebase = new FirebaseDB("https://mobile-shoebox.firebaseio.com/order_keys");
-
-            FirebaseResponse getResponse = firebase.Get();
-            String order_id="";
-            var data = "";
-            var pesanan = "";
-            dynamic stuff = JObject.Parse(getResponse.JSONContent);
-             umn_order = Convert.ToInt32(stuff.umn);
-             pertamina_order = Convert.ToInt32(stuff.pertamina);
-             mercubuana_order = Convert.ToInt32(stuff.mercubuana);
-             atmajaya_order = Convert.ToInt32(stuff.atmajaya);
-
-            for(int i = 0; i < service.Count; i++)
+            if (cabang_combo.Text.Equals(""))
             {
-                if (cabang_combo.Text.Equals("UMN")) { umn_order += 1; order_id = generate_orderid("u", umn_order); }
-                else if (cabang_combo.Text.Equals("Pertamina")) { pertamina_order += 1; order_id = generate_orderid("p", pertamina_order); }
-                else if (cabang_combo.Text.Equals("Mercubuana")) { mercubuana_order += 1; order_id = generate_orderid("m", mercubuana_order); }
-                else if (cabang_combo.Text.Equals("Atmajaya")) { atmajaya_order += 1; order_id = generate_orderid("a", atmajaya_order); }
-                else if (cabang_combo.Text.Equals("Others"))
-                {
+                MessageBox.Show("Wajib Memilih cabang service !");
+            }
+            else
+            {
+                String tanggalmasuk = DateTime.Now.ToString("yy-M-dd");
 
+                FirebaseDB firebaseDB = new FirebaseDB("https://mobile-shoebox.firebaseio.com/orders_store");
+
+                FirebaseDB firebase = new FirebaseDB("https://mobile-shoebox.firebaseio.com/order_keys");
+
+                FirebaseResponse getResponse = firebase.Get();
+                String order_id = "";
+                var data = "";
+                var pesanan = "";
+                dynamic stuff = JObject.Parse(getResponse.JSONContent);
+                umn_order = Convert.ToInt32(stuff.umn);
+                pertamina_order = Convert.ToInt32(stuff.pertamina);
+                mercubuana_order = Convert.ToInt32(stuff.mercubuana);
+                atmajaya_order = Convert.ToInt32(stuff.atmajaya);
+
+                for (int i = 0; i < service.Count; i++)
+                {
+                    if (cabang_combo.Text.Equals("UMN")) { umn_order += 1; order_id = generate_orderid("u", umn_order); }
+                    else if (cabang_combo.Text.Equals("Pertamina")) { pertamina_order += 1; order_id = generate_orderid("p", pertamina_order); }
+                    else if (cabang_combo.Text.Equals("Mercubuana")) { mercubuana_order += 1; order_id = generate_orderid("m", mercubuana_order); }
+                    else if (cabang_combo.Text.Equals("Atmajaya")) { atmajaya_order += 1; order_id = generate_orderid("a", atmajaya_order); }
+                    else if (cabang_combo.Text.Equals("Others"))
+                    {
+
+                    }
+
+                    pesanan = @"{'customer':'" + combo_customer.Text + "','biaya':'" + total_txt.Text + "','pembayaran' : '" + "-" + "','cabang' : '" + cabang_combo.Text + "','merek_sepatu' : '" + comboBox2.Text + "','orderid' : '" + order_id + "','service' : '" + service[i] + "','subService' : '" + subservice[i] + "','diskon' : '" + diskon_txt.Text + "','tanggal_masuk' : '" + tanggalmasuk + "'}";
+
+                    FirebaseDB Orders = firebaseDB.Node(order_id);
+                    Orders.Put(pesanan);
                 }
 
-                pesanan = @"{'customer':'" + combo_customer.Text + "','biaya':'" + total_txt.Text + "','pembayaran' : '" + "-" + "','cabang' : '" + cabang_combo.Text + "','merek_sepatu' : '" + comboBox2.Text + "','orderid' : '" + order_id + "','service' : '" + service[i] + "','subService' : '" + subservice[i] + "','diskon' : '" + diskon_txt.Text + "','tanggal_masuk' : '" + tanggalmasuk + "'}";
+                data = @"{'UMN':'" + umn_order + "','atmajaya' : '" + atmajaya_order + "','laci' : '" + "occupied" + "','mercubuana' : '" + mercubuana_order + "','pertamina' : '" + pertamina_order + "','umn' : '" + umn_order + "'}";
+                firebase.Patch(data);
 
-                FirebaseDB Orders = firebaseDB.Node(order_id);
-                Orders.Put(pesanan);
+                total_harga = Convert.ToInt32(total_txt.Text);
+                Payment form = new Payment(total_harga, order_id);
+                form.Show(); Hide();
             }
-            
-            data = @"{'UMN':'" + umn_order + "','atmajaya' : '" + atmajaya_order + "','laci' : '" + "occupied" + "','mercubuana' : '" + mercubuana_order + "','pertamina' : '" + pertamina_order + "','umn' : '" +umn_order+"'}";
-            firebase.Patch(data);
-
-            total_harga = Convert.ToInt32(total_txt.Text);
-            Payment form = new Payment(total_harga, order_id);
-            form.Show();Hide();
         }
 
         private void button24_Click(object sender, EventArgs e)
@@ -371,6 +376,11 @@ namespace Tikhe_POS
             total_txt.Text = total_harga.ToString();
             subservice.Add("Sabun 3");
             service.Add("Sabun");
+        }
+
+        private void cabang_combo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
 
         private void sales_Load(object sender, EventArgs e)
