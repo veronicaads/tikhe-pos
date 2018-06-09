@@ -77,7 +77,7 @@ namespace Tikhe_POS
             if (MessageBox.Show("Are you sure to Add this item ?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 
-                String tanggalmasuk = DateTime.Now.ToString("dd-MM-yy");
+                String tanggalmasuk = DateTime.Now.ToString("yy-M-dd");
 
                 String supp_id = "";
                 
