@@ -64,6 +64,11 @@ namespace Tikhe_POS
             }
         }
 
+        private void Employee_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void Employee_MouseUp(object sender, MouseEventArgs e)
         {
             TogMove = 0;
