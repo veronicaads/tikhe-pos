@@ -80,6 +80,7 @@
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(408, 65);
 			this.panel1.TabIndex = 6;
+			this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
 			// 
 			// label6
 			// 
@@ -135,6 +136,7 @@
 			this.label8.Size = new System.Drawing.Size(67, 16);
 			this.label8.TabIndex = 16;
 			this.label8.Text = "Start Date";
+			this.label8.Click += new System.EventHandler(this.label8_Click);
 			// 
 			// label9
 			// 
@@ -146,6 +148,7 @@
 			this.label9.Size = new System.Drawing.Size(64, 16);
 			this.label9.TabIndex = 17;
 			this.label9.Text = "End Date";
+			this.label9.Click += new System.EventHandler(this.label9_Click);
 			// 
 			// button3
 			// 
@@ -194,6 +197,7 @@
 			this.label5.Size = new System.Drawing.Size(94, 16);
 			this.label5.TabIndex = 4;
 			this.label5.Text = "Store Location";
+			this.label5.Click += new System.EventHandler(this.label5_Click);
 			// 
 			// cabang
 			// 
@@ -271,6 +275,7 @@
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "ReportInput";
 			this.Text = "Form1";
+			this.Load += new System.EventHandler(this.ReportInput_Load);
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
 			this.ResumeLayout(false);

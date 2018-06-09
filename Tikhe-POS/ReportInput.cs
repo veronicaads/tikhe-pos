@@ -57,10 +57,7 @@ namespace Tikhe_POS
 				Chart chart = new Chart();
 				chart.Show();
 			}
-			else {
-				Detail_serviceorder detail = new Detail_serviceorder();
-				detail.Show();
-			}
+
 			
 		}
 
@@ -87,6 +84,31 @@ namespace Tikhe_POS
 		private void subservis_clicked(object sender, EventArgs e)
 		{
 			Properties.Settings.Default.subservis = subservice.Text;
+		}
+
+		private void ReportInput_Load(object sender, EventArgs e)
+		{
+
+		}
+
+		private void panel1_Paint(object sender, PaintEventArgs e)
+		{
+
+		}
+
+		private void label8_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void label9_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void label5_Click(object sender, EventArgs e)
+		{
+
 		}
 	}
 }
