@@ -32,6 +32,7 @@
 			this.label2 = new System.Windows.Forms.Label();
 			this.button18 = new System.Windows.Forms.Button();
 			this.orderBinding = new System.Windows.Forms.DataGridView();
+			this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.label3 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
@@ -39,7 +40,10 @@
 			this.button1 = new System.Windows.Forms.Button();
 			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.label5 = new System.Windows.Forms.Label();
-			this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.button2 = new System.Windows.Forms.Button();
+			this.button3 = new System.Windows.Forms.Button();
+			this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+			this.printDocument2 = new System.Drawing.Printing.PrintDocument();
 			this.iDOrderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.applicationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.serviceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,18 +51,18 @@
 			this.cabangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.customerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.tanggalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.transactionBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
 			this.transactionBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
 			this.transactionBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.orderTransactionBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
 			this.orderTransactionBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.transactionBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
 			((System.ComponentModel.ISupportInitialize)(this.orderBinding)).BeginInit();
 			this.panel1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.transactionBindingSource2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.transactionBindingSource1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.transactionBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.orderTransactionBindingSource1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.orderTransactionBindingSource)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.transactionBindingSource2)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// label2
@@ -105,6 +109,13 @@
 			this.orderBinding.Name = "orderBinding";
 			this.orderBinding.Size = new System.Drawing.Size(846, 400);
 			this.orderBinding.TabIndex = 11;
+			// 
+			// Total
+			// 
+			this.Total.DataPropertyName = "Total";
+			this.Total.HeaderText = "Total";
+			this.Total.Name = "Total";
+			this.Total.ReadOnly = true;
 			// 
 			// panel1
 			// 
@@ -187,12 +198,29 @@
 			this.label5.TabIndex = 14;
 			this.label5.Text = "Grand Total";
 			// 
-			// Total
+			// button2
 			// 
-			this.Total.DataPropertyName = "Total";
-			this.Total.HeaderText = "Total";
-			this.Total.Name = "Total";
-			this.Total.ReadOnly = true;
+			this.button2.Location = new System.Drawing.Point(16, 550);
+			this.button2.Name = "button2";
+			this.button2.Size = new System.Drawing.Size(158, 36);
+			this.button2.TabIndex = 15;
+			this.button2.Text = "Export to Excel";
+			this.button2.UseVisualStyleBackColor = true;
+			this.button2.Click += new System.EventHandler(this.button2_Click);
+			// 
+			// button3
+			// 
+			this.button3.Location = new System.Drawing.Point(196, 550);
+			this.button3.Name = "button3";
+			this.button3.Size = new System.Drawing.Size(124, 36);
+			this.button3.TabIndex = 16;
+			this.button3.Text = "Export to PDF";
+			this.button3.UseVisualStyleBackColor = true;
+			this.button3.Click += new System.EventHandler(this.button3_Click);
+			// 
+			// printDocument1
+			// 
+			this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
 			// 
 			// iDOrderDataGridViewTextBoxColumn
 			// 
@@ -236,6 +264,10 @@
 			this.tanggalDataGridViewTextBoxColumn.HeaderText = "Tanggal";
 			this.tanggalDataGridViewTextBoxColumn.Name = "tanggalDataGridViewTextBoxColumn";
 			// 
+			// transactionBindingSource2
+			// 
+			this.transactionBindingSource2.DataSource = typeof(Tikhe_POS.Transaction);
+			// 
 			// transactionBindingSource1
 			// 
 			this.transactionBindingSource1.DataSource = typeof(Tikhe_POS.Transaction);
@@ -252,16 +284,14 @@
 			// 
 			this.orderTransactionBindingSource.DataSource = typeof(Tikhe_POS.OrderTransaction);
 			// 
-			// transactionBindingSource2
-			// 
-			this.transactionBindingSource2.DataSource = typeof(Tikhe_POS.Transaction);
-			// 
 			// Detail_serviceorder
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(89)))), ((int)(((byte)(134)))));
 			this.ClientSize = new System.Drawing.Size(875, 598);
+			this.Controls.Add(this.button3);
+			this.Controls.Add(this.button2);
 			this.Controls.Add(this.label5);
 			this.Controls.Add(this.textBox1);
 			this.Controls.Add(this.label1);
@@ -279,11 +309,11 @@
 			((System.ComponentModel.ISupportInitialize)(this.orderBinding)).EndInit();
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.transactionBindingSource2)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.transactionBindingSource1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.transactionBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.orderTransactionBindingSource1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.orderTransactionBindingSource)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.transactionBindingSource2)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -314,5 +344,9 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn tanggalDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Total;
 		private System.Windows.Forms.BindingSource transactionBindingSource2;
+		private System.Windows.Forms.Button button2;
+		private System.Windows.Forms.Button button3;
+		private System.Drawing.Printing.PrintDocument printDocument1;
+		private System.Drawing.Printing.PrintDocument printDocument2;
 	}
 }
