@@ -100,8 +100,7 @@ namespace Tikhe_POS
                     tmp = row.Cells[4].Value.ToString();
                     service.Remove(tmp);
                     subservice.Remove(tmp);
-                    orderBindingSource1.RemoveCurrent();
-                    
+                    orderBindingSource1.RemoveCurrent();                  
                 }
             }
         }
@@ -115,7 +114,6 @@ namespace Tikhe_POS
             subservice.Add("Full Sizing");
             service.Add("Reclean");
             harga_sub.Add("15000");
-
         }
 
         private void ordinary_sewing_btn_Click(object sender, EventArgs e)
@@ -289,10 +287,13 @@ namespace Tikhe_POS
 
                 data = @"{'UMN':'" + umn_order + "','atmajaya' : '" + atmajaya_order + "','laci' : '" + "occupied" + "','mercubuana' : '" + mercubuana_order + "','pertamina' : '" + pertamina_order + "','umn' : '" + umn_order + "'}";
                 firebase.Patch(data);
-
-                total_harga = Convert.ToInt32(total_txt.Text);
+				Properties.Settings.Default.cabang = cabang_combo.Text;
+				Properties.Settings.Default.customer = combo_customer.Text;
+				Properties.Settings.Default.tanggal_order = tanggalmasuk;
+				total_harga = Convert.ToInt32(total_txt.Text);
                 Payment form = new Payment(total_harga, order_id);
                 form.Show(); Hide();
+				
             }
         }
 

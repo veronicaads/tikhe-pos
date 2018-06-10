@@ -142,6 +142,9 @@ namespace Tikhe_POS
 
             MainMenu balik = new MainMenu();
             balik.Show();Hide();
+			Invoices invoice = new Invoices();
+			invoice.Show();
+			
         }
 
         private void panel1_MouseUp(object sender, MouseEventArgs e)

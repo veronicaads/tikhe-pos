@@ -67,204 +67,318 @@ namespace Tikhe_POS
 				String cabang = Properties.Settings.Default.cabang;
 				String tgl_akhir = Properties.Settings.Default.tgl_akhir;
 				String tgl_awal = Properties.Settings.Default.tgl_awal;
-				String servis = Properties.Settings.Default.subservis;
 				String app_type = Properties.Settings.Default.servis;
+				String flag = Properties.Settings.Default.flag_form;
 				JObject stuff = JObject.Parse(getResponse.JSONContent);
 				JObject stuffss = JObject.Parse(getResponses.JSONContent);
-				if (cabang.Equals("Location")) {
-					IEnumerable<JToken> data = stuff.SelectTokens("$..[?(@.service != 'Sabun' && @.tanggal_masuk >= '" + tgl_awal + "' && @.tanggal_masuk < '" + tgl_akhir + "' )]");
-					foreach (JToken item in data)
-					{
-						dynamic stuffs = JObject.Parse(item.ToString());
-						transactionBindingSource2.Add(new Transaction()
-						{
-							IDOrder = stuffs.orderid,
-							Application = "Store",
-							Service = stuffs.service,
-							Subservice = stuffs.subService,
-							Cabang = stuffs.cabang,
-							Customer = stuffs.customer,
-							Tanggal = stuffs.tanggal_masuk,
-							Total = stuffs.biaya
-						});
-						total = total + Convert.ToInt32(stuffs.biaya);
-					}
-					IEnumerable<JToken> data_m = stuffss.SelectTokens("$..[?(@.service != 'Sabun' && @.tanggal_masuk >= '" + tgl_awal + "' && @.tanggal_masuk < '" + tgl_akhir + "' )]");
-					foreach (JToken item in data_m)
-					{
-						dynamic stuffs = JObject.Parse(item.ToString());
-						//MessageBox.Show(item.ToString());
-						transactionBindingSource2.Add(new Transaction()
-						{
-							IDOrder = stuffs.orderId,
-							Application = "Mobile",
-							Service = stuffs.service,
-							Subservice = stuffs.subService,
-							Cabang = stuffs.cabang,
-							Customer = stuffs.userEmail,
-							Tanggal = stuffs.tanggal_masuk,
-							Total = stuffs.biaya
-						});
-						total = total + Convert.ToInt32(stuffs.biaya);
-					}
-				}
-				else if (cabang.Equals("Mercubuana"))
+				//MessageBox.Show(flag);
+				if (flag.Equals("service_order"))
 				{
-					IEnumerable<JToken> data= stuff.SelectTokens("$..[?(@.cabang == 'Mercubuana' && @.service != 'Sabun' && @.tanggal_masuk >= '" + tgl_awal + "' && @.tanggal_masuk < '" + tgl_akhir + "' )]");
-					foreach (JToken item in data)
+					if (cabang.Equals("Location"))
 					{
-						dynamic stuffs = JObject.Parse(item.ToString());
-						//MessageBox.Show(total);
-						transactionBindingSource2.Add(new Transaction()
+						IEnumerable<JToken> data = stuff.SelectTokens("$..[?(@.service != 'Sabun' && @.tanggal_masuk >= '" + tgl_awal + "' && @.tanggal_masuk < '" + tgl_akhir + "' )]");
+						foreach (JToken item in data)
 						{
-							IDOrder = stuffs.orderid,
-							Application = "Store",
-							Service = stuffs.service,
-							Subservice = stuffs.subService,
-							Cabang = stuffs.cabang,
-							Customer = stuffs.customer,
-							Tanggal = stuffs.tanggal_masuk,
-							Total = stuffs.biaya
-						});
-						total = total + Convert.ToInt32(stuffs.biaya);
+							dynamic stuffs = JObject.Parse(item.ToString());
+							transactionBindingSource2.Add(new Transaction()
+							{
+								IDOrder = stuffs.orderid,
+								Application = "Store",
+								Service = stuffs.service,
+								Subservice = stuffs.subService,
+								Cabang = stuffs.cabang,
+								Customer = stuffs.customer,
+								Tanggal = stuffs.tanggal_masuk,
+								Total = stuffs.biaya
+							});
+							total = total + Convert.ToInt32(stuffs.biaya);
+						}
+						IEnumerable<JToken> data_m = stuffss.SelectTokens("$..[?(@.service != 'Sabun' && @.tanggal_masuk >= '" + tgl_awal + "' && @.tanggal_masuk < '" + tgl_akhir + "' )]");
+						foreach (JToken item in data_m)
+						{
+							dynamic stuffs = JObject.Parse(item.ToString());
+							//MessageBox.Show(item.ToString());
+							transactionBindingSource2.Add(new Transaction()
+							{
+								IDOrder = stuffs.orderId,
+								Application = "Mobile",
+								Service = stuffs.service,
+								Subservice = stuffs.subService,
+								Cabang = stuffs.cabang,
+								Customer = stuffs.userEmail,
+								Tanggal = stuffs.tanggal_masuk,
+								Total = stuffs.biaya
+							});
+							total = total + Convert.ToInt32(stuffs.biaya);
+						}
 					}
-					IEnumerable<JToken> data_m = stuffss.SelectTokens("$..[?(@.cabang == 'Mercubuana' && @.service != 'Sabun' && @.tanggal_masuk >= '" + tgl_awal + "' && @.tanggal_masuk < '" + tgl_akhir + "' )]");
-					foreach (JToken item in data_m)
+					else if (cabang.Equals("Mercubuana"))
 					{
-						dynamic stuffs = JObject.Parse(item.ToString());
-						//MessageBox.Show(total);
-						transactionBindingSource2.Add(new Transaction()
+						IEnumerable<JToken> data = stuff.SelectTokens("$..[?(@.cabang == 'Mercubuana' && @.service != 'Sabun' && @.tanggal_masuk >= '" + tgl_awal + "' && @.tanggal_masuk < '" + tgl_akhir + "' )]");
+						foreach (JToken item in data)
 						{
-							IDOrder = stuffs.orderId,
-							Application = "Mobile",
-							Service = stuffs.service,
-							Subservice = stuffs.subService,
-							Cabang = stuffs.cabang,
-							Customer = stuffs.userEmail,
-							Tanggal = stuffs.tanggal_masuk,
-							Total = stuffs.biaya
-						});
-						total = total + Convert.ToInt32(stuffs.biaya);
+							dynamic stuffs = JObject.Parse(item.ToString());
+							//MessageBox.Show(total);
+							transactionBindingSource2.Add(new Transaction()
+							{
+								IDOrder = stuffs.orderid,
+								Application = "Store",
+								Service = stuffs.service,
+								Subservice = stuffs.subService,
+								Cabang = stuffs.cabang,
+								Customer = stuffs.customer,
+								Tanggal = stuffs.tanggal_masuk,
+								Total = stuffs.biaya
+							});
+							total = total + Convert.ToInt32(stuffs.biaya);
+						}
+						IEnumerable<JToken> data_m = stuffss.SelectTokens("$..[?(@.cabang == 'Mercubuana' && @.service != 'Sabun' && @.tanggal_masuk >= '" + tgl_awal + "' && @.tanggal_masuk < '" + tgl_akhir + "' )]");
+						foreach (JToken item in data_m)
+						{
+							dynamic stuffs = JObject.Parse(item.ToString());
+							//MessageBox.Show(total);
+							transactionBindingSource2.Add(new Transaction()
+							{
+								IDOrder = stuffs.orderId,
+								Application = "Mobile",
+								Service = stuffs.service,
+								Subservice = stuffs.subService,
+								Cabang = stuffs.cabang,
+								Customer = stuffs.userEmail,
+								Tanggal = stuffs.tanggal_masuk,
+								Total = stuffs.biaya
+							});
+							total = total + Convert.ToInt32(stuffs.biaya);
+						}
 					}
+					else if (cabang.Equals("UMN"))
+					{
+						IEnumerable<JToken> data = stuff.SelectTokens("$..[?(@.cabang == 'UMN' && @.service != 'Sabun' && @.tanggal_masuk >= '" + tgl_awal + "' && @.tanggal_masuk < '" + tgl_akhir + "' )]");
+						foreach (JToken item in data)
+						{
+							dynamic stuffs = JObject.Parse(item.ToString());
+							//MessageBox.Show(total);
+							transactionBindingSource2.Add(new Transaction()
+							{
+								IDOrder = stuffs.orderid,
+								Application = "Store",
+								Service = stuffs.service,
+								Subservice = stuffs.subService,
+								Cabang = stuffs.cabang,
+								Customer = stuffs.customer,
+								Tanggal = stuffs.tanggal_masuk,
+								Total = stuffs.biaya
+							});
+							total = total + Convert.ToInt32(stuffs.biaya);
+						}
+						IEnumerable<JToken> data_m = stuffss.SelectTokens("$..[?(@.cabang == 'UMN' && @.service != 'Sabun' && @.tanggal_masuk >= '" + tgl_awal + "' && @.tanggal_masuk < '" + tgl_akhir + "' )]");
+						foreach (JToken item in data_m)
+						{
+							dynamic stuffs = JObject.Parse(item.ToString());
+							//MessageBox.Show(total);
+							transactionBindingSource2.Add(new Transaction()
+							{
+								IDOrder = stuffs.orderId,
+								Application = "Mobile",
+								Service = stuffs.service,
+								Subservice = stuffs.subService,
+								Cabang = stuffs.cabang,
+								Customer = stuffs.userEmail,
+								Tanggal = stuffs.tanggal_masuk,
+								Total = stuffs.biaya
+							});
+							total = total + Convert.ToInt32(stuffs.biaya);
+						}
+					}
+					else if (cabang.Equals("Pertamina"))
+					{
+						IEnumerable<JToken> data = stuff.SelectTokens("$..[?(@.cabang == 'Pertamina' && @.service != 'Sabun' && @.tanggal_masuk >= '" + tgl_awal + "' && @.tanggal_masuk < '" + tgl_akhir + "' )]");
+						foreach (JToken item in data)
+						{
+							dynamic stuffs = JObject.Parse(item.ToString());
+							//MessageBox.Show(total);
+							transactionBindingSource2.Add(new Transaction()
+							{
+								IDOrder = stuffs.orderid,
+								Application = "Store",
+								Service = stuffs.service,
+								Subservice = stuffs.subService,
+								Cabang = stuffs.cabang,
+								Customer = stuffs.customer,
+								Tanggal = stuffs.tanggal_masuk,
+								Total = stuffs.biaya
+							});
+							total = total + Convert.ToInt32(stuffs.biaya);
+						}
+						IEnumerable<JToken> data_m = stuffss.SelectTokens("$..[?(@.cabang == 'Pertamina' && @.service != 'Sabun' && @.tanggal_masuk >= '" + tgl_awal + "' && @.tanggal_masuk < '" + tgl_akhir + "' )]");
+						foreach (JToken item in data_m)
+						{
+							dynamic stuffs = JObject.Parse(item.ToString());
+							//MessageBox.Show(total);
+							transactionBindingSource2.Add(new Transaction()
+							{
+								IDOrder = stuffs.orderId,
+								Application = "Mobile",
+								Service = stuffs.service,
+								Subservice = stuffs.subService,
+								Cabang = stuffs.cabang,
+								Customer = stuffs.userEmail,
+								Tanggal = stuffs.tanggal_masuk,
+								Total = stuffs.biaya
+							});
+							total = total + Convert.ToInt32(stuffs.biaya);
+						}
+					}
+					else if (cabang.Equals("Atmajaya"))
+					{
+						IEnumerable<JToken> data = stuff.SelectTokens("$..[?(@.cabang == 'Atmajaya' && @.service != 'Sabun' && @.tanggal_masuk >= '" + tgl_awal + "' && @.tanggal_masuk < '" + tgl_akhir + "' )]");
+						foreach (JToken item in data)
+						{
+							dynamic stuffs = JObject.Parse(item.ToString());
+							//MessageBox.Show(total);
+							transactionBindingSource2.Add(new Transaction()
+							{
+								IDOrder = stuffs.orderid,
+								Application = "Store",
+								Service = stuffs.service,
+								Subservice = stuffs.subService,
+								Cabang = stuffs.cabang,
+								Customer = stuffs.customer,
+								Tanggal = stuffs.tanggal_masuk,
+								Total = stuffs.biaya
+							});
+							total = total + Convert.ToInt32(stuffs.biaya);
+						}
+						IEnumerable<JToken> data_m = stuffss.SelectTokens("$..[?(@.cabang == 'Atmajaya' && @.service != 'Sabun' && @.tanggal_masuk >= '" + tgl_awal + "' && @.tanggal_masuk < '" + tgl_akhir + "' )]");
+						foreach (JToken item in data_m)
+						{
+							dynamic stuffs = JObject.Parse(item.ToString());
+							//MessageBox.Show(total);
+							transactionBindingSource2.Add(new Transaction()
+							{
+								IDOrder = stuffs.orderId,
+								Application = "Mobile",
+								Service = stuffs.service,
+								Subservice = stuffs.subService,
+								Cabang = stuffs.cabang,
+								Customer = stuffs.userEmail,
+								Tanggal = stuffs.tanggal_masuk,
+								Total = stuffs.biaya
+							});
+							total = total + Convert.ToInt32(stuffs.biaya);
+						}
+					}
+					textBox1.Text = total.ToString();
 				}
-				else if (cabang.Equals("UMN"))
-				{
-					IEnumerable<JToken> data = stuff.SelectTokens("$..[?(@.cabang == 'UMN' && @.service != 'Sabun' && @.tanggal_masuk >= '" + tgl_awal + "' && @.tanggal_masuk < '" + tgl_akhir + "' )]");
-					foreach (JToken item in data)
+				else {
+					if (cabang.Equals("Location"))
 					{
-						dynamic stuffs = JObject.Parse(item.ToString());
-						//MessageBox.Show(total);
-						transactionBindingSource2.Add(new Transaction()
+						IEnumerable<JToken> data = stuff.SelectTokens("$..[?(@.service == 'Sabun' && @.tanggal_masuk >= '" + tgl_awal + "' && @.tanggal_masuk < '" + tgl_akhir + "' )]");
+						foreach (JToken item in data)
 						{
-							IDOrder = stuffs.orderid,
-							Application = "Store",
-							Service = stuffs.service,
-							Subservice = stuffs.subService,
-							Cabang = stuffs.cabang,
-							Customer = stuffs.customer,
-							Tanggal = stuffs.tanggal_masuk,
-							Total = stuffs.biaya
-						});
-						total = total + Convert.ToInt32(stuffs.biaya);
+							dynamic stuffs = JObject.Parse(item.ToString());
+							transactionBindingSource2.Add(new Transaction()
+							{
+								IDOrder = stuffs.orderid,
+								Application = "Store",
+								Service = stuffs.service,
+								Subservice = stuffs.subService,
+								Cabang = stuffs.cabang,
+								Customer = stuffs.customer,
+								Tanggal = stuffs.tanggal_masuk,
+								Total = stuffs.biaya
+							});
+							total = total + Convert.ToInt32(stuffs.biaya);
+						}
 					}
-					IEnumerable<JToken> data_m = stuffss.SelectTokens("$..[?(@.cabang == 'UMN' && @.service != 'Sabun' && @.tanggal_masuk >= '" + tgl_awal + "' && @.tanggal_masuk < '" + tgl_akhir + "' )]");
-					foreach (JToken item in data_m)
+					else if (cabang.Equals("Mercubuana"))
 					{
-						dynamic stuffs = JObject.Parse(item.ToString());
-						//MessageBox.Show(total);
-						transactionBindingSource2.Add(new Transaction()
+						IEnumerable<JToken> data = stuff.SelectTokens("$..[?(@.cabang == 'Mercubuana' && @.service != 'Sabun' && @.tanggal_masuk >= '" + tgl_awal + "' && @.tanggal_masuk < '" + tgl_akhir + "' )]");
+						foreach (JToken item in data)
 						{
-							IDOrder = stuffs.orderId,
-							Application = "Mobile",
-							Service = stuffs.service,
-							Subservice = stuffs.subService,
-							Cabang = stuffs.cabang,
-							Customer = stuffs.userEmail,
-							Tanggal = stuffs.tanggal_masuk,
-							Total = stuffs.biaya
-						});
-						total = total + Convert.ToInt32(stuffs.biaya);
+							dynamic stuffs = JObject.Parse(item.ToString());
+							//MessageBox.Show(total);
+							transactionBindingSource2.Add(new Transaction()
+							{
+								IDOrder = stuffs.orderid,
+								Application = "Store",
+								Service = stuffs.service,
+								Subservice = stuffs.subService,
+								Cabang = stuffs.cabang,
+								Customer = stuffs.customer,
+								Tanggal = stuffs.tanggal_masuk,
+								Total = stuffs.biaya
+							});
+							total = total + Convert.ToInt32(stuffs.biaya);
+						}
 					}
+					else if (cabang.Equals("UMN"))
+					{
+						IEnumerable<JToken> data = stuff.SelectTokens("$..[?(@.cabang == 'UMN' && @.service != 'Sabun' && @.tanggal_masuk >= '" + tgl_awal + "' && @.tanggal_masuk < '" + tgl_akhir + "' )]");
+						foreach (JToken item in data)
+						{
+							dynamic stuffs = JObject.Parse(item.ToString());
+							//MessageBox.Show(total);
+							transactionBindingSource2.Add(new Transaction()
+							{
+								IDOrder = stuffs.orderid,
+								Application = "Store",
+								Service = stuffs.service,
+								Subservice = stuffs.subService,
+								Cabang = stuffs.cabang,
+								Customer = stuffs.customer,
+								Tanggal = stuffs.tanggal_masuk,
+								Total = stuffs.biaya
+							});
+							total = total + Convert.ToInt32(stuffs.biaya);
+						}
+					}
+					else if (cabang.Equals("Pertamina"))
+					{
+						IEnumerable<JToken> data = stuff.SelectTokens("$..[?(@.cabang == 'Pertamina' && @.service != 'Sabun' && @.tanggal_masuk >= '" + tgl_awal + "' && @.tanggal_masuk < '" + tgl_akhir + "' )]");
+						foreach (JToken item in data)
+						{
+							dynamic stuffs = JObject.Parse(item.ToString());
+							//MessageBox.Show(total);
+							transactionBindingSource2.Add(new Transaction()
+							{
+								IDOrder = stuffs.orderid,
+								Application = "Store",
+								Service = stuffs.service,
+								Subservice = stuffs.subService,
+								Cabang = stuffs.cabang,
+								Customer = stuffs.customer,
+								Tanggal = stuffs.tanggal_masuk,
+								Total = stuffs.biaya
+							});
+							total = total + Convert.ToInt32(stuffs.biaya);
+						}
+						
+					}
+					else if (cabang.Equals("Atmajaya"))
+					{
+						IEnumerable<JToken> data = stuff.SelectTokens("$..[?(@.cabang == 'Atmajaya' && @.service != 'Sabun' && @.tanggal_masuk >= '" + tgl_awal + "' && @.tanggal_masuk < '" + tgl_akhir + "' )]");
+						foreach (JToken item in data)
+						{
+							dynamic stuffs = JObject.Parse(item.ToString());
+							//MessageBox.Show(total);
+							transactionBindingSource2.Add(new Transaction()
+							{
+								IDOrder = stuffs.orderid,
+								Application = "Store",
+								Service = stuffs.service,
+								Subservice = stuffs.subService,
+								Cabang = stuffs.cabang,
+								Customer = stuffs.customer,
+								Tanggal = stuffs.tanggal_masuk,
+								Total = stuffs.biaya
+							});
+							total = total + Convert.ToInt32(stuffs.biaya);
+						}
+					}
+					textBox1.Text = total.ToString();
 				}
-				else if (cabang.Equals("Pertamina"))
-				{
-					IEnumerable<JToken> data = stuff.SelectTokens("$..[?(@.cabang == 'Pertamina' && @.service != 'Sabun' && @.tanggal_masuk >= '" + tgl_awal + "' && @.tanggal_masuk < '" + tgl_akhir + "' )]");
-					foreach (JToken item in data)
-					{
-						dynamic stuffs = JObject.Parse(item.ToString());
-						//MessageBox.Show(total);
-						transactionBindingSource2.Add(new Transaction()
-						{
-							IDOrder = stuffs.orderid,
-							Application = "Store",
-							Service = stuffs.service,
-							Subservice = stuffs.subService,
-							Cabang = stuffs.cabang,
-							Customer = stuffs.customer,
-							Tanggal = stuffs.tanggal_masuk,
-							Total = stuffs.biaya
-						});
-						total = total + Convert.ToInt32(stuffs.biaya);
-					}
-					IEnumerable<JToken> data_m = stuffss.SelectTokens("$..[?(@.cabang == 'Pertamina' && @.service != 'Sabun' && @.tanggal_masuk >= '" + tgl_awal + "' && @.tanggal_masuk < '" + tgl_akhir + "' )]");
-					foreach (JToken item in data_m)
-					{
-						dynamic stuffs = JObject.Parse(item.ToString());
-						//MessageBox.Show(total);
-						transactionBindingSource2.Add(new Transaction()
-						{
-							IDOrder = stuffs.orderId,
-							Application = "Mobile",
-							Service = stuffs.service,
-							Subservice = stuffs.subService,
-							Cabang = stuffs.cabang,
-							Customer = stuffs.userEmail,
-							Tanggal = stuffs.tanggal_masuk,
-							Total = stuffs.biaya
-						});
-						total = total + Convert.ToInt32(stuffs.biaya);
-					}
-				}
-				else if (cabang.Equals("Atmajaya"))
-				{
-					IEnumerable<JToken> data = stuff.SelectTokens("$..[?(@.cabang == 'Atmajaya' && @.service != 'Sabun' && @.tanggal_masuk >= '" + tgl_awal + "' && @.tanggal_masuk < '" + tgl_akhir + "' )]");
-					foreach (JToken item in data)
-					{
-						dynamic stuffs = JObject.Parse(item.ToString());
-						//MessageBox.Show(total);
-						transactionBindingSource2.Add(new Transaction()
-						{
-							IDOrder = stuffs.orderid,
-							Application = "Store",
-							Service = stuffs.service,
-							Subservice = stuffs.subService,
-							Cabang = stuffs.cabang,
-							Customer = stuffs.customer,
-							Tanggal = stuffs.tanggal_masuk,
-							Total = stuffs.biaya
-						});
-						total = total + Convert.ToInt32(stuffs.biaya);
-					}
-					IEnumerable<JToken> data_m = stuffss.SelectTokens("$..[?(@.cabang == 'Atmajaya' && @.service != 'Sabun' && @.tanggal_masuk >= '" + tgl_awal + "' && @.tanggal_masuk < '" + tgl_akhir + "' )]");
-					foreach (JToken item in data_m)
-					{
-						dynamic stuffs = JObject.Parse(item.ToString());
-						//MessageBox.Show(total);
-						transactionBindingSource2.Add(new Transaction()
-						{
-							IDOrder = stuffs.orderId,
-							Application = "Mobile",
-							Service = stuffs.service,
-							Subservice = stuffs.subService,
-							Cabang = stuffs.cabang,
-							Customer = stuffs.userEmail,
-							Tanggal = stuffs.tanggal_masuk,
-							Total = stuffs.biaya
-						});
-						total = total + Convert.ToInt32(stuffs.biaya);
-					}
-				}
-				textBox1.Text = total.ToString();
+				
 			}
 			catch (Exception error)
 			{
@@ -299,6 +413,12 @@ namespace Tikhe_POS
 			Bitmap bm = new Bitmap(this.orderBinding.Width, this.orderBinding.Height);
 			orderBinding.DrawToBitmap(bm, new Rectangle(0, 0, this.orderBinding.Width, this.orderBinding.Height));
 			e.Graphics.DrawImage(bm, 0, 0);
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			Detail_serviceorder form = new Detail_serviceorder();
+			form.Close();
 		}
 	}
 }

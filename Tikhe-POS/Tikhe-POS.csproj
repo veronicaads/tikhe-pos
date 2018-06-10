@@ -143,6 +143,20 @@
     <Compile Include="Detail_serviceorder.Designer.cs">
       <DependentUpon>Detail_serviceorder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Invoices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Invoices.Designer.cs">
+      <DependentUpon>Invoices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory_Report_Detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory_Report_Detail.Designer.cs">
+      <DependentUpon>Inventory_Report_Detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventori.cs" />
+    <Compile Include="Invoice.cs" />
     <Compile Include="ReportInputDetail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -244,6 +258,12 @@
     <EmbeddedResource Include="Detail_serviceorder.resx">
       <DependentUpon>Detail_serviceorder.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Invoices.resx">
+      <DependentUpon>Invoices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory_Report_Detail.resx">
+      <DependentUpon>Inventory_Report_Detail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportInputDetail.resx">
       <DependentUpon>ReportInputDetail.cs</DependentUpon>
     </EmbeddedResource>
@@ -294,6 +314,8 @@
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Inventori.datasource" />
+    <None Include="Properties\DataSources\Invoice.datasource" />
     <None Include="Properties\DataSources\Order.datasource" />
     <None Include="Properties\DataSources\OrderTransaction.datasource" />
     <None Include="Properties\DataSources\Person.datasource" />

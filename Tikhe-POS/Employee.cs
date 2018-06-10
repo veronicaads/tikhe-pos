@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FirebaseNet.Database;
+using System.Text.RegularExpressions;
 
 namespace Tikhe_POS
 {
@@ -69,7 +70,49 @@ namespace Tikhe_POS
 
         }
 
-        private void Employee_MouseUp(object sender, MouseEventArgs e)
+		private void pw_s_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		public enum PasswordScore
+		{
+			Blank = 0,
+			VeryWeak = 1,
+			Weak = 2,
+			Medium = 3,
+			Strong = 4,
+			VeryStrong = 5
+		}
+
+		public static PasswordScore CheckStrength(string password)
+		{
+			int score = 1;
+			if (password.Length < 1)
+				return PasswordScore.Blank;
+			if (password.Length < 4)
+				return PasswordScore.VeryWeak;
+			if (password.Length >= 6)
+				score++;
+			if (password.Length >= 8)
+				score++;
+			if (Regex.Match(password, @"/\d+/", RegexOptions.ECMAScript).Success)
+				score++;
+			if (Regex.Match(password, @"/[a-z]/", RegexOptions.ECMAScript).Success &&
+			  Regex.Match(password, @"/[A-Z]/", RegexOptions.ECMAScript).Success)
+				score++;
+			if (Regex.Match(password, @"/.[!,@,#,$,%,^,&,*,?,_,~,-,£,(,)]/", RegexOptions.ECMAScript).Success)
+				score++;
+			return (PasswordScore)score;
+		}
+
+		private void pass_txt_TextChanged(object sender, EventArgs e)
+		{
+			String pws = CheckStrength(pass_txt.Text).ToString();
+			pw_s.Text = pws;
+		}
+
+		private void Employee_MouseUp(object sender, MouseEventArgs e)
         {
             TogMove = 0;
         }

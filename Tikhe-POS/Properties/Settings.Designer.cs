@@ -130,5 +130,29 @@ namespace Tikhe_POS.Properties {
                 this["flag_form"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string customer {
+            get {
+                return ((string)(this["customer"]));
+            }
+            set {
+                this["customer"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string tanggal_order {
+            get {
+                return ((string)(this["tanggal_order"]));
+            }
+            set {
+                this["tanggal_order"] = value;
+            }
+        }
     }
 }

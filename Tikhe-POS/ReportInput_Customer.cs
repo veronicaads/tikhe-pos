@@ -32,7 +32,8 @@ namespace Tikhe_POS
 			Properties.Settings.Default.tgl_awal_cs = this.dateTimePicker1.Value.ToString("yy-M-dd");
 			Properties.Settings.Default.tgl_akhir_cs = this.dateTimePicker2.Value.ToString("yy-M-dd");
 			String flag = Properties.Settings.Default.flag_form;
-			if (flag.Equals("Customer")) {
+			if (flag.Equals("Customer"))
+			{
 				Cust_Chart chart = new Cust_Chart();
 				chart.Show();
 			}
@@ -45,6 +46,10 @@ namespace Tikhe_POS
 			{
 				Restock_Graph chart = new Restock_Graph();
 				chart.Show();
+			}
+			else if (flag.Equals("inventory")) {
+				Inventory_Report_Detail rs = new Inventory_Report_Detail();
+				rs.Show();
 			}
 
 		}

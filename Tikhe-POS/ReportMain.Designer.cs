@@ -203,6 +203,7 @@
 			this.radioButton3.Text = "Inventory Order";
 			this.radioButton3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.radioButton3.UseVisualStyleBackColor = true;
+			this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
 			// 
 			// service_detail
 			// 
@@ -228,6 +229,7 @@
 			this.customer_detail.TabStop = true;
 			this.customer_detail.Text = "Item Order";
 			this.customer_detail.UseVisualStyleBackColor = true;
+			this.customer_detail.CheckedChanged += new System.EventHandler(this.customer_detail_CheckedChanged);
 			// 
 			// button18
 			// 

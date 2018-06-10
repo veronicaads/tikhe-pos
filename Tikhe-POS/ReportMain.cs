@@ -135,6 +135,20 @@ namespace Tikhe_POS
 			Properties.Settings.Default.flag_form = "Stock";
 		}
 
+		private void customer_detail_CheckedChanged(object sender, EventArgs e)
+		{
+			ReportInputDetail rd = new ReportInputDetail();
+			rd.Show();
+			Properties.Settings.Default.flag_form = "item_order";
+		}
+
+		private void radioButton3_CheckedChanged(object sender, EventArgs e)
+		{
+			ReportInput_Customer rd = new ReportInput_Customer();
+			rd.Show();
+			Properties.Settings.Default.flag_form = "inventory";
+		}
+
 		private void ReportMain_MouseUp(object sender, MouseEventArgs e)
         {
             TogMove = 0;

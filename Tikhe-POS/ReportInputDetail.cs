@@ -37,17 +37,15 @@ namespace Tikhe_POS
 			Properties.Settings.Default.cabang = cabang.Text;
 			Properties.Settings.Default.tgl_awal = this.dateTimePicker1.Value.ToString("yy-M-dd");
 			Properties.Settings.Default.tgl_akhir = this.dateTimePicker2.Value.ToString("yy-M-dd");
-			String flag = Properties.Settings.Default.flag_form;
-			if (flag.Equals("service_order"))
-			{
 				Detail_serviceorder chart = new Detail_serviceorder();
 				chart.Show();
-			}
-			else if (flag.Equals("Item"))
-			{
-				
-			}
 
+		}
+
+		private void button3_Click(object sender, EventArgs e)
+		{
+			ReportInputDetail form = new ReportInputDetail();
+			form.Close();
 		}
 	}
 }

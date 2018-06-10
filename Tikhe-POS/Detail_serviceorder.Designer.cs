@@ -32,7 +32,15 @@
 			this.label2 = new System.Windows.Forms.Label();
 			this.button18 = new System.Windows.Forms.Button();
 			this.orderBinding = new System.Windows.Forms.DataGridView();
+			this.iDOrderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.applicationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.serviceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.subserviceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.cabangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.customerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.tanggalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.transactionBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.label3 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
@@ -44,21 +52,14 @@
 			this.button3 = new System.Windows.Forms.Button();
 			this.printDocument1 = new System.Drawing.Printing.PrintDocument();
 			this.printDocument2 = new System.Drawing.Printing.PrintDocument();
-			this.iDOrderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.applicationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.serviceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.subserviceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.cabangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.customerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.tanggalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.transactionBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
 			this.transactionBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
 			this.transactionBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.orderTransactionBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
 			this.orderTransactionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.printDocument3 = new System.Drawing.Printing.PrintDocument();
 			((System.ComponentModel.ISupportInitialize)(this.orderBinding)).BeginInit();
-			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.transactionBindingSource2)).BeginInit();
+			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.transactionBindingSource1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.transactionBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.orderTransactionBindingSource1)).BeginInit();
@@ -110,12 +111,58 @@
 			this.orderBinding.Size = new System.Drawing.Size(846, 400);
 			this.orderBinding.TabIndex = 11;
 			// 
+			// iDOrderDataGridViewTextBoxColumn
+			// 
+			this.iDOrderDataGridViewTextBoxColumn.DataPropertyName = "IDOrder";
+			this.iDOrderDataGridViewTextBoxColumn.HeaderText = "IDOrder";
+			this.iDOrderDataGridViewTextBoxColumn.Name = "iDOrderDataGridViewTextBoxColumn";
+			// 
+			// applicationDataGridViewTextBoxColumn
+			// 
+			this.applicationDataGridViewTextBoxColumn.DataPropertyName = "Application";
+			this.applicationDataGridViewTextBoxColumn.HeaderText = "Application";
+			this.applicationDataGridViewTextBoxColumn.Name = "applicationDataGridViewTextBoxColumn";
+			// 
+			// serviceDataGridViewTextBoxColumn
+			// 
+			this.serviceDataGridViewTextBoxColumn.DataPropertyName = "Service";
+			this.serviceDataGridViewTextBoxColumn.HeaderText = "Service";
+			this.serviceDataGridViewTextBoxColumn.Name = "serviceDataGridViewTextBoxColumn";
+			// 
+			// subserviceDataGridViewTextBoxColumn
+			// 
+			this.subserviceDataGridViewTextBoxColumn.DataPropertyName = "Subservice";
+			this.subserviceDataGridViewTextBoxColumn.HeaderText = "Subservice";
+			this.subserviceDataGridViewTextBoxColumn.Name = "subserviceDataGridViewTextBoxColumn";
+			// 
+			// cabangDataGridViewTextBoxColumn
+			// 
+			this.cabangDataGridViewTextBoxColumn.DataPropertyName = "Cabang";
+			this.cabangDataGridViewTextBoxColumn.HeaderText = "Cabang";
+			this.cabangDataGridViewTextBoxColumn.Name = "cabangDataGridViewTextBoxColumn";
+			// 
+			// customerDataGridViewTextBoxColumn
+			// 
+			this.customerDataGridViewTextBoxColumn.DataPropertyName = "Customer";
+			this.customerDataGridViewTextBoxColumn.HeaderText = "Customer";
+			this.customerDataGridViewTextBoxColumn.Name = "customerDataGridViewTextBoxColumn";
+			// 
+			// tanggalDataGridViewTextBoxColumn
+			// 
+			this.tanggalDataGridViewTextBoxColumn.DataPropertyName = "Tanggal";
+			this.tanggalDataGridViewTextBoxColumn.HeaderText = "Tanggal";
+			this.tanggalDataGridViewTextBoxColumn.Name = "tanggalDataGridViewTextBoxColumn";
+			// 
 			// Total
 			// 
 			this.Total.DataPropertyName = "Total";
 			this.Total.HeaderText = "Total";
 			this.Total.Name = "Total";
 			this.Total.ReadOnly = true;
+			// 
+			// transactionBindingSource2
+			// 
+			this.transactionBindingSource2.DataSource = typeof(Tikhe_POS.Transaction);
 			// 
 			// panel1
 			// 
@@ -157,11 +204,11 @@
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label1.ForeColor = System.Drawing.Color.Black;
-			this.label1.Location = new System.Drawing.Point(295, 22);
+			this.label1.Location = new System.Drawing.Point(349, 18);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(208, 24);
+			this.label1.Size = new System.Drawing.Size(187, 24);
 			this.label1.TabIndex = 7;
-			this.label1.Text = "Service Order Report";
+			this.label1.Text = "Transaction Report";
 			this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
 			// 
 			// button1
@@ -176,6 +223,7 @@
 			this.button1.TabIndex = 6;
 			this.button1.Text = "< Back";
 			this.button1.UseVisualStyleBackColor = false;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// textBox1
 			// 
@@ -222,52 +270,6 @@
 			// 
 			this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
 			// 
-			// iDOrderDataGridViewTextBoxColumn
-			// 
-			this.iDOrderDataGridViewTextBoxColumn.DataPropertyName = "IDOrder";
-			this.iDOrderDataGridViewTextBoxColumn.HeaderText = "IDOrder";
-			this.iDOrderDataGridViewTextBoxColumn.Name = "iDOrderDataGridViewTextBoxColumn";
-			// 
-			// applicationDataGridViewTextBoxColumn
-			// 
-			this.applicationDataGridViewTextBoxColumn.DataPropertyName = "Application";
-			this.applicationDataGridViewTextBoxColumn.HeaderText = "Application";
-			this.applicationDataGridViewTextBoxColumn.Name = "applicationDataGridViewTextBoxColumn";
-			// 
-			// serviceDataGridViewTextBoxColumn
-			// 
-			this.serviceDataGridViewTextBoxColumn.DataPropertyName = "Service";
-			this.serviceDataGridViewTextBoxColumn.HeaderText = "Service";
-			this.serviceDataGridViewTextBoxColumn.Name = "serviceDataGridViewTextBoxColumn";
-			// 
-			// subserviceDataGridViewTextBoxColumn
-			// 
-			this.subserviceDataGridViewTextBoxColumn.DataPropertyName = "Subservice";
-			this.subserviceDataGridViewTextBoxColumn.HeaderText = "Subservice";
-			this.subserviceDataGridViewTextBoxColumn.Name = "subserviceDataGridViewTextBoxColumn";
-			// 
-			// cabangDataGridViewTextBoxColumn
-			// 
-			this.cabangDataGridViewTextBoxColumn.DataPropertyName = "Cabang";
-			this.cabangDataGridViewTextBoxColumn.HeaderText = "Cabang";
-			this.cabangDataGridViewTextBoxColumn.Name = "cabangDataGridViewTextBoxColumn";
-			// 
-			// customerDataGridViewTextBoxColumn
-			// 
-			this.customerDataGridViewTextBoxColumn.DataPropertyName = "Customer";
-			this.customerDataGridViewTextBoxColumn.HeaderText = "Customer";
-			this.customerDataGridViewTextBoxColumn.Name = "customerDataGridViewTextBoxColumn";
-			// 
-			// tanggalDataGridViewTextBoxColumn
-			// 
-			this.tanggalDataGridViewTextBoxColumn.DataPropertyName = "Tanggal";
-			this.tanggalDataGridViewTextBoxColumn.HeaderText = "Tanggal";
-			this.tanggalDataGridViewTextBoxColumn.Name = "tanggalDataGridViewTextBoxColumn";
-			// 
-			// transactionBindingSource2
-			// 
-			this.transactionBindingSource2.DataSource = typeof(Tikhe_POS.Transaction);
-			// 
 			// transactionBindingSource1
 			// 
 			this.transactionBindingSource1.DataSource = typeof(Tikhe_POS.Transaction);
@@ -307,9 +309,9 @@
 			this.Text = "Form1";
 			this.Load += new System.EventHandler(this.Customer_Load);
 			((System.ComponentModel.ISupportInitialize)(this.orderBinding)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.transactionBindingSource2)).EndInit();
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.transactionBindingSource2)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.transactionBindingSource1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.transactionBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.orderTransactionBindingSource1)).EndInit();
@@ -348,5 +350,6 @@
 		private System.Windows.Forms.Button button3;
 		private System.Drawing.Printing.PrintDocument printDocument1;
 		private System.Drawing.Printing.PrintDocument printDocument2;
+		private System.Drawing.Printing.PrintDocument printDocument3;
 	}
 }
