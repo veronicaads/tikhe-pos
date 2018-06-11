@@ -37,10 +37,6 @@ namespace Tikhe_POS
         {
             String username = username_edit.Text;
             String password = password_edit.Text;
-            
-
-            
-            //MessageBox.Show(getResponse.JSONContent);
             if (String.Compare(username, "superadmin") == 0 && String.Compare(password, "shoebox555") == 0)
             {
                 MainMenu form = new MainMenu();

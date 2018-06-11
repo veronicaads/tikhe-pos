@@ -52,11 +52,10 @@ namespace Tikhe_POS
 			Properties.Settings.Default.subservis = subservice.Text;
 			Properties.Settings.Default.tgl_awal = this.dateTimePicker1.Value.ToString("yy-M-dd");
 			Properties.Settings.Default.tgl_akhir = this.dateTimePicker2.Value.ToString("yy-M-dd");
-			if (flag.Equals("Graph_Service"))
-			{
+			
 				Chart chart = new Chart();
 				chart.Show();
-			}
+			
 
 			
 		}

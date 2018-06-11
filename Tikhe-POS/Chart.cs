@@ -886,7 +886,6 @@ namespace Tikhe_POS
 
 		private void fillChart(String cabang,int x, int y,int z)
 		{
-			//AddXY value in chart1 in series named as Salary  
 			pets.Series[cabang].Points.AddXY("Reclean", x);
 			pets.Series[cabang].Points.AddXY("Repaint", y);
 			pets.Series[cabang].Points.AddXY("Repair", z);		

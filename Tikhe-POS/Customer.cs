@@ -208,7 +208,13 @@ namespace Tikhe_POS
                     dynamic stiff = JObject.Parse(customer.JSONContent);
                     if (stiff.nama=="") continue;
                     
-                    personBindingSource.Add(new Person() { ID = stiff.id, Nama = stiff.nama, JenisKelamin = stiff.gender, Alamat = stiff.alamat, Email = stiff.email, HP = stiff.hp });
+                    personBindingSource.Add(new Person()
+					{ ID = stiff.id,
+						Nama = stiff.nama,
+						JenisKelamin = stiff.gender,
+						Alamat = stiff.alamat,
+						Email = stiff.email,
+						HP = stiff.hp });
                 }
 
 
@@ -243,14 +249,16 @@ namespace Tikhe_POS
 				else
 				{
 					if (nama_disub.Equals(sub_search_name)) {
-						personBindingSource.Add(new Person() { ID = items.id, Nama = items.nama, JenisKelamin = items.gender, Alamat = items.alamat, Email = items.email, HP = items.hp });
+						personBindingSource.Add(new Person()
+						{ ID = items.id,
+							Nama = items.nama,
+							JenisKelamin = items.gender,
+							Alamat = items.alamat,
+							Email = items.email,
+							HP = items.hp });
 					}
-					
-
 				}
 			}
-
-
 		}
 
         private void Customer_MouseUp(object sender, MouseEventArgs e)

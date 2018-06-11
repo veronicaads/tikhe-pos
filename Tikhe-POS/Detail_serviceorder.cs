@@ -393,8 +393,7 @@ namespace Tikhe_POS
 			sfd.FileName = "export.xls";
 			if (sfd.ShowDialog() == DialogResult.OK)
 			{
-				//ToCsV(dataGridView1, @"c:\export.xls");
-				ToCsV(orderBinding, sfd.FileName); // Here dataGridview1 is your grid view name
+				ToCsV(orderBinding, sfd.FileName); 
 			}
 		}
 		Bitmap bitmap;
@@ -404,7 +403,6 @@ namespace Tikhe_POS
 		}
 		private void PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
 		{
-			//Print the contents.
 			e.Graphics.DrawImage(bitmap, 0, 0);
 		}
 
