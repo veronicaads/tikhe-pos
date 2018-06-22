@@ -52,19 +52,19 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button22 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.personBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.namaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jenisKelaminDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.namaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jenisKelaminDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.alamatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hPDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.personBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.namaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jenisKelaminDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -341,65 +341,6 @@
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.Sorted += new System.EventHandler(this.dataGridView1_Sorted);
             // 
-            // personBindingSource
-            // 
-            this.personBindingSource.DataSource = typeof(Tikhe_POS.Person);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(13, 117);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(618, 32);
-            this.textBox1.TabIndex = 8;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.Purple;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(647, 117);
-            this.button7.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(91, 32);
-            this.button7.TabIndex = 9;
-            this.button7.Text = "Search";
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDDataGridViewTextBoxColumn.Width = 30;
-            // 
-            // namaDataGridViewTextBoxColumn
-            // 
-            this.namaDataGridViewTextBoxColumn.DataPropertyName = "Nama";
-            this.namaDataGridViewTextBoxColumn.HeaderText = "Nama";
-            this.namaDataGridViewTextBoxColumn.Name = "namaDataGridViewTextBoxColumn";
-            this.namaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.namaDataGridViewTextBoxColumn.Width = 145;
-            // 
-            // jenisKelaminDataGridViewTextBoxColumn
-            // 
-            this.jenisKelaminDataGridViewTextBoxColumn.DataPropertyName = "JenisKelamin";
-            this.jenisKelaminDataGridViewTextBoxColumn.HeaderText = "JK";
-            this.jenisKelaminDataGridViewTextBoxColumn.Name = "jenisKelaminDataGridViewTextBoxColumn";
-            this.jenisKelaminDataGridViewTextBoxColumn.Width = 40;
-            // 
-            // hPDataGridViewTextBoxColumn
-            // 
-            this.hPDataGridViewTextBoxColumn.DataPropertyName = "HP";
-            this.hPDataGridViewTextBoxColumn.HeaderText = "HP";
-            this.hPDataGridViewTextBoxColumn.Name = "hPDataGridViewTextBoxColumn";
-            this.hPDataGridViewTextBoxColumn.Width = 115;
-            // 
             // iDDataGridViewTextBoxColumn1
             // 
             this.iDDataGridViewTextBoxColumn1.DataPropertyName = "ID";
@@ -437,13 +378,67 @@
             this.hPDataGridViewTextBoxColumn1.HeaderText = "HP";
             this.hPDataGridViewTextBoxColumn1.Name = "hPDataGridViewTextBoxColumn1";
             // 
+            // personBindingSource
+            // 
+            this.personBindingSource.DataSource = typeof(Tikhe_POS.Person);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(117, 120);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(618, 32);
+            this.textBox1.TabIndex = 8;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDDataGridViewTextBoxColumn.Width = 30;
+            // 
+            // namaDataGridViewTextBoxColumn
+            // 
+            this.namaDataGridViewTextBoxColumn.DataPropertyName = "Nama";
+            this.namaDataGridViewTextBoxColumn.HeaderText = "Nama";
+            this.namaDataGridViewTextBoxColumn.Name = "namaDataGridViewTextBoxColumn";
+            this.namaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.namaDataGridViewTextBoxColumn.Width = 145;
+            // 
+            // jenisKelaminDataGridViewTextBoxColumn
+            // 
+            this.jenisKelaminDataGridViewTextBoxColumn.DataPropertyName = "JenisKelamin";
+            this.jenisKelaminDataGridViewTextBoxColumn.HeaderText = "JK";
+            this.jenisKelaminDataGridViewTextBoxColumn.Name = "jenisKelaminDataGridViewTextBoxColumn";
+            this.jenisKelaminDataGridViewTextBoxColumn.Width = 40;
+            // 
+            // hPDataGridViewTextBoxColumn
+            // 
+            this.hPDataGridViewTextBoxColumn.DataPropertyName = "HP";
+            this.hPDataGridViewTextBoxColumn.HeaderText = "HP";
+            this.hPDataGridViewTextBoxColumn.Name = "hPDataGridViewTextBoxColumn";
+            this.hPDataGridViewTextBoxColumn.Width = 115;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(12, 126);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(86, 20);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "Search   :";
+            // 
             // Customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(89)))), ((int)(((byte)(134)))));
             this.ClientSize = new System.Drawing.Size(750, 585);
-            this.Controls.Add(this.button7);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
@@ -483,7 +478,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button22;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button3;
@@ -509,5 +503,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn alamatDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn hPDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.Label label8;
     }
 }

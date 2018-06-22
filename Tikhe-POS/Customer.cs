@@ -64,14 +64,14 @@ namespace Tikhe_POS
             {
                 if (pria_but.Checked)
                 {
-                    personBindingSource.Add(new Person() { ID = "C"+id_cust.ToString(), Nama = nama_txt.Text, JenisKelamin = "Pria", Alamat = alamat_txt.Text, Email = email_txt.Text, HP = hp_txt.Text });
-                    gender = "Pria";
+                    personBindingSource.Add(new Person() { ID = "C"+id_cust.ToString(), Nama = nama_txt.Text, JenisKelamin = "Male", Alamat = alamat_txt.Text, Email = email_txt.Text, HP = hp_txt.Text });
+                    gender = "Male";
                     data = @"{'id':'"+tmp+"','nama' : '" + nama + "','alamat' : '" + alamat + "','hp' : '" + hp + "','email' : '" + email + "','gender' : '" + gender + "','tanggal_masuk' : '" + tglmasuk + "'}";
                 }
                 else
                 {
-                    personBindingSource.Add(new Person() { ID = "C"+id_cust.ToString(), Nama = nama_txt.Text, JenisKelamin = "Wanita", Alamat = alamat_txt.Text, Email = email_txt.Text, HP = hp_txt.Text });
-                    gender = "Wanita";
+                    personBindingSource.Add(new Person() { ID = "C"+id_cust.ToString(), Nama = nama_txt.Text, JenisKelamin = "Female", Alamat = alamat_txt.Text, Email = email_txt.Text, HP = hp_txt.Text });
+                    gender = "Female";
                     data = @"{'id':'" + tmp + "','nama' : '" + nama + "','alamat' : '" + alamat + "','hp' : '" + hp + "','email' : '" + email + "','gender' : '" + gender + "','tanggal_masuk' : '" + tglmasuk + "'}";
                 }
                 id_cust++;
@@ -96,7 +96,7 @@ namespace Tikhe_POS
             alamat_txt.Text = row.Cells[3].Value.ToString();
             email_txt.Text = row.Cells[4].Value.ToString();
             hp_txt.Text = row.Cells[5].Value.ToString();
-            if (row.Cells[2].Value.ToString().Equals("Pria")){pria_but.Checked = true;}
+            if (row.Cells[2].Value.ToString().Equals("Male")){pria_but.Checked = true;}
             else wanita_but.Checked = true;
         }
 
@@ -119,8 +119,8 @@ namespace Tikhe_POS
                 newRow.Cells[4].Value = email_txt.Text;
                 newRow.Cells[5].Value = hp_txt.Text;
                 
-                if (pria_but.Checked) gender = "Pria";
-                else gender = "Wanita";
+                if (pria_but.Checked) gender = "Male";
+                else gender = "Female";
                 newRow.Cells[2].Value = gender;
 
                 var data = "";

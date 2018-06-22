@@ -42,11 +42,22 @@ namespace Tikhe_POS
             String nama = nama_txt.Text;
             String email = email_txt.Text;
             String hp = hp_txt.Text;
-            FirebaseDB firebaseDB = new FirebaseDB("https://mobile-shoebox.firebaseio.com/Employees");
-            FirebaseDB firebaseDBEmployees = firebaseDB.Node(username);
-            var data = @"{'username' : '" + username + "','password' : '" + password +"'}";
-            firebaseDBEmployees.Put(data);
-			MessageBox.Show("Data berhasil ditambahkan");
+            if(textBox1.Text == password)
+            {
+                FirebaseDB firebaseDB = new FirebaseDB("https://mobile-shoebox.firebaseio.com/Employees");
+                FirebaseDB firebaseDBEmployees = firebaseDB.Node(username);
+                var data = @"{'username' : '" + username + "','password' : '" + password + "'}";
+                firebaseDBEmployees.Put(data);
+                MessageBox.Show("Data berhasil ditambahkan");
+                //personBindingSource.Add(new Person() { ID = "C" + id_cust.ToString(), Nama = nama_txt.Text, JenisKelamin = "Male", Alamat = alamat_txt.Text, Email = email_txt.Text, HP = hp_txt.Text });
+
+                employeedataBindingSource.Add(new Employee_data() { Username = username, Password = password, Email = email, HP = hp, Nama = nama });
+            }
+            else
+            {
+                MessageBox.Show("Password Doesn't Match !");
+            }
+            
         }
         int TogMove;
         int X, Y;

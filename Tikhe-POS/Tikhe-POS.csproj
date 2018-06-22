@@ -315,6 +315,7 @@
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Employee_data.datasource" />
     <None Include="Properties\DataSources\Inventori.datasource" />
     <None Include="Properties\DataSources\Invoice.datasource" />
     <None Include="Properties\DataSources\Order.datasource" />

@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.pw_s = new System.Windows.Forms.Label();
             this.strength = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -50,11 +53,20 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.namaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeedataBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.delete_btn = new System.Windows.Forms.Button();
+            this.update_btn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeedataBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label6
@@ -70,6 +82,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.delete_btn);
+            this.groupBox1.Controls.Add(this.update_btn);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.pw_s);
@@ -88,12 +102,29 @@
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button22);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(14, 140);
+            this.groupBox1.Location = new System.Drawing.Point(20, 153);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(350, 360);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Info Employee";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(133, 130);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.PasswordChar = '*';
+            this.textBox1.Size = new System.Drawing.Size(198, 24);
+            this.textBox1.TabIndex = 10;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(19, 130);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(114, 18);
+            this.label10.TabIndex = 9;
+            this.label10.Text = "Retype - Pass";
             // 
             // pw_s
             // 
@@ -215,10 +246,10 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(195, 303);
+            this.button3.Location = new System.Drawing.Point(264, 303);
             this.button3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(109, 40);
+            this.button3.Size = new System.Drawing.Size(67, 40);
             this.button3.TabIndex = 3;
             this.button3.Text = "Clear";
             this.button3.UseVisualStyleBackColor = false;
@@ -230,10 +261,10 @@
             this.button22.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button22.ForeColor = System.Drawing.Color.White;
-            this.button22.Location = new System.Drawing.Point(44, 303);
+            this.button22.Location = new System.Drawing.Point(20, 303);
             this.button22.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(109, 40);
+            this.button22.Size = new System.Drawing.Size(69, 40);
             this.button22.TabIndex = 3;
             this.button22.Text = "Add";
             this.button22.UseVisualStyleBackColor = false;
@@ -289,35 +320,109 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(392, 140);
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.namaDataGridViewTextBoxColumn,
+            this.usernameDataGridViewTextBoxColumn,
+            this.hPDataGridViewTextBoxColumn,
+            this.passwordDataGridViewTextBoxColumn,
+            this.emailDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.employeedataBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(392, 153);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(357, 360);
+            this.dataGridView1.Size = new System.Drawing.Size(367, 360);
             this.dataGridView1.TabIndex = 21;
             // 
-            // textBox1
+            // namaDataGridViewTextBoxColumn
             // 
-            this.textBox1.Location = new System.Drawing.Point(133, 130);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PasswordChar = '*';
-            this.textBox1.Size = new System.Drawing.Size(198, 24);
-            this.textBox1.TabIndex = 10;
+            this.namaDataGridViewTextBoxColumn.DataPropertyName = "Nama";
+            this.namaDataGridViewTextBoxColumn.HeaderText = "Nama";
+            this.namaDataGridViewTextBoxColumn.Name = "namaDataGridViewTextBoxColumn";
+            this.namaDataGridViewTextBoxColumn.Width = 130;
             // 
-            // label10
+            // usernameDataGridViewTextBoxColumn
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(19, 130);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(114, 18);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "Retype - Pass";
+            this.usernameDataGridViewTextBoxColumn.DataPropertyName = "Username";
+            this.usernameDataGridViewTextBoxColumn.HeaderText = "Username";
+            this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
+            // 
+            // hPDataGridViewTextBoxColumn
+            // 
+            this.hPDataGridViewTextBoxColumn.DataPropertyName = "HP";
+            this.hPDataGridViewTextBoxColumn.HeaderText = "HP";
+            this.hPDataGridViewTextBoxColumn.Name = "hPDataGridViewTextBoxColumn";
+            // 
+            // passwordDataGridViewTextBoxColumn
+            // 
+            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "Password";
+            this.passwordDataGridViewTextBoxColumn.HeaderText = "Password";
+            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            // 
+            // employeedataBindingSource
+            // 
+            this.employeedataBindingSource.DataSource = typeof(Tikhe_POS.Employee_data);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(36, 108);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(86, 20);
+            this.label11.TabIndex = 22;
+            this.label11.Text = "Search   :";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(141, 102);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(618, 32);
+            this.textBox2.TabIndex = 23;
+            // 
+            // delete_btn
+            // 
+            this.delete_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.delete_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.delete_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.delete_btn.ForeColor = System.Drawing.Color.White;
+            this.delete_btn.Location = new System.Drawing.Point(186, 303);
+            this.delete_btn.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.delete_btn.Name = "delete_btn";
+            this.delete_btn.Size = new System.Drawing.Size(66, 40);
+            this.delete_btn.TabIndex = 11;
+            this.delete_btn.Text = "Delete";
+            this.delete_btn.UseVisualStyleBackColor = false;
+            // 
+            // update_btn
+            // 
+            this.update_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.update_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.update_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.update_btn.ForeColor = System.Drawing.Color.White;
+            this.update_btn.Location = new System.Drawing.Point(106, 303);
+            this.update_btn.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.update_btn.Name = "update_btn";
+            this.update_btn.Size = new System.Drawing.Size(67, 40);
+            this.update_btn.TabIndex = 12;
+            this.update_btn.Text = "Update";
+            this.update_btn.UseVisualStyleBackColor = false;
             // 
             // Employee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(89)))), ((int)(((byte)(134)))));
-            this.ClientSize = new System.Drawing.Size(771, 585);
+            this.ClientSize = new System.Drawing.Size(771, 527);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label2);
@@ -337,6 +442,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeedataBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -367,5 +473,15 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn namaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hPDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource employeedataBindingSource;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button delete_btn;
+        private System.Windows.Forms.Button update_btn;
     }
 }
