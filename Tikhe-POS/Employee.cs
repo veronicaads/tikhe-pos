@@ -79,8 +79,31 @@ namespace Tikhe_POS
 
         private void Employee_Load(object sender, EventArgs e)
         {
-
-        }
+			try
+			{
+				FirebaseDB firebase = new FirebaseDB("https://mobile-shoebox.firebaseio.com/Employees");
+				FirebaseResponse getResponse = firebase.Get();
+				dynamic stuff = JObject.Parse(getResponse.JSONContent);
+				//MessageBox.Show(getResponse.JSONContent);
+				IEnumerable<JToken> name = stuff.SelectTokens("$.*");
+				foreach (JToken item in name)
+				{
+					dynamic stiff = JObject.Parse(item.ToString());
+					employeedataBindingSource.Add(new Employee_data()
+					{
+						Username = stiff.username,
+						Password = stiff.password,
+						Email = stiff.email,
+						Nama = stiff.nama,
+						HP = stiff.hp
+					});
+				}
+			}
+			catch (Exception error)
+			{
+				MessageBox.Show(error.Message);
+			}
+		}
 
 		private void pw_s_Click(object sender, EventArgs e)
 		{
@@ -133,7 +156,8 @@ namespace Tikhe_POS
             email_txt.Text = row.Cells[4].Value.ToString();
             hp_txt.Text = row.Cells[2].Value.ToString();
         }
-        FirebaseDB firebaseDB = new FirebaseDB("https://mobile-shoebox.firebaseio.com/Supplier");
+
+        FirebaseDB firebaseDB = new FirebaseDB("https://mobile-shoebox.firebaseio.com/Employees");
         private void update_btn_Click(object sender, EventArgs e)
         {
             if (nama_txt.Text == "" || email_txt.Text == "" || hp_txt.Text == "" || user_txt.Text == "" || pass_txt.Text == "" || textBox1.Text == "")
@@ -151,40 +175,65 @@ namespace Tikhe_POS
                 newRow.Cells[4].Value = email_txt.Text;
                 newRow.Cells[3].Value = pass_txt.Text;
 
-                FirebaseDB firebaseSupplier = firebaseDB.Node(newRow.Cells[0].Value.ToString());
-                FirebaseResponse coba = firebaseSupplier.Get();
+                FirebaseDB firebaseEmployee = firebaseDB.Node(newRow.Cells[0].Value.ToString());
+                FirebaseResponse coba = firebaseEmployee.Get();
                 dynamic stuff = JObject.Parse(coba.JSONContent);
 
                 var data = @"{'username' : '" + user_txt.Text + "','password' : '" + pass_txt.Text + "','nama' : '" + nama_txt.Text + "','email' : '" + email_txt.Text + "','hp' : '" + hp_txt.Text + "'}";
-
-                firebaseSupplier.Patch(data);
-
+                firebaseEmployee.Patch(data);
                 nama_txt.Text = "";
                 pass_txt.Text = "";
                 hp_txt.Text = "";
                 email_txt.Text = "";
                 user_txt.Text = "";
                 textBox1.Text = "";
-
             }
-
         }
 
         private void delete_btn_Click(object sender, EventArgs e)
         {
             selectedRow = dataGridView1.CurrentCell.RowIndex;
+			String username = user_txt.Text;
             nama_txt.Text = "";
             user_txt.Text = "";
             hp_txt.Text = "";
             email_txt.Text = "";
             pass_txt.Text = "";
             textBox1.Text = "";
-
             DataGridViewRow newRow = dataGridView1.Rows[selectedRow];
             dataGridView1.Rows.RemoveAt(selectedRow);
+			FirebaseDB firebaseDelete = new FirebaseDB("https://mobile-shoebox.firebaseio.com/Employees/" + username );
+			FirebaseResponse deleteResponse = firebaseDelete.Delete();
         }
 
-        private void Employee_MouseUp(object sender, MouseEventArgs e)
+		private void search_textchange(object sender, EventArgs e)
+		{
+			FirebaseResponse employee = firebaseDB.Get();
+			dynamic stuff = JObject.Parse(employee.JSONContent);
+			IEnumerable<JToken> name = stuff.SelectTokens("$..[?(@.nama >= '" + textBox2.Text + "')]");
+			String search_nama = textBox1.Text;
+			String sub_search_name = search_nama.Substring(0, search_nama.Length);
+			employeedataBindingSource.Clear();
+			foreach (JToken item in name)
+			{
+				dynamic stiff = JObject.Parse(item.ToString());
+				String nama_sub = stiff.nama;
+				String nama_disub = nama_sub.Substring(0, search_nama.Length);
+					if (nama_disub.Equals(sub_search_name))
+					{
+						employeedataBindingSource.Add(new Employee_data()
+						{
+							Username = stiff.username,
+							Password = stiff.password,
+							Email = stiff.email,
+							Nama = stiff.nama,
+							HP = stiff.hp
+						});
+					}
+			}
+		}
+
+		private void Employee_MouseUp(object sender, MouseEventArgs e)
         {
             TogMove = 0;
         }

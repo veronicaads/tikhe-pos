@@ -31,7 +31,7 @@ namespace Tikhe_POS
 			String tgl_awal = Properties.Settings.Default.tgl_awal_cs;
 			IEnumerable<JToken> data_cust = stuff.SelectTokens("$..[?(@.tanggal_masuk >= '" + tgl_awal + "' && @.tanggal_masuk < '" + tgl_akhir + "' )].gender");
 			foreach (JToken item in data_cust) {
-				if (item.ToString().Equals("Wanita"))
+				if (item.ToString().Equals("Female"))
 				{
 					x++;
 				}
