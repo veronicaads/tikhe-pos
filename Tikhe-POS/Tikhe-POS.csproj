@@ -143,6 +143,7 @@
     <Compile Include="Detail_serviceorder.Designer.cs">
       <DependentUpon>Detail_serviceorder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Employee_data.cs" />
     <Compile Include="Invoices.cs">
       <SubType>Form</SubType>
     </Compile>

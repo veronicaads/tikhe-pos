@@ -211,7 +211,12 @@ namespace Tikhe_POS
 			}
 		}
 
-		private void Supplier_MouseUp(object sender, MouseEventArgs e)
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Supplier_MouseUp(object sender, MouseEventArgs e)
         {
             TogMove = 0;
         }

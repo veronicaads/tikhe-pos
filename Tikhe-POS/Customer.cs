@@ -184,7 +184,12 @@ namespace Tikhe_POS
 
 		}
 
-		private void Customer_MouseMove(object sender, MouseEventArgs e)
+        private void pria_but_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Customer_MouseMove(object sender, MouseEventArgs e)
         {
             if (TogMove == 1)
             {
