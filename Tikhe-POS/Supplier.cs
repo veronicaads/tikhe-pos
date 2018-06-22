@@ -135,7 +135,7 @@ namespace Tikhe_POS
 
             DataGridViewRow newRow = dataGridView1.Rows[selectedRow];
             FirebaseDB firebaseSupplier = firebaseDB.Node(newRow.Cells[0].Value.ToString());
-            MessageBox.Show(newRow.Cells[0].Value.ToString());
+            //MessageBox.Show(newRow.Cells[0].Value.ToString());
             var data = "";
             data = @"{'id':'XXX','nama' : '" + nama_txt.Text + "','alamat' : '" + alamat_txt.Text + "','hp' : '" + hp_txt.Text + "','email' : '" + email_txt.Text + "','produk' : '" + vendor_txt.Text + "','merek' : '" + merek_txt.Text + "'}";
 

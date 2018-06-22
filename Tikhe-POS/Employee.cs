@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FirebaseNet.Database;
 using System.Text.RegularExpressions;
+using Newtonsoft.Json.Linq;
 
 namespace Tikhe_POS
 {
@@ -30,6 +31,7 @@ namespace Tikhe_POS
         {
             nama_txt.Text = "";
             pass_txt.Text = "";
+            textBox1.Text = "";
             email_txt.Text = "";
             hp_txt.Text = "";
             user_txt.Text = "";
@@ -46,10 +48,9 @@ namespace Tikhe_POS
             {
                 FirebaseDB firebaseDB = new FirebaseDB("https://mobile-shoebox.firebaseio.com/Employees");
                 FirebaseDB firebaseDBEmployees = firebaseDB.Node(username);
-                var data = @"{'username' : '" + username + "','password' : '" + password + "'}";
+                var data = @"{'username' : '" + username + "','password' : '" + password + "','nama' : '" + nama + "','email' : '" + email + "','hp' : '" + hp + "'}";
                 firebaseDBEmployees.Put(data);
                 MessageBox.Show("Data berhasil ditambahkan");
-                //personBindingSource.Add(new Person() { ID = "C" + id_cust.ToString(), Nama = nama_txt.Text, JenisKelamin = "Male", Alamat = alamat_txt.Text, Email = email_txt.Text, HP = hp_txt.Text });
 
                 employeedataBindingSource.Add(new Employee_data() { Username = username, Password = password, Email = email, HP = hp, Nama = nama });
             }
@@ -122,8 +123,68 @@ namespace Tikhe_POS
 			String pws = CheckStrength(pass_txt.Text).ToString();
 			pw_s.Text = pws;
 		}
+        int selectedRow;
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            selectedRow = e.RowIndex;
+            DataGridViewRow row = dataGridView1.Rows[selectedRow];
+            user_txt.Text = row.Cells[1].Value.ToString();
+            nama_txt.Text = row.Cells[0].Value.ToString();
+            email_txt.Text = row.Cells[4].Value.ToString();
+            hp_txt.Text = row.Cells[2].Value.ToString();
+        }
+        FirebaseDB firebaseDB = new FirebaseDB("https://mobile-shoebox.firebaseio.com/Supplier");
+        private void update_btn_Click(object sender, EventArgs e)
+        {
+            if (nama_txt.Text == "" || email_txt.Text == "" || hp_txt.Text == "" || user_txt.Text == "" || pass_txt.Text == "" || textBox1.Text == "")
+            {
+                MessageBox.Show("Semua Wajib Diisi !", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MainMenu form = new MainMenu();
+                form.Show(); Hide();
+            }
+            else
+            {
+                DataGridViewRow newRow = dataGridView1.Rows[selectedRow];
+                newRow.Cells[0].Value = nama_txt.Text;
+                newRow.Cells[2].Value = hp_txt.Text;
+                newRow.Cells[1].Value = user_txt.Text;
+                newRow.Cells[4].Value = email_txt.Text;
+                newRow.Cells[3].Value = pass_txt.Text;
 
-		private void Employee_MouseUp(object sender, MouseEventArgs e)
+                FirebaseDB firebaseSupplier = firebaseDB.Node(newRow.Cells[0].Value.ToString());
+                FirebaseResponse coba = firebaseSupplier.Get();
+                dynamic stuff = JObject.Parse(coba.JSONContent);
+
+                var data = @"{'username' : '" + user_txt.Text + "','password' : '" + pass_txt.Text + "','nama' : '" + nama_txt.Text + "','email' : '" + email_txt.Text + "','hp' : '" + hp_txt.Text + "'}";
+
+                firebaseSupplier.Patch(data);
+
+                nama_txt.Text = "";
+                pass_txt.Text = "";
+                hp_txt.Text = "";
+                email_txt.Text = "";
+                user_txt.Text = "";
+                textBox1.Text = "";
+
+            }
+
+        }
+
+        private void delete_btn_Click(object sender, EventArgs e)
+        {
+            selectedRow = dataGridView1.CurrentCell.RowIndex;
+            nama_txt.Text = "";
+            user_txt.Text = "";
+            hp_txt.Text = "";
+            email_txt.Text = "";
+            pass_txt.Text = "";
+            textBox1.Text = "";
+
+            DataGridViewRow newRow = dataGridView1.Rows[selectedRow];
+            dataGridView1.Rows.RemoveAt(selectedRow);
+        }
+
+        private void Employee_MouseUp(object sender, MouseEventArgs e)
         {
             TogMove = 0;
         }

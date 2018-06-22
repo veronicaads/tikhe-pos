@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.delete_btn = new System.Windows.Forms.Button();
+            this.update_btn = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.pw_s = new System.Windows.Forms.Label();
@@ -61,8 +63,6 @@
             this.employeedataBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label11 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.delete_btn = new System.Windows.Forms.Button();
-            this.update_btn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -108,6 +108,36 @@
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Info Employee";
+            // 
+            // delete_btn
+            // 
+            this.delete_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.delete_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.delete_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.delete_btn.ForeColor = System.Drawing.Color.White;
+            this.delete_btn.Location = new System.Drawing.Point(186, 303);
+            this.delete_btn.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.delete_btn.Name = "delete_btn";
+            this.delete_btn.Size = new System.Drawing.Size(66, 40);
+            this.delete_btn.TabIndex = 11;
+            this.delete_btn.Text = "Delete";
+            this.delete_btn.UseVisualStyleBackColor = false;
+            this.delete_btn.Click += new System.EventHandler(this.delete_btn_Click);
+            // 
+            // update_btn
+            // 
+            this.update_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.update_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.update_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.update_btn.ForeColor = System.Drawing.Color.White;
+            this.update_btn.Location = new System.Drawing.Point(106, 303);
+            this.update_btn.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.update_btn.Name = "update_btn";
+            this.update_btn.Size = new System.Drawing.Size(67, 40);
+            this.update_btn.TabIndex = 12;
+            this.update_btn.Text = "Update";
+            this.update_btn.UseVisualStyleBackColor = false;
+            this.update_btn.Click += new System.EventHandler(this.update_btn_Click);
             // 
             // textBox1
             // 
@@ -209,9 +239,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(20, 262);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 18);
+            this.label5.Size = new System.Drawing.Size(36, 18);
             this.label5.TabIndex = 4;
-            this.label5.Text = "No. HP ";
+            this.label5.Text = "HP ";
             // 
             // label4
             // 
@@ -333,6 +363,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(367, 360);
             this.dataGridView1.TabIndex = 21;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // namaDataGridViewTextBoxColumn
             // 
@@ -386,34 +417,6 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(618, 32);
             this.textBox2.TabIndex = 23;
-            // 
-            // delete_btn
-            // 
-            this.delete_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.delete_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.delete_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.delete_btn.ForeColor = System.Drawing.Color.White;
-            this.delete_btn.Location = new System.Drawing.Point(186, 303);
-            this.delete_btn.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.delete_btn.Name = "delete_btn";
-            this.delete_btn.Size = new System.Drawing.Size(66, 40);
-            this.delete_btn.TabIndex = 11;
-            this.delete_btn.Text = "Delete";
-            this.delete_btn.UseVisualStyleBackColor = false;
-            // 
-            // update_btn
-            // 
-            this.update_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.update_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.update_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.update_btn.ForeColor = System.Drawing.Color.White;
-            this.update_btn.Location = new System.Drawing.Point(106, 303);
-            this.update_btn.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.update_btn.Name = "update_btn";
-            this.update_btn.Size = new System.Drawing.Size(67, 40);
-            this.update_btn.TabIndex = 12;
-            this.update_btn.Text = "Update";
-            this.update_btn.UseVisualStyleBackColor = false;
             // 
             // Employee
             // 
