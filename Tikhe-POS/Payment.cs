@@ -78,6 +78,10 @@ namespace Tikhe_POS
         private void username_edit_TextChanged(object sender, EventArgs e)
         {
             label7.Text = (Convert.ToInt32(username_edit.Text) - total_harga).ToString();
+            if (Convert.ToInt32(label7.Text) < 0)
+            {
+                label7.Text = "0";
+            }
         }
 
         private void username_edit_KeyPress(object sender, KeyPressEventArgs e)

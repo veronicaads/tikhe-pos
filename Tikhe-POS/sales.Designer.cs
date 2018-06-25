@@ -98,6 +98,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -734,7 +735,7 @@
             this.button23.Location = new System.Drawing.Point(380, 701);
             this.button23.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(160, 46);
+            this.button23.Size = new System.Drawing.Size(107, 46);
             this.button23.TabIndex = 2;
             this.button23.Text = "Payment";
             this.button23.UseVisualStyleBackColor = false;
@@ -745,10 +746,10 @@
             this.button24.BackColor = System.Drawing.Color.Gray;
             this.button24.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button24.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button24.Location = new System.Drawing.Point(561, 702);
+            this.button24.Location = new System.Drawing.Point(626, 702);
             this.button24.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(157, 45);
+            this.button24.Size = new System.Drawing.Size(94, 45);
             this.button24.TabIndex = 2;
             this.button24.Text = "Cancel";
             this.button24.UseVisualStyleBackColor = false;
@@ -932,12 +933,26 @@
             this.button12.UseVisualStyleBackColor = false;
             this.button12.Click += new System.EventHandler(this.button12_Click_1);
             // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Gray;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(499, 701);
+            this.button4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(119, 46);
+            this.button4.TabIndex = 6;
+            this.button4.Text = "Confirmation";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
             // sales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(89)))), ((int)(((byte)(134)))));
             this.ClientSize = new System.Drawing.Size(750, 788);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.button24);
@@ -1048,5 +1063,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn hargaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn Delete;
         private System.Windows.Forms.DataGridViewTextBoxColumn serviceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button button4;
     }
 }
