@@ -278,7 +278,7 @@ namespace Tikhe_POS
 
                     }
 
-                    pesanan = @"{'customer':'" + combo_customer.Text + "','biaya':'" + harga_sub[i] + "','pembayaran' : '" + "-" + "','cabang' : '" + cabang_combo.Text + "','merek_sepatu' : '" + comboBox2.Text + "','orderid' : '" + order_id + "','service' : '" + service[i] + "','subService' : '" + subservice[i] + "','diskon' : '" + diskon_txt.Text + "','tanggal_masuk' : '" + tanggalmasuk + "'}";
+                    pesanan = @"{'customer':'" + combo_customer.Text + "','biaya':'" + harga_sub[i] + "','pembayaran' : '" + "-" + "','cabang' : '" + cabang_combo.Text + "','merek_sepatu' : '" + comboBox2.Text + "','orderid' : '" + order_id + "','service' : '" + service[i] + "','subService' : '" + subservice[i] + "','diskon' : '" + diskon_txt.Text + "','tanggal_masuk' : '" + tanggalmasuk + "','tanggal_keluar' : '" +""+ "'}";
                     //pesanan = @"{'customer':'" + combo_customer.Text + "','biaya':'" + total_txt.Text + "','pembayaran' : '" + "-" + "','cabang' : '" + cabang_combo.Text + "','merek_sepatu' : '" + comboBox2.Text + "','orderid' : '" + order_id + "','service' : '" + service[i] + "','subService' : '" + subservice[i] + "','diskon' : '" + diskon_txt.Text + "','tanggal_masuk' : '" + tanggalmasuk + "'}";
 
                     FirebaseDB Orders = firebaseDB.Node(order_id);
@@ -403,6 +403,12 @@ namespace Tikhe_POS
         private void cabang_combo_SelectedIndexChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            confirmation baru = new confirmation();
+            baru.Show();
         }
 
         private void sales_Load(object sender, EventArgs e)

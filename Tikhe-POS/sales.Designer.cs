@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -81,24 +81,24 @@
             this.button23 = new System.Windows.Forms.Button();
             this.button24 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.noDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.noDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subServiceDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hargaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.serviceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.noDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.orderBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.orderBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.orderBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             this.orderBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
             this.vendorBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -106,6 +106,7 @@
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource2)).BeginInit();
@@ -113,7 +114,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vendorBindingSource)).BeginInit();
-            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -758,14 +758,14 @@
             // dataGridView2
             // 
             this.dataGridView2.AutoGenerateColumns = false;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.noDataGridViewTextBoxColumn2,
@@ -774,73 +774,40 @@
             this.Delete,
             this.serviceDataGridViewTextBoxColumn});
             this.dataGridView2.DataSource = this.orderBindingSource1;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView2.Location = new System.Drawing.Point(380, 350);
             this.dataGridView2.Name = "dataGridView2";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView2.RowTemplate.Height = 30;
             this.dataGridView2.Size = new System.Drawing.Size(338, 156);
             this.dataGridView2.TabIndex = 3;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
-            // noDataGridViewTextBoxColumn2
-            // 
-            this.noDataGridViewTextBoxColumn2.DataPropertyName = "No";
-            this.noDataGridViewTextBoxColumn2.HeaderText = "ID";
-            this.noDataGridViewTextBoxColumn2.Name = "noDataGridViewTextBoxColumn2";
-            this.noDataGridViewTextBoxColumn2.ReadOnly = true;
-            this.noDataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.noDataGridViewTextBoxColumn2.Width = 30;
-            // 
-            // subServiceDataGridViewTextBoxColumn1
-            // 
-            this.subServiceDataGridViewTextBoxColumn1.DataPropertyName = "SubService";
-            this.subServiceDataGridViewTextBoxColumn1.HeaderText = "SubService";
-            this.subServiceDataGridViewTextBoxColumn1.Name = "subServiceDataGridViewTextBoxColumn1";
-            this.subServiceDataGridViewTextBoxColumn1.Width = 120;
-            // 
-            // hargaDataGridViewTextBoxColumn
-            // 
-            this.hargaDataGridViewTextBoxColumn.DataPropertyName = "Harga";
-            this.hargaDataGridViewTextBoxColumn.HeaderText = "Price";
-            this.hargaDataGridViewTextBoxColumn.Name = "hargaDataGridViewTextBoxColumn";
-            this.hargaDataGridViewTextBoxColumn.Width = 105;
-            // 
             // Delete
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Red;
-            this.Delete.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Red;
+            this.Delete.DefaultCellStyle = dataGridViewCellStyle2;
             this.Delete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Delete.HeaderText = "Delete";
             this.Delete.Name = "Delete";
             this.Delete.Text = "X";
             this.Delete.Width = 40;
-            // 
-            // serviceDataGridViewTextBoxColumn
-            // 
-            this.serviceDataGridViewTextBoxColumn.DataPropertyName = "Service";
-            this.serviceDataGridViewTextBoxColumn.HeaderText = "Service";
-            this.serviceDataGridViewTextBoxColumn.Name = "serviceDataGridViewTextBoxColumn";
-            // 
-            // orderBindingSource1
-            // 
-            this.orderBindingSource1.DataSource = typeof(Tikhe_POS.Order);
             // 
             // noDataGridViewTextBoxColumn
             // 
@@ -848,30 +815,6 @@
             this.noDataGridViewTextBoxColumn.HeaderText = "No";
             this.noDataGridViewTextBoxColumn.Name = "noDataGridViewTextBoxColumn";
             this.noDataGridViewTextBoxColumn.Width = 40;
-            // 
-            // orderBindingSource
-            // 
-            this.orderBindingSource.DataSource = typeof(Tikhe_POS.Order);
-            // 
-            // orderBindingSource2
-            // 
-            this.orderBindingSource2.DataSource = typeof(Tikhe_POS.Order);
-            // 
-            // orderBindingSource3
-            // 
-            this.orderBindingSource3.DataSource = typeof(Tikhe_POS.Order);
-            // 
-            // orderBindingSource4
-            // 
-            this.orderBindingSource4.DataSource = typeof(Tikhe_POS.Order);
-            // 
-            // orderBindingSource5
-            // 
-            this.orderBindingSource5.DataSource = typeof(Tikhe_POS.Order);
-            // 
-            // vendorBindingSource
-            // 
-            this.vendorBindingSource.DataSource = typeof(Tikhe_POS.Vendor);
             // 
             // groupBox6
             // 
@@ -945,6 +888,64 @@
             this.button4.TabIndex = 6;
             this.button4.Text = "Confirmation";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // noDataGridViewTextBoxColumn2
+            // 
+            this.noDataGridViewTextBoxColumn2.DataPropertyName = "No";
+            this.noDataGridViewTextBoxColumn2.HeaderText = "ID";
+            this.noDataGridViewTextBoxColumn2.Name = "noDataGridViewTextBoxColumn2";
+            this.noDataGridViewTextBoxColumn2.ReadOnly = true;
+            this.noDataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.noDataGridViewTextBoxColumn2.Width = 30;
+            // 
+            // subServiceDataGridViewTextBoxColumn1
+            // 
+            this.subServiceDataGridViewTextBoxColumn1.DataPropertyName = "SubService";
+            this.subServiceDataGridViewTextBoxColumn1.HeaderText = "SubService";
+            this.subServiceDataGridViewTextBoxColumn1.Name = "subServiceDataGridViewTextBoxColumn1";
+            this.subServiceDataGridViewTextBoxColumn1.Width = 120;
+            // 
+            // hargaDataGridViewTextBoxColumn
+            // 
+            this.hargaDataGridViewTextBoxColumn.DataPropertyName = "Harga";
+            this.hargaDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.hargaDataGridViewTextBoxColumn.Name = "hargaDataGridViewTextBoxColumn";
+            this.hargaDataGridViewTextBoxColumn.Width = 105;
+            // 
+            // serviceDataGridViewTextBoxColumn
+            // 
+            this.serviceDataGridViewTextBoxColumn.DataPropertyName = "Service";
+            this.serviceDataGridViewTextBoxColumn.HeaderText = "Service";
+            this.serviceDataGridViewTextBoxColumn.Name = "serviceDataGridViewTextBoxColumn";
+            // 
+            // orderBindingSource1
+            // 
+            this.orderBindingSource1.DataSource = typeof(Tikhe_POS.Order);
+            // 
+            // orderBindingSource
+            // 
+            this.orderBindingSource.DataSource = typeof(Tikhe_POS.Order);
+            // 
+            // orderBindingSource2
+            // 
+            this.orderBindingSource2.DataSource = typeof(Tikhe_POS.Order);
+            // 
+            // orderBindingSource3
+            // 
+            this.orderBindingSource3.DataSource = typeof(Tikhe_POS.Order);
+            // 
+            // orderBindingSource4
+            // 
+            this.orderBindingSource4.DataSource = typeof(Tikhe_POS.Order);
+            // 
+            // orderBindingSource5
+            // 
+            this.orderBindingSource5.DataSource = typeof(Tikhe_POS.Order);
+            // 
+            // vendorBindingSource
+            // 
+            this.vendorBindingSource.DataSource = typeof(Tikhe_POS.Vendor);
             // 
             // sales
             // 
@@ -983,6 +984,7 @@
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.groupBox6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource2)).EndInit();
@@ -990,7 +992,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vendorBindingSource)).EndInit();
-            this.groupBox6.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
