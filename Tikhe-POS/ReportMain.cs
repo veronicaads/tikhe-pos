@@ -15,6 +15,7 @@ namespace Tikhe_POS
         public ReportMain()
         {
             InitializeComponent();
+           
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -76,19 +77,24 @@ namespace Tikhe_POS
 
         private void order_graphic_CheckedChanged(object sender, EventArgs e)
         {
-            
+            if (order_graphic.Checked)
+            {
+                ReportInput RI = new ReportInput();
+                RI.Show();
+                Properties.Settings.Default.flag_form = "Graph_service";
+            }
         }
 
         private void ReportMain_Load(object sender, EventArgs e)
         {
-           
+            order_graphic.Checked = false;
         }
 
         private void order_graphic_MouseClick(object sender, MouseEventArgs e)
         {
-            ReportInput RI = new ReportInput();
-            RI.Show();
-			Properties.Settings.Default.flag_form = "Graph_service";
+            //ReportInput RI = new ReportInput();
+            //RI.Show();
+			//Properties.Settings.Default.flag_form = "Graph_service";
 		}
 
         private void service_summary_CheckedChanged(object sender, EventArgs e)
@@ -104,9 +110,12 @@ namespace Tikhe_POS
 
         private void service_detail_CheckedChanged(object sender, EventArgs e)
         {
-			ReportInputDetail rd = new ReportInputDetail();
-			rd.Show();
-			Properties.Settings.Default.flag_form = "service_order";
+            if (service_detail.Checked)
+            {
+                ReportInputDetail rd = new ReportInputDetail();
+                rd.Show();
+                Properties.Settings.Default.flag_form = "service_order";
+            }
 		}
 
         private void service_detail_MouseClick(object sender, MouseEventArgs e)
@@ -116,37 +125,51 @@ namespace Tikhe_POS
 
 		private void customer_graphic_CheckedChanged(object sender, EventArgs e)
 		{
-			ReportInput_Customer Rs = new ReportInput_Customer();
-			Rs.Show();
-			Properties.Settings.Default.flag_form = "Customer";
+            if (customer_graphic.Checked) {
+                ReportInput_Customer Rs = new ReportInput_Customer();
+                Rs.Show();
+                Properties.Settings.Default.flag_form = "Customer";
+            }
 		}
 
 		private void item_graph_CheckedChanged(object sender, EventArgs e)
 		{
-			ReportInput_Customer Rs = new ReportInput_Customer();
-			Rs.Show();
-			Properties.Settings.Default.flag_form = "Item";
+            if (item_graph.Checked)
+            {
+                ReportInput_Customer Rs = new ReportInput_Customer();
+                Rs.Show();
+                Properties.Settings.Default.flag_form = "Item";
+            }
 		}
 
 		private void restock_graph_CheckedChanged(object sender, EventArgs e)
 		{
-			ReportInput_Customer Rs = new ReportInput_Customer();
-			Rs.Show();
-			Properties.Settings.Default.flag_form = "Stock";
+            if (restock_graph.Checked)
+            {
+                ReportInput_Customer Rs = new ReportInput_Customer();
+                Rs.Show();
+                Properties.Settings.Default.flag_form = "Stock";
+            }
 		}
 
 		private void customer_detail_CheckedChanged(object sender, EventArgs e)
 		{
-			ReportInputDetail rd = new ReportInputDetail();
-			rd.Show();
-			Properties.Settings.Default.flag_form = "item_order";
+            if (customer_detail.Checked)
+            {
+                ReportInputDetail rd = new ReportInputDetail();
+                rd.Show();
+                Properties.Settings.Default.flag_form = "item_order";
+            }
 		}
 
 		private void radioButton3_CheckedChanged(object sender, EventArgs e)
 		{
-			ReportInput_Customer rd = new ReportInput_Customer();
-			rd.Show();
-			Properties.Settings.Default.flag_form = "inventory";
+            if (radioButton3.Checked)
+            {
+                ReportInput_Customer rd = new ReportInput_Customer();
+                rd.Show();
+                Properties.Settings.Default.flag_form = "inventory";
+            }
 		}
 
 		private void ReportMain_MouseUp(object sender, MouseEventArgs e)

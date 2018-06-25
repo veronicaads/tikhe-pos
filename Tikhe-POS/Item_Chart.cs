@@ -113,5 +113,10 @@ namespace Tikhe_POS
 			item.Series[cabang].Points.AddXY("Sabun Tipe 2", y);
 			item.Series[cabang].Points.AddXY("Sabun Tipe 3", z);
 		}
-	}
+
+        private void item_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

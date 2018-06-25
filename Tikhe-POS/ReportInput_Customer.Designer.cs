@@ -170,6 +170,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ReportInput_Customer";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.ReportInput_Customer_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ReportInput_Customer_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ReportInput_Customer_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ReportInput_Customer_MouseUp);

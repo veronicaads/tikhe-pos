@@ -226,6 +226,11 @@ namespace Tikhe_POS
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
             if (textBox2.Text.Equals("")) diskon_txt.Text = "0";
+            else if (Convert.ToInt32(textBox2.Text) > 100)
+            {
+                MessageBox.Show("Can't be more than 100% !");
+                textBox2.Text = "";
+            }
             else diskon_txt.Text = (Convert.ToInt32(textBox2.Text) * Convert.ToInt32(subtotal_txt.Text) / 100).ToString();
             total_txt.Text = (Convert.ToInt32(subtotal_txt.Text) - Convert.ToInt32(diskon_txt.Text)).ToString();
         }

@@ -79,6 +79,11 @@ namespace Tikhe_POS
             }
         }
 
+        private void ReportInput_Customer_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void ReportInput_Customer_MouseUp(object sender, MouseEventArgs e)
         {
             TogMove = 0;

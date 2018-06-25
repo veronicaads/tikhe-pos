@@ -44,8 +44,9 @@ namespace Tikhe_POS
 
 		private void button3_Click(object sender, EventArgs e)
 		{
-			ReportInputDetail form = new ReportInputDetail();
-			form.Close();
+            //ReportInputDetail form = new ReportInputDetail();
+            //form.Close();
+            Hide();
 		}
 	}
 }

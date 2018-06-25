@@ -109,5 +109,26 @@ namespace Tikhe_POS
 		{
 
 		}
-	}
+        int TogMove;
+        int X, Y;
+        private void ReportInput_MouseDown(object sender, MouseEventArgs e)
+        {
+            TogMove = 1;
+            X = e.X;
+            Y = e.Y;
+        }
+
+        private void ReportInput_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (TogMove == 1)
+            {
+                this.SetDesktopLocation(MousePosition.X - X, MousePosition.Y - Y);
+            }
+        }
+
+        private void ReportInput_MouseUp(object sender, MouseEventArgs e)
+        {
+            TogMove = 0;
+        }
+    }
 }

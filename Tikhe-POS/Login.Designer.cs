@@ -53,7 +53,7 @@
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(408, 51);
-            this.panel1.TabIndex = 0;
+            this.panel1.TabIndex = 6;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
@@ -69,7 +69,7 @@
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(197, 22);
-            this.label2.TabIndex = 3;
+            this.label2.TabIndex = 0;
             this.label2.Text = "Tikhe - Point Of Sale";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
@@ -97,7 +97,7 @@
             this.login_btn.Margin = new System.Windows.Forms.Padding(4);
             this.login_btn.Name = "login_btn";
             this.login_btn.Size = new System.Drawing.Size(88, 37);
-            this.login_btn.TabIndex = 1;
+            this.login_btn.TabIndex = 5;
             this.login_btn.Text = "Log In";
             this.login_btn.UseVisualStyleBackColor = false;
             this.login_btn.Click += new System.EventHandler(this.login_btn_Click);
@@ -111,7 +111,7 @@
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 18);
-            this.label1.TabIndex = 2;
+            this.label1.TabIndex = 1;
             this.label1.Text = "Username";
             // 
             // label3
@@ -141,7 +141,7 @@
             this.password_edit.Name = "password_edit";
             this.password_edit.PasswordChar = '*';
             this.password_edit.Size = new System.Drawing.Size(157, 27);
-            this.password_edit.TabIndex = 3;
+            this.password_edit.TabIndex = 4;
             this.password_edit.TextChanged += new System.EventHandler(this.password_edit_TextChanged);
             // 
             // label5
@@ -155,7 +155,7 @@
             this.label5.Name = "label5";
             this.label5.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label5.Size = new System.Drawing.Size(103, 31);
-            this.label5.TabIndex = 8;
+            this.label5.TabIndex = 0;
             this.label5.Text = "Log In";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 

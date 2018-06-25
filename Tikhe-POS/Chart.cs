@@ -19,7 +19,12 @@ namespace Tikhe_POS
 		int counter_x = 0, counter_y = 0, counter_z = 0, counter_a = 0, counter_b = 0, counter_c = 0, counter_d = 0;
 		int counter_e = 0;
 
-		public Chart()
+        private void pets_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public Chart()
 		{
 			InitializeComponent();
 		}

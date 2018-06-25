@@ -55,8 +55,9 @@ namespace Tikhe_POS
 
 		private void button3_Click(object sender, EventArgs e)
 		{
-			Inventory_Report_Detail form = new Inventory_Report_Detail();
-			form.Close();
+            //Inventory_Report_Detail form = new Inventory_Report_Detail();
+            //form.Close();
+            Hide();
 		}
 		private void Inventory_Load(object sender, EventArgs e)
 		{
